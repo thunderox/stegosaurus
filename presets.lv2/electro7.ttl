@@ -9,16 +9,16 @@
 <>
 	a pset:Preset ;
 	lv2:appliesTo <http://nickbailey.co.nr/plugins/stegosaurus> ;
-	rdfs:label "electronic_new3" ;
+	rdfs:label "electro7" ;
 	lv2:port [
 		lv2:symbol "clhat_osc1_active" ;
-		pset:value 0.0
+		pset:value 1.0
 	] , [
 		lv2:symbol "clhat_osc1_amp_attack" ;
 		pset:value 0.44999999
 	] , [
 		lv2:symbol "clhat_osc1_amp_decay" ;
-		pset:value 0.26666701
+		pset:value 0.26666665
 	] , [
 		lv2:symbol "clhat_osc1_amp_release" ;
 		pset:value 0.30000001
@@ -27,13 +27,13 @@
 		pset:value 0.0
 	] , [
 		lv2:symbol "clhat_osc1_noise" ;
-		pset:value 0.884615
+		pset:value 0.88461536
 	] , [
 		lv2:symbol "clhat_osc1_osc2_active" ;
 		pset:value 1.0
 	] , [
 		lv2:symbol "clhat_osc1_osc2_amp_attack" ;
-		pset:value 0.466667
+		pset:value 0.46666664
 	] , [
 		lv2:symbol "clhat_osc1_osc2_amp_decay" ;
 		pset:value 0.55000001
@@ -63,10 +63,10 @@
 		pset:value 1.0
 	] , [
 		lv2:symbol "clhat_osc1_osc2_volume" ;
-		pset:value 0.21794873
+		pset:value 0.34615386
 	] , [
 		lv2:symbol "clhat_osc1_pitch" ;
-		pset:value 0.19230799
+		pset:value 0.19230771
 	] , [
 		lv2:symbol "clhat_osc1_pitch_attack" ;
 		pset:value 0.0
@@ -81,7 +81,7 @@
 		pset:value 1.0
 	] , [
 		lv2:symbol "clhat_osc1_volume" ;
-		pset:value 0.67948699
+		pset:value 0.67948717
 	] , [
 		lv2:symbol "kick_osc1_active" ;
 		pset:value 1.0
@@ -90,10 +90,10 @@
 		pset:value 0.0
 	] , [
 		lv2:symbol "kick_osc1_amp_decay" ;
-		pset:value 0.61333299
+		pset:value 0.61333334
 	] , [
 		lv2:symbol "kick_osc1_amp_release" ;
-		pset:value 0.51666701
+		pset:value 0.51666665
 	] , [
 		lv2:symbol "kick_osc1_amp_sustain" ;
 		pset:value 0.0
@@ -102,7 +102,7 @@
 		pset:value 0.02
 	] , [
 		lv2:symbol "kick_osc1_pitch" ;
-		pset:value 0.29487199
+		pset:value 0.29487181
 	] , [
 		lv2:symbol "kick_osc1_pitch_attack" ;
 		pset:value 0.0
@@ -165,13 +165,13 @@
 		pset:value 0.61000001
 	] , [
 		lv2:symbol "ophat_osc1_amp_release" ;
-		pset:value 0.646667
+		pset:value 0.64666665
 	] , [
 		lv2:symbol "ophat_osc1_amp_sustain" ;
 		pset:value 0.0
 	] , [
 		lv2:symbol "ophat_osc1_noise" ;
-		pset:value 0.0
+		pset:value 0.05
 	] , [
 		lv2:symbol "ophat_osc1_osc2_active" ;
 		pset:value 1.0
@@ -180,25 +180,25 @@
 		pset:value 0.0
 	] , [
 		lv2:symbol "ophat_osc1_osc2_amp_decay" ;
-		pset:value 0.54333299
+		pset:value 0.54333305
 	] , [
 		lv2:symbol "ophat_osc1_osc2_amp_release" ;
-		pset:value 0.54000002
+		pset:value 0.53999996
 	] , [
 		lv2:symbol "ophat_osc1_osc2_amp_sustain" ;
 		pset:value 0.0
 	] , [
 		lv2:symbol "ophat_osc1_osc2_noise" ;
-		pset:value 0.0
+		pset:value 0.07692307
 	] , [
 		lv2:symbol "ophat_osc1_osc2_pitch" ;
-		pset:value 0.61102599
+		pset:value 0.61102569
 	] , [
 		lv2:symbol "ophat_osc1_osc2_pitch_attack" ;
 		pset:value 0.0
 	] , [
 		lv2:symbol "ophat_osc1_osc2_pitch_decay" ;
-		pset:value 0.66666698
+		pset:value 0.66666663
 	] , [
 		lv2:symbol "ophat_osc1_osc2_pitch_release" ;
 		pset:value 1.0
@@ -210,13 +210,13 @@
 		pset:value 0.615385
 	] , [
 		lv2:symbol "ophat_osc1_pitch" ;
-		pset:value 0.29487199
+		pset:value 0.29487181
 	] , [
 		lv2:symbol "ophat_osc1_pitch_attack" ;
 		pset:value 0.0
 	] , [
 		lv2:symbol "ophat_osc1_pitch_decay" ;
-		pset:value 0.73333299
+		pset:value 0.73333335
 	] , [
 		lv2:symbol "ophat_osc1_pitch_release" ;
 		pset:value 1.0
@@ -225,7 +225,7 @@
 		pset:value 1.0
 	] , [
 		lv2:symbol "ophat_osc1_volume" ;
-		pset:value 0.346154
+		pset:value 0.34615386
 	] , [
 		lv2:symbol "snare_osc1_active" ;
 		pset:value 1.0
@@ -234,34 +234,34 @@
 		pset:value 0.0
 	] , [
 		lv2:symbol "snare_osc1_amp_decay" ;
-		pset:value 0.61666667
+		pset:value 0.72666657
 	] , [
 		lv2:symbol "snare_osc1_amp_release" ;
-		pset:value 0.5
+		pset:value 0.0
 	] , [
 		lv2:symbol "snare_osc1_amp_sustain" ;
 		pset:value 0.0
 	] , [
 		lv2:symbol "snare_osc1_noise" ;
-		pset:value 0.02
+		pset:value 0.0
 	] , [
 		lv2:symbol "snare_osc1_pitch" ;
-		pset:value 0.19230771
+		pset:value 0.08974361
 	] , [
 		lv2:symbol "snare_osc1_pitch_attack" ;
 		pset:value 0.0
 	] , [
 		lv2:symbol "snare_osc1_pitch_decay" ;
-		pset:value 0.5
+		pset:value 0.5333333
 	] , [
 		lv2:symbol "snare_osc1_pitch_release" ;
-		pset:value 0.61666667
+		pset:value 0.0
 	] , [
 		lv2:symbol "snare_osc1_pitch_sustain" ;
 		pset:value 0.0
 	] , [
 		lv2:symbol "snare_osc1_volume" ;
-		pset:value 1.0
+		pset:value 0.88461536
 	] , [
 		lv2:symbol "snare_osc2_active" ;
 		pset:value 1.0
@@ -270,34 +270,34 @@
 		pset:value 0.0
 	] , [
 		lv2:symbol "snare_osc2_amp_decay" ;
-		pset:value 0.61666662
+		pset:value 0.59333324
 	] , [
 		lv2:symbol "snare_osc2_amp_release" ;
-		pset:value 0.63666666
+		pset:value 0.67333299
 	] , [
 		lv2:symbol "snare_osc2_amp_sustain" ;
 		pset:value 0.0
 	] , [
 		lv2:symbol "snare_osc2_noise" ;
-		pset:value 1.0
+		pset:value 0.82051283
 	] , [
 		lv2:symbol "snare_osc2_pitch" ;
-		pset:value 0.32051283
+		pset:value 1.0
 	] , [
 		lv2:symbol "snare_osc2_pitch_attack" ;
 		pset:value 0.0
 	] , [
 		lv2:symbol "snare_osc2_pitch_decay" ;
-		pset:value 1.0
+		pset:value 0.5333333
 	] , [
 		lv2:symbol "snare_osc2_pitch_release" ;
-		pset:value 0.88333333
+		pset:value 0.0
 	] , [
 		lv2:symbol "snare_osc2_pitch_sustain" ;
-		pset:value 1.0
+		pset:value 0.0
 	] , [
 		lv2:symbol "snare_osc2_volume" ;
-		pset:value 0.47435898
+		pset:value 0.73076922
 	] , [
 		lv2:symbol "volume" ;
 		pset:value 1.0

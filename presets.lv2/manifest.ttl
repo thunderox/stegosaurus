@@ -8,46 +8,10 @@
 @prefix doap: <http://usefulinc.com/ns/doap#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 
-<electro.ttl>
+<electro1.ttl>
 	a pset:Preset ;
-	rdfs:seeAlso <electro.ttl> ;
+	rdfs:seeAlso <electro1.ttl> ;
 	lv2:appliesTo <http://nickbailey.co.nr/plugins/stegosaurus> .
-		
-<electro_new.ttl>
-	a pset:Preset ;
-	rdfs:seeAlso <electro_new.ttl> ;
-	lv2:appliesTo <http://nickbailey.co.nr/plugins/stegosaurus> .
-
-<electro_new2.ttl>
-	a pset:Preset ;
-	rdfs:seeAlso <electro_new2.ttl> ;
-	lv2:appliesTo <http://nickbailey.co.nr/plugins/stegosaurus> .
-
-<selectro_new3.ttl>
-	a pset:Preset ;
-	rdfs:seeAlso <electro_new3.ttl> ;
-	lv2:appliesTo <http://nickbailey.co.nr/plugins/stegosaurus> .
-
-<electronic.ttl>
-	a pset:Preset ;
-	rdfs:seeAlso <electronic.ttl> ;
-	lv2:appliesTo <http://nickbailey.co.nr/plugins/stegosaurus> .
-
-<electronicq.ttl>
-	a pset:Preset ;
-	rdfs:seeAlso <electronicq.ttl> ;
-	lv2:appliesTo <http://nickbailey.co.nr/plugins/stegosaurus> .
-
-<electronic2.ttl>
-	a pset:Preset ;
-	rdfs:seeAlso <electronic2.ttl> ;
-	lv2:appliesTo <http://nickbailey.co.nr/plugins/stegosaurus> .
-
-<electronic3.ttl>
-	a pset:Preset ;
-	rdfs:seeAlso <electronic.ttl> ;
-	lv2:appliesTo <http://nickbailey.co.nr/plugins/stegosaurus> .
-
 
 <electro2.ttl>
 	a pset:Preset ;
@@ -74,7 +38,22 @@
 	rdfs:seeAlso <electro6.ttl> ;
 	lv2:appliesTo <http://nickbailey.co.nr/plugins/stegosaurus> .
 
+<electro7.ttl>
+	a pset:Preset ;
+	rdfs:seeAlso <electro7.ttl> ;
+	lv2:appliesTo <http://nickbailey.co.nr/plugins/stegosaurus> .
 
+<electro8.ttl>
+	a pset:Preset ;
+	rdfs:seeAlso <electro8.ttl> ;
+	lv2:appliesTo <http://nickbailey.co.nr/plugins/stegosaurus> .
 
+<electro9.ttl>
+	a pset:Preset ;
+	rdfs:seeAlso <electro9.ttl> ;
+	lv2:appliesTo <http://nickbailey.co.nr/plugins/stegosaurus> .
 
-
+<electro10.ttl>
+	a pset:Preset ;
+	rdfs:seeAlso <electro10.ttl> ;
+	lv2:appliesTo <http://nickbailey.co.nr/plugins/stegosaurus> .

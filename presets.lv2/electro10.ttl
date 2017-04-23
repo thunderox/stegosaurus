@@ -9,7 +9,7 @@
 <>
 	a pset:Preset ;
 	lv2:appliesTo <http://nickbailey.co.nr/plugins/stegosaurus> ;
-	rdfs:label "electronic2" ;
+	rdfs:label "electro10" ;
 	lv2:port [
 		lv2:symbol "clhat_osc1_active" ;
 		pset:value 1.0

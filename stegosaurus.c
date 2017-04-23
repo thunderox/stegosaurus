@@ -94,12 +94,12 @@ run(LV2_Handle instance, uint32_t n_samples)
 
 			printf("Event detected - %d - %d - %d \n", data[0], data[1], data[2] );
 
-			if (data[0] == 0x90 && data[2] > 0)
+			if (data[0] == 0x99 && data[2] > 0)
 			{
 				stegosaurus_synth_note_on( data[1], data[2] );
 			}
 
-			if (data[0] == 0x80 || data[0] == 0x90 && data[2] == 0)
+			if (data[0] == 0x89 || data[0] == 0x99 && data[2] == 0)
 			{
 				stegosaurus_synth_note_off( data[1] );
 			}

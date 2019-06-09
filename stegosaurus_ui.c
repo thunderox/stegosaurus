@@ -193,7 +193,7 @@ instantiate(const LV2UI_Descriptor*   descriptor,
 	addDeliriumUIWidget(&self->deliriumUI_window, deliriumUI_Fader, 1, 1.5,7,1,4,"NOISE",stegosaurus_KICK_OSC2_NOISE);
 	addDeliriumUIWidget(&self->deliriumUI_window, deliriumUI_Fader, 1, 2.5,7,1,4,"PITCH",stegosaurus_KICK_OSC2_PITCH);
 	addDeliriumUIWidget(&self->deliriumUI_window, deliriumUI_ADSR, 1, 4,7,3,3,"AMP",stegosaurus_KICK_OSC2_AMP_ATTACK);
-	addDeliriumUIWidget(&self->deliriumUI_window, deliriumUI_ADSR, 1, 7.25,7,3,3,"PITCH",stegosaurus_KICK_OSC2_PITCH_ATTACK);
+	addDeliriumUIWidget(&self->deliriumUI_window, deliriumUI_ADSR, 1, 7.52,7,3,3,"PITCH",stegosaurus_KICK_OSC2_PITCH_ATTACK);
 	addDeliriumUIWidget(&self->deliriumUI_window, deliriumUI_Fader, 1, 11,7,1,4,"VOL", stegosaurus_KICK_OSC2_VOLUME);
 
 	addDeliriumUIWidget(&self->deliriumUI_window, deliriumUI_Switch, 2, 0.5,3,1,2,"OSC 1",stegosaurus_SNARE_OSC1_ACTIVE);
@@ -207,7 +207,7 @@ instantiate(const LV2UI_Descriptor*   descriptor,
 	addDeliriumUIWidget(&self->deliriumUI_window, deliriumUI_Fader, 2, 1.5,7,1,4,"NOISE",stegosaurus_SNARE_OSC2_NOISE);
 	addDeliriumUIWidget(&self->deliriumUI_window, deliriumUI_Fader, 2, 2.5,7,1,4,"PITCH",stegosaurus_SNARE_OSC2_PITCH);
 	addDeliriumUIWidget(&self->deliriumUI_window, deliriumUI_ADSR, 2, 4,7,3,3,"AMP",stegosaurus_SNARE_OSC2_AMP_ATTACK);
-	addDeliriumUIWidget(&self->deliriumUI_window, deliriumUI_ADSR, 2, 7.25,7,3,3,"PITCH",stegosaurus_SNARE_OSC2_PITCH_ATTACK);
+	addDeliriumUIWidget(&self->deliriumUI_window, deliriumUI_ADSR, 2, 7.52,7,3,3,"PITCH",stegosaurus_SNARE_OSC2_PITCH_ATTACK);
 	addDeliriumUIWidget(&self->deliriumUI_window, deliriumUI_Fader, 2, 11,7,1,4,"VOL", stegosaurus_SNARE_OSC2_VOLUME);
 
 	addDeliriumUIWidget(&self->deliriumUI_window, deliriumUI_Switch, 3, 0.5,3,1,2,"OSC 1",stegosaurus_CLHAT_OSC1_ACTIVE);
@@ -221,7 +221,7 @@ instantiate(const LV2UI_Descriptor*   descriptor,
 	addDeliriumUIWidget(&self->deliriumUI_window, deliriumUI_Fader, 3, 1.5,7,1,4,"NOISE",stegosaurus_CLHAT_OSC2_NOISE);
 	addDeliriumUIWidget(&self->deliriumUI_window, deliriumUI_Fader, 3, 2.5,7,1,4,"PITCH",stegosaurus_CLHAT_OSC2_PITCH);
 	addDeliriumUIWidget(&self->deliriumUI_window, deliriumUI_ADSR, 3, 4,7,3,3,"AMP",stegosaurus_CLHAT_OSC2_AMP_ATTACK);
-	addDeliriumUIWidget(&self->deliriumUI_window, deliriumUI_ADSR, 3, 7.25,7,3,3,"PITCH",stegosaurus_CLHAT_OSC2_PITCH_ATTACK);
+	addDeliriumUIWidget(&self->deliriumUI_window, deliriumUI_ADSR, 3, 7.52,7,3,3,"PITCH",stegosaurus_CLHAT_OSC2_PITCH_ATTACK);
 	addDeliriumUIWidget(&self->deliriumUI_window, deliriumUI_Fader, 3, 11,7,1,4,"VOL", stegosaurus_CLHAT_OSC2_VOLUME);
 
 	addDeliriumUIWidget(&self->deliriumUI_window, deliriumUI_Switch, 4, 0.5,3,1,2,"OSC 1",stegosaurus_OPHAT_OSC1_ACTIVE);
@@ -235,7 +235,7 @@ instantiate(const LV2UI_Descriptor*   descriptor,
 	addDeliriumUIWidget(&self->deliriumUI_window, deliriumUI_Fader, 4, 1.5,7,1,4,"NOISE",stegosaurus_OPHAT_OSC2_NOISE);
 	addDeliriumUIWidget(&self->deliriumUI_window, deliriumUI_Fader, 4, 2.5,7,1,4,"PITCH",stegosaurus_OPHAT_OSC2_PITCH);
 	addDeliriumUIWidget(&self->deliriumUI_window, deliriumUI_ADSR, 4, 4,7,3,3,"AMP",stegosaurus_OPHAT_OSC2_AMP_ATTACK);
-	addDeliriumUIWidget(&self->deliriumUI_window, deliriumUI_ADSR, 4, 7.25,7,3,3,"PITCH",stegosaurus_OPHAT_OSC2_PITCH_ATTACK);
+	addDeliriumUIWidget(&self->deliriumUI_window, deliriumUI_ADSR, 4, 7.52,7,3,3,"PITCH",stegosaurus_OPHAT_OSC2_PITCH_ATTACK);
 	addDeliriumUIWidget(&self->deliriumUI_window, deliriumUI_Fader, 4, 11,7,1,4,"VOL", stegosaurus_OPHAT_OSC2_VOLUME);
 
 	addDeliriumUIWidget(&self->deliriumUI_window, deliriumUI_Knob, 5, 13.5,6,2,4,"VOLUME",stegosaurus_VOLUME);

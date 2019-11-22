@@ -6,7 +6,7 @@ import sys
 
 # Variables for 'waf dist'
 APPNAME = 'stegosaurus.lv2'
-VERSION = '0.0.3'
+VERSION = '0.0.4'
 
 # Mandatory variables
 top = '.'
@@ -90,7 +90,7 @@ def build(bld):
 
     # Build UI library
     obj = bld(features     = '%s %sshlib' % (ui_lang, ui_lang),
-              source       = ['stegosaurus_ui.c', "deliriumUI/deliriumUI.c", "deliriumUI/button.c", "deliriumUI/knob.c", "deliriumUI/microknob.c", "deliriumUI/fader.c", "deliriumUI/switch.c", "deliriumUI/adsr.c", pugl_impl],
+              source       = ['stegosaurus_ui.c', "deliriumUI/deliriumUI.c", "deliriumUI/button.c", "deliriumUI/knob.c", "deliriumUI/microknob.c", "deliriumUI/fader.c", "deliriumUI/switch.c", "deliriumUI/adsr.c","deliriumUI/wave_selector.c","deliriumUI/lfo.c","deliriumUI/selector.c",pugl_impl],
               name         = 'stegosaurus_ui',
               target       = '%s/stegosaurus_ui' % bundle,
               install_path = '${LV2DIR}/%s' % bundle,

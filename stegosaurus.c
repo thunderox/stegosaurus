@@ -76,8 +76,8 @@ run(LV2_Handle instance, uint32_t n_samples)
 
 	stegosaurusURIs* uris = &self->uris;
 
-	memset( self->params[stegosaurus_OUT_LEFT], 0, sizeof(double)*(n_samples*0.5) );
-	memset( self->params[stegosaurus_OUT_RIGHT], 0, sizeof(double)*(n_samples*0.5) );
+	memset( self->params[stegosaurus_OUT_ONE], 0, sizeof(double)*(n_samples*0.5) );
+	memset( self->params[stegosaurus_OUT_TWO], 0, sizeof(double)*(n_samples*0.5) );
 
 	// const float coef = DB_CO(
 
@@ -86,13 +86,13 @@ run(LV2_Handle instance, uint32_t n_samples)
 	LV2_ATOM_SEQUENCE_FOREACH(self->midi_in, ev)
 	{
 
-		printf("Some sort of atom event detected.........");
+		// printf("Some sort of event detected.........");
 
 		if (ev->body.type == uris->midi_Event)
 		{
 			uint8_t* const data = (uint8_t* const)(ev + 1);
 
-			printf("Event detected - %d - %d - %d \n", data[0], data[1], data[2] );
+			// printf("Event detected - %d - %d - %d \n", data[0], data[1], data[2] );
 
 			if (data[0] == 0x90 && data[2] > 0)
 			{
@@ -111,7 +111,7 @@ run(LV2_Handle instance, uint32_t n_samples)
 	if (stegosaurus_synth_get_number_of_voices_playing() > 0)
 	{
 
-		stegosaurus_synth_play(self->params[stegosaurus_OUT_LEFT], self->params[stegosaurus_OUT_RIGHT], n_samples); 
+		stegosaurus_synth_play(self->params[stegosaurus_OUT_ONE], self->params[stegosaurus_OUT_TWO], self->params[stegosaurus_OUT_THREE],self->params[stegosaurus_OUT_FOUR],n_samples); 
 	}
 }
 

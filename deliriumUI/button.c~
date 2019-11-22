@@ -1,7 +1,7 @@
 
 #include "deliriumUI.h"
 
-void displayDiliriumUIButton(deliriumUI* deliriumUI_window, cairo_t* cr, int widgetNumber)
+void displaydeliriumUIButton(deliriumUI* deliriumUI_window, cairo_t* cr, int widgetNumber)
 {
 	deliriumUIWidget* deliriumUIWidgets = deliriumUI_window->deliriumUIWidgets;
 
@@ -18,21 +18,22 @@ void displayDiliriumUIButton(deliriumUI* deliriumUI_window, cairo_t* cr, int wid
 
 	// Draw base
 	if (deliriumUIWidgets[widgetNumber].hover) {
-		cairo_set_source_rgba(cr, 0.3, 0.2, 0.2, 0.8);
+		cairo_set_source_rgba(cr, 0.1,0.2,0.1, 1);
 	} else {
-		cairo_set_source_rgba(cr, 0.2, 0.2, 0.2, 0.5);
+		cairo_set_source_rgba(cr, 0,0.1,0, 1);
 	}
 
 	roundedBox(cr, x, y, w, h);
+	cairo_fill_preserve(cr);
 
 	// Draw border
 	cairo_set_source_rgba(cr, 0.0, 0.0, 0.0, 1);
 	cairo_set_line_width(cr, 4.0);
-	//cairo_stroke(cr);
+	cairo_stroke(cr);
 
 	// Draw label
 	cairo_text_extents_t extents;
-	cairo_set_font_size(cr, deliriumUI_window->widgetHeight / 2.5);
+	cairo_set_font_size(cr, deliriumUI_window->widgetHeight/2);
 	cairo_text_extents(cr, deliriumUIWidgets[widgetNumber].label, &extents);
 	cairo_move_to(cr,
 	              (x + w / 2) - extents.width / 2,

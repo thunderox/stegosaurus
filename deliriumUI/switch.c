@@ -3,7 +3,7 @@
 #include <math.h>
 #define M_PI 3.14159265358979323846264338327
 
-void setValueDiliriumUISwitch(deliriumUI* deliriumUI_window, int widgetNumber, float _value)
+void setValuedeliriumUISwitch(deliriumUI* deliriumUI_window, int widgetNumber, float _value)
 {
 	deliriumUIWidget* deliriumUIWidgets = deliriumUI_window->deliriumUIWidgets;
 	deliriumUIWidgets[widgetNumber].values[0] = (bool)_value;
@@ -11,7 +11,7 @@ void setValueDiliriumUISwitch(deliriumUI* deliriumUI_window, int widgetNumber, f
 }
 
 
-void displayDiliriumUISwitch(deliriumUI* deliriumUI_window, cairo_t* cr, int widgetNumber)
+void displaydeliriumUISwitch(deliriumUI* deliriumUI_window, cairo_t* cr, int widgetNumber)
 {
 	deliriumUIWidget* deliriumUIWidgets = deliriumUI_window->deliriumUIWidgets;
 

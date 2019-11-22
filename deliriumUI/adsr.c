@@ -4,7 +4,7 @@
 #define M_PI 3.14159265358979323846264338327
 
 
-void setValueDiliriumUIADSR(deliriumUI* deliriumUI_window, int widgetNumber, float _value)
+void setValuedeliriumUIADSR(deliriumUI* deliriumUI_window, int widgetNumber, float _value)
 {
 	if (_value<0) _value=0;
 	if (_value>1) _value=1;
@@ -22,7 +22,7 @@ void setValueDiliriumUIADSR(deliriumUI* deliriumUI_window, int widgetNumber, flo
 
 //-------------------------------------------------------------------------------
 
-void displayDiliriumUIADSR(deliriumUI* deliriumUI_window, cairo_t* cr, int widgetNumber)
+void displaydeliriumUIADSR(deliriumUI* deliriumUI_window, cairo_t* cr, int widgetNumber)
 {
 	deliriumUIWidget* deliriumUIWidgets = deliriumUI_window->deliriumUIWidgets;
 
@@ -36,18 +36,15 @@ void displayDiliriumUIADSR(deliriumUI* deliriumUI_window, cairo_t* cr, int widge
 	int sw = w;
 	int sh = h * 0.8;
 
-	cairo_set_line_width(cr, w/40);
-
 	cairo_set_source_rgb(cr, 0.0, 0.0, 0.0);
 	cairo_rectangle(cr, x, y, w, h);
 	cairo_clip(cr);
 
+	cairo_set_source_rgb(cr, 0.0, 0.0, 0.0);
+	cairo_rectangle(cr, x, y, w, h);
+	cairo_stroke(cr);
 	cairo_set_source_rgba(cr, 0.0, 0.0, 0.0, 0.25);
 	cairo_paint(cr);	
-
-	cairo_set_source_rgba(cr, 0.0, 0.0, 0.0, 0.75);
-	cairo_rectangle(cr, x+1, y+1, w-2, h-2);
-	cairo_stroke(cr);
 
 	// Draw label
 	cairo_text_extents_t extents;
@@ -56,7 +53,7 @@ void displayDiliriumUIADSR(deliriumUI* deliriumUI_window, cairo_t* cr, int widge
 
 	cairo_move_to(cr,
 	              x + (w/2) - (extents.width/2)  ,
-	              (y + h/1.06) - (extents.height/3) );
+	              (y + h) - (extents.height) );
 
 	if (deliriumUIWidgets[widgetNumber].hover) {
 		cairo_set_source_rgba(cr, 0.8, 0.8, 0.8, 1);
@@ -74,7 +71,7 @@ void displayDiliriumUIADSR(deliriumUI* deliriumUI_window, cairo_t* cr, int widge
 
 		cairo_move_to(cr,
 		              x + (w/2) - (extents.width/2)  ,
-		              (y + (h/1.2)) - (extents.height/3) );
+		              (y + (h/1.2)) - (extents.height) );
 
 		cairo_show_text(cr,  res);
 	}

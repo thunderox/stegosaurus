@@ -6,8 +6,8 @@
 
 typedef enum {
 	stegosaurus_MIDI_IN=0,
-	stegosaurus_OUT_LEFT=1,
-	stegosaurus_OUT_RIGHT=2,
+	stegosaurus_OUT_ONE=1,
+	stegosaurus_OUT_TWO=2,
 	stegosaurus_VOLUME=3,
 
 	stegosaurus_KICK_OSC1_ACTIVE=4,
@@ -116,15 +116,23 @@ typedef enum {
 	stegosaurus_OPHAT_OSC2_PITCH_SUSTAIN=97,
 	stegosaurus_OPHAT_OSC2_PITCH_RELEASE=98,
 	stegosaurus_OPHAT_OSC2_VOLUME=99,
+	stegosaurus_OUT_THREE=100,
+	stegosaurus_OUT_FOUR=101,
+	stegosaurus_OUT_SELECTOR_1=102,
+	stegosaurus_OUT_SELECTOR_2=103,
+	stegosaurus_OUT_SELECTOR_3=104,
+	stegosaurus_OUT_SELECTOR_4=105
 
 
 } PortIndex;
 
 typedef struct {
-	float* out_left;
-	float* out_right;
+	float* out_one;
+	float* out_two;
+	float* out_three;
+	float* out_four;
 	
-	float* params[100];
+	float* params[160];
 
 	stegosaurusURIs uris;
 	LV2_Atom_Forge forge;

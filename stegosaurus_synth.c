@@ -20,10 +20,15 @@ void stegosaurus_synth_init(int sample_rate)
 
 	for (int v=0; v<4; v++)
 	{
-		for (int y=0; y<2; y++)
+		voices[v] = (voice*)malloc(sizeof(voice));
+		voices[v]->active = false;
+		voices[v]->volume = 0;
+		voices[v]->out_dest = 0;
+		voices[v]->pan = 0.5;
+		voices[v]->frequency = 50;
+
+		for (int y=0; y<3; y++)
 		{
-			voices[v] = (voice*)malloc(sizeof(voice));
-			voices[v]->active = false;
 			voices[v]->osc[y].wave1_number = 0;	
 			voices[v]->osc[y].wave2_number = 0;
 			voices[v]->osc[y].wave_mix = 0;
@@ -79,7 +84,7 @@ void stegosaurus_synth_cleanup()
 	noise_cleanup();
 }
 
-void stegosaurus_synth_play(float* const out_left, float* const out_right, uint32_t n_frames)
+void stegosaurus_synth_play(float* const out_one, float* const out_two, float* const out_three,float* const out_four, uint32_t n_frames)
 {
 
 	float master_volume = stegosaurus_self->params[stegosaurus_VOLUME][0]; 
@@ -236,14 +241,20 @@ void stegosaurus_synth_play(float* const out_left, float* const out_right, uint3
 	osc2_volume[2] = stegosaurus_self->params[stegosaurus_CLHAT_OSC2_VOLUME][0];
 	osc2_volume[3] = stegosaurus_self->params[stegosaurus_OPHAT_OSC2_VOLUME][0];
 
+	int out_select[4];
+	out_select[0] = stegosaurus_self->params[stegosaurus_OUT_SELECTOR_1][0];
+	out_select[1] = stegosaurus_self->params[stegosaurus_OUT_SELECTOR_2][0];
+	out_select[2] = stegosaurus_self->params[stegosaurus_OUT_SELECTOR_3][0];
+	out_select[3] = stegosaurus_self->params[stegosaurus_OUT_SELECTOR_4][0];
+
 	for (int fr=0; fr<n_frames; fr++)
 	{
-		float out = 0;
+		float voice_out[4];
+		voice_out[0] = 0; voice_out[1] = 0; voice_out[2] = 0; voice_out[3] = 0;
 
 
 			for (int v=0; v<4; v++)
 			{
-
 				if ( voices[v]->active)
 				{
 
@@ -388,7 +399,7 @@ void stegosaurus_synth_play(float* const out_left, float* const out_right, uint3
 						if (new_pitch < 0) new_pitch = 0;
 						voices[v]->osc[0].frequency = new_pitch;
 
-						out += (osc1_volume[v] * (wavetable_tick( &voices[v]->osc[0] ) * 0.5) * env_osc1_amp_level_db);	
+						voice_out[v] += (osc1_volume[v] * (wavetable_tick( &voices[v]->osc[0] ) * 0.5) * env_osc1_amp_level_db);	
 					}
 
 					// DO OSCILLATOR 2 ------------------------------------------------------
@@ -532,15 +543,111 @@ void stegosaurus_synth_play(float* const out_left, float* const out_right, uint3
 						if (new_pitch < 0) new_pitch = 0;
 						voices[v]->osc[1].frequency = new_pitch;
 
-						out += voices[v]->volume *  (osc2_volume[v] * (wavetable_tick( &voices[v]->osc[1] ) * 0.5) * env_osc2_amp_level_db);	
+						voice_out[v] += voices[v]->volume *  (osc2_volume[v] * (wavetable_tick( &voices[v]->osc[1] ) * 0.5) * env_osc2_amp_level_db);	
 
 
 					}	
+
 				}
 			}
 
-		out_left[fr] = out;
-		out_right[fr] = out;
+		// OUTPUT VOICE ONE - KICK
+
+		if (out_select[0] == 0)
+		{
+			out_one[fr] += voice_out[0];
+			out_two[fr] += voice_out[0];
+		}			
+		else if (out_select[0] == 1)
+		{
+			out_one[fr] += voice_out[0];
+		}
+		else if (out_select[0] == 2)
+		{
+			out_two[fr] += voice_out[0];
+		}
+		else if (out_select[0] == 3)
+		{
+			out_three[fr] += voice_out[0];
+		}
+		else if (out_select[0] == 4)
+		{
+			out_four[fr] += voice_out[0];
+		}
+
+
+		// OUTPUT VOICE TWO - SNARE
+
+		if (out_select[1] == 0)
+		{
+			out_one[fr] += voice_out[1];
+			out_two[fr] += voice_out[1];
+		}			
+		else if (out_select[1] == 1)
+		{
+			out_one[fr] += voice_out[1];
+		}
+		else if (out_select[1] == 2)
+		{
+			out_two[fr] += voice_out[1];
+		}
+		else if (out_select[1] == 3)
+		{
+			out_three[fr] += voice_out[1];
+		}
+		else if (out_select[1] == 4)
+		{
+			out_four[fr] += voice_out[1];
+		}
+
+		// OUTPUT VOICE THREE - CLOSED HAT
+
+		if (out_select[2] == 0)
+		{
+			out_one[fr] += voice_out[2];
+			out_two[fr] += voice_out[2];
+		}			
+		else if (out_select[2] == 1)
+		{
+			out_one[fr] += voice_out[2];
+		}
+		else if (out_select[2] == 2)
+		{
+			out_two[fr] += voice_out[2];
+		}
+		else if (out_select[2] == 3)
+		{
+			out_three[fr] += voice_out[2];
+		}
+		else if (out_select[2] == 4)
+		{
+			out_four[fr] += voice_out[2];
+		}
+
+		// OUTPUT VOICE FOUR - OPEN HAT
+
+		if (out_select[3] == 0)
+		{
+			out_one[fr] += voice_out[3];
+			out_two[fr] += voice_out[3];
+		}			
+		else if (out_select[3] == 1)
+		{
+			out_one[fr] += voice_out[3];
+		}
+		else if (out_select[3] == 2)
+		{
+			out_two[fr] += voice_out[3];
+		}
+		else if (out_select[3] == 3)
+		{
+			out_three[fr] += voice_out[3];
+		}
+		else if (out_select[3] == 4)
+		{
+			out_four[fr] += voice_out[3];
+		}
+
 	}
 }
 

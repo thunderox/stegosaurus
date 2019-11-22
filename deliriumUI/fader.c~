@@ -1,10 +1,10 @@
-
+ 
 #include "deliriumUI.h"
 #include <math.h>
 #define M_PI 3.14159265358979323846264338327
 
 
-void setValueDiliriumUIFader(deliriumUI* deliriumUI_window, int widgetNumber, float _value)
+void setValuedeliriumUIFader(deliriumUI* deliriumUI_window, int widgetNumber, float _value)
 {
 	if (_value<0) _value=0;
 	if (_value>1) _value=1;
@@ -17,7 +17,7 @@ void setValueDiliriumUIFader(deliriumUI* deliriumUI_window, int widgetNumber, fl
 
 //-------------------------------------------------------------------------------
 
-void displayDiliriumUIFader(deliriumUI* deliriumUI_window, cairo_t* cr, int widgetNumber)
+void displaydeliriumUIFader(deliriumUI* deliriumUI_window, cairo_t* cr, int widgetNumber)
 {
 	deliriumUIWidget* deliriumUIWidgets = deliriumUI_window->deliriumUIWidgets;
 
@@ -37,7 +37,7 @@ void displayDiliriumUIFader(deliriumUI* deliriumUI_window, cairo_t* cr, int widg
 
 	// Draw label
 	cairo_text_extents_t extents;
-	cairo_set_font_size(cr, w / 5.5);
+	cairo_set_font_size(cr, w / 4);
 	cairo_text_extents(cr, deliriumUIWidgets[widgetNumber].label, &extents);
 
 	cairo_move_to(cr,

@@ -28,7 +28,7 @@ void displayDiliriumUIADSR(deliriumUI* deliriumUI_window, cairo_t* cr, int widge
 
 	int x = deliriumUIWidgets[widgetNumber].x * deliriumUI_window->widgetWidth;
 	int y = deliriumUIWidgets[widgetNumber].y * deliriumUI_window->widgetHeight;
-	int w = deliriumUIWidgets[widgetNumber].w * deliriumUI_window->widgetWidth;
+	int w = deliriumUIWidgets[widgetNumber].w * dewryliriumUI_window->widgetWidth;
 	int h = deliriumUIWidgets[widgetNumber].h * deliriumUI_window->widgetHeight;
 
 	int sx = x;
@@ -36,18 +36,15 @@ void displayDiliriumUIADSR(deliriumUI* deliriumUI_window, cairo_t* cr, int widge
 	int sw = w;
 	int sh = h * 0.8;
 
-	cairo_set_line_width(cr, w/40);
-
 	cairo_set_source_rgb(cr, 0.0, 0.0, 0.0);
 	cairo_rectangle(cr, x, y, w, h);
 	cairo_clip(cr);
 
+	cairo_set_source_rgb(cr, 0.0, 0.0, 0.0);
+	cairo_rectangle(cr, x, y, w, h);
+	cairo_stroke(cr);
 	cairo_set_source_rgba(cr, 0.0, 0.0, 0.0, 0.25);
 	cairo_paint(cr);	
-
-	cairo_set_source_rgba(cr, 0.0, 0.0, 0.0, 0.75);
-	cairo_rectangle(cr, x+1, y+1, w-2, h-2);
-	cairo_stroke(cr);
 
 	// Draw label
 	cairo_text_extents_t extents;
@@ -56,7 +53,7 @@ void displayDiliriumUIADSR(deliriumUI* deliriumUI_window, cairo_t* cr, int widge
 
 	cairo_move_to(cr,
 	              x + (w/2) - (extents.width/2)  ,
-	              (y + h/1.075) - (extents.height/3) );
+	              (y + h) - (extents.height/3) );
 
 	if (deliriumUIWidgets[widgetNumber].hover) {
 		cairo_set_source_rgba(cr, 0.8, 0.8, 0.8, 1);

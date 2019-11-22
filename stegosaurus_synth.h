@@ -10,8 +10,8 @@
 #include "stegosaurus.h"
 
 void stegosaurus_synth_init(int);
-void stegosaurus_synth_cleanup();
-void stegosaurus_synth_play(float* const, float* const, uint32_t);
+void stegosaurus_synth_cleanup(); 
+void stegosaurus_synth_play(float* const, float* const, float* const, float* const, uint32_t);
 void stegosaurus_synth_note_on(int, int);
 void stegosaurus_synth_note_off(int);
 int stegosaurus_synth_get_number_of_voices_playing();
@@ -36,6 +36,7 @@ stegosaurus* stegosaurus_self;
 		bool active;
 
 		float volume;
+		int out_dest;
 		float pan;
 		float frequency;
 

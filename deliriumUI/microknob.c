@@ -3,7 +3,7 @@
 #include <math.h>
 #define M_PI 3.14159265358979323846264338327
 
-void displayDiliriumUIMicroKnob(deliriumUI* deliriumUI_window, cairo_t* cr, int widgetNumber)
+void displaydeliriumUIMicroKnob(deliriumUI* deliriumUI_window, cairo_t* cr, int widgetNumber)
 {
 	deliriumUIWidget* deliriumUIWidgets = deliriumUI_window->deliriumUIWidgets;
 

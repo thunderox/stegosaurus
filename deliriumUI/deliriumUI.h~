@@ -1,9 +1,15 @@
  
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include <stdbool.h>
 #include <cairo/cairo.h>
 #include "pugl/pugl.h"
+
+char* bundle_path;
+float* wavetable_buffer;
+int waveform_length;
+char* wave_names[32];
 
 // LV2UI stuff
 #include "lv2/lv2plug.in/ns/extensions/ui/ui.h"
@@ -19,7 +25,9 @@ typedef enum
 	deliriumUI_MicroKnob=3,
 	deliriumUI_Fader=4, 
 	deliriumUI_Switch=5,
-	deliriumUI_ADSR=6
+	deliriumUI_ADSR=6,
+	deliriumUI_Wave_Selector=7,
+	deliriumUI_LFO=8
 } deliriumUI_WidgetType;
 
 typedef struct {
@@ -72,8 +80,13 @@ void setValueFromMousePosition(deliriumUI*, int, int, int);
 void hasMouseClickedDeliriumUIWidget(deliriumUI*, int, int);
 void setValue(deliriumUI*, cairo_t*, int, float);
 void decValue(deliriumUI*, cairo_t*);
+void zeroValue(deliriumUI*, cairo_t*);
 void incValue(deliriumUI*, cairo_t*);
 void setMinMax(deliriumUI*,   int, float, float);
+void set_bundle_path(char*);
+void set_wavetable_buffer(float*, int);
+void set_wave_names(char**, int);
+void setIncrement(deliriumUI*, cairo_t*, float);
 
 static void roundedBox(cairo_t* cr, double x, double y, double w, double h)
 {
@@ -98,20 +111,24 @@ static void roundedBox(cairo_t* cr, double x, double y, double w, double h)
 }
 
 
-void displayDiliriumUIButton(deliriumUI*, cairo_t*, int);
-void displayDiliriumUIKnob(deliriumUI*, cairo_t*, int);
-void displayDiliriumUIMicroKnob(deliriumUI*, cairo_t*, int);
-void displayDiliriumUIFader(deliriumUI*, cairo_t*, int);
-void displayDiliriumUISwitch(deliriumUI*, cairo_t*, int);
-void displayDiliriumUIADSR(deliriumUI*, cairo_t*, int);
+void displaydeliriumUIButton(deliriumUI*, cairo_t*, int);
+void displaydeliriumUIKnob(deliriumUI*, cairo_t*, int);
+void displaydeliriumUIMicroKnob(deliriumUI*, cairo_t*, int);
+void displaydeliriumUIFader(deliriumUI*, cairo_t*, int);
+void displaydeliriumUISwitch(deliriumUI*, cairo_t*, int);
+void displaydeliriumUIADSR(deliriumUI*, cairo_t*, int);
+void displaydeliriumUIWave_Selector(deliriumUI*, cairo_t*, int);
+void displaydeliriumUILFO(deliriumUI*, cairo_t*, int);
 
 int getNumberOfWidgets(deliriumUI*);
 
-void setValueDiliriumUIFader(deliriumUI*, int, float);
-void setValueDiliriumUISwitch(deliriumUI*, int, float);
-void setValueDiliriumUIADSR(deliriumUI*, int, float);
+void setValuedeliriumUIFader(deliriumUI*, int, float);
+void setValuedeliriumUISwitch(deliriumUI*, int, float);
+void setValuedeliriumUIADSR(deliriumUI*, int, float);
+void setValuedeliriumUIWave_Selector(deliriumUI*, int, float);
+void setValuedeliriumUILFO(deliriumUI*, int, float);
 
-void setControllerDiliriumUI( LV2UI_Controller, LV2UI_Write_Function);
+void setControllerdeliriumUI( LV2UI_Controller, LV2UI_Write_Function);
 
 
 

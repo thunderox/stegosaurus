@@ -34,14 +34,14 @@
 		a lv2:AudioPort ,
 		lv2:OutputPort ;
 		lv2:index 1 ;
-		lv2:symbol "out_left" ;
-		lv2:name "In left"
+		lv2:symbol "out_one" ;
+		lv2:name "Out One"
 	] , [
 		a lv2:AudioPort ,
 		lv2:OutputPort ;
 		lv2:index 2 ;
-		lv2:symbol "out_right" ;
-		lv2:name "Out right"
+		lv2:symbol "out_two" ;
+		lv2:name "Out Two"
 	] , [
 
 		a lv2:ControlPort, lv2:InputPort;
@@ -51,12 +51,6 @@
 		lv2:minimum 0;
 		lv2:maximum 1;
 		lv2:default 0.6;
-
-
-
-
-
-
 
 
 	] , [
@@ -934,8 +928,50 @@
 		lv2:minimum 0;
 		lv2:maximum 1;
 		lv2:default 0.51282048;
-
-
+	] , [
+		a lv2:AudioPort ,
+		lv2:OutputPort ;
+		lv2:index 100 ;
+		lv2:symbol "out_three" ;
+		lv2:name "Out Three"
+	] , [
+		a lv2:AudioPort ,
+		lv2:OutputPort ;
+		lv2:index 101 ;
+		lv2:symbol "out_four" ;
+		lv2:name "Out Four"
+	] , [
+		a lv2:ControlPort, lv2:InputPort;
+		lv2:index 102;
+		lv2:symbol "out_selector_1";
+		lv2:name "Out Selector 1";
+		lv2:minimum 0;
+		lv2:maximum 4;
+		lv2:default 0;
+	] , [
+		a lv2:ControlPort, lv2:InputPort;
+		lv2:index 103;
+		lv2:symbol "out_selector_2";
+		lv2:name "Out Selector 2";
+		lv2:minimum 0;
+		lv2:maximum 4;
+		lv2:default 0;
+	] , [
+		a lv2:ControlPort, lv2:InputPort;
+		lv2:index 104;
+		lv2:symbol "out_selector_3";
+		lv2:name "Out Selector 3";
+		lv2:minimum 0;
+		lv2:maximum 4;
+		lv2:default 0;
+	] , [
+		a lv2:ControlPort, lv2:InputPort;
+		lv2:index 105;
+		lv2:symbol "out_selector_4";
+		lv2:name "Out Selector 4";
+		lv2:minimum 0;
+		lv2:maximum 4;
+		lv2:default 0;
 	].
 
 <http://nickbailey.co.nr/plugins/stegosaurus#ui>

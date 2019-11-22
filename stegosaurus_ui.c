@@ -15,6 +15,11 @@
 
 #define stegosaurus_UI_URI "http://nickbailey.co.nr/plugins/stegosaurus#ui"
 
+int button_kick = -1;
+int button_snare = -1;
+int button_closed_hat = -1;
+int button_open_hat = -1;
+
 typedef struct {
 	PuglView*            view;
 	LV2UI_Write_Function write;
@@ -87,6 +92,67 @@ onMouse(PuglView* view, int button, bool press, int x, int y)
 
 	stegosaurusUI* self = (stegosaurusUI*)puglGetHandle(view);
 	cairo_t* cr = puglGetContext(view);
+	int widgetNumber = self->deliriumUI_window.currentWidgetNumber;
+	int widgetType = self->deliriumUI_window.deliriumUIWidgets[widgetNumber].type;
+	int group = self->deliriumUI_window.deliriumUIWidgets[widgetNumber].group;
+
+	self->deliriumUI_window.mouseButton[button] = press;
+
+	if (widgetType == deliriumUI_Button && press == true && button == 1)
+	{
+
+		if (widgetNumber+1 == button_kick)
+		{
+			self->deliriumUI_window.group_visible[1] = true;
+			self->deliriumUI_window.group_visible[2] = false;
+			self->deliriumUI_window.group_visible[3] = false;
+			self->deliriumUI_window.group_visible[4] = false;
+			return;
+		}
+
+		if (widgetNumber+1 == button_snare)
+		{
+			self->deliriumUI_window.group_visible[1] = false;
+			self->deliriumUI_window.group_visible[2] = true;
+			self->deliriumUI_window.group_visible[3] = false;
+			self->deliriumUI_window.group_visible[4] = false;
+			return;
+		}
+
+		if (widgetNumber+1 == button_closed_hat)
+		{
+			self->deliriumUI_window.group_visible[1] = false;
+			self->deliriumUI_window.group_visible[2] = false;
+			self->deliriumUI_window.group_visible[3] = true;
+			self->deliriumUI_window.group_visible[4] = false;
+			return;
+		}
+		
+		if (widgetNumber+1 == button_open_hat)
+		{
+			self->deliriumUI_window.group_visible[1] = false;
+			self->deliriumUI_window.group_visible[2] = false;
+			self->deliriumUI_window.group_visible[3] = false;
+			self->deliriumUI_window.group_visible[4] = true;
+			return;
+		}
+		
+	}
+
+	if (widgetType == deliriumUI_Selector && self->deliriumUI_window.group_visible[group])
+	{
+		if (press == true && button == 3) 	
+		{
+			incValue(&self->deliriumUI_window, cr);
+			return;
+		}
+
+		if (press == true && button == 1) 	
+		{
+			decValue(&self->deliriumUI_window, cr);
+			return;
+		}
+	}
 
 	self->deliriumUI_window.mouseButton[button] = press;
 
@@ -175,12 +241,12 @@ instantiate(const LV2UI_Descriptor*   descriptor,
 	}
 
 
-	setControllerDiliriumUI(controller, write_function);
+	setControllerdeliriumUI(controller, write_function);
 
-	addDeliriumUIWidget(&self->deliriumUI_window, deliriumUI_Button, 5, 0,0,2,1,"KICK",-1);
-	addDeliriumUIWidget(&self->deliriumUI_window, deliriumUI_Button, 5, 2,0,2,1,"SNARE",-2);
-	addDeliriumUIWidget(&self->deliriumUI_window, deliriumUI_Button, 5, 4,0,2,1,"CLOSED HAT",-3);
-	addDeliriumUIWidget(&self->deliriumUI_window, deliriumUI_Button, 5, 6,0,2,1,"OPEN HAT",-4);
+	button_kick = addDeliriumUIWidget(&self->deliriumUI_window, deliriumUI_Button, 5, 0,0,2,1,"KICK",-2);
+	button_snare = addDeliriumUIWidget(&self->deliriumUI_window, deliriumUI_Button, 5, 2,0,2,1,"SNARE",-2);
+	button_closed_hat = addDeliriumUIWidget(&self->deliriumUI_window, deliriumUI_Button, 5, 4,0,2,1,"CLOSED HAT",-2);
+	button_open_hat = addDeliriumUIWidget(&self->deliriumUI_window, deliriumUI_Button, 5, 6,0,2,1,"OPEN HAT",-2);
 
 	addDeliriumUIWidget(&self->deliriumUI_window, deliriumUI_Switch, 1, 0.5,3,1,2,"OSC 1",stegosaurus_KICK_OSC1_ACTIVE);
 	addDeliriumUIWidget(&self->deliriumUI_window, deliriumUI_Fader, 1, 1.5,2,1,4,"NOISE",stegosaurus_KICK_OSC1_NOISE);
@@ -196,6 +262,9 @@ instantiate(const LV2UI_Descriptor*   descriptor,
 	addDeliriumUIWidget(&self->deliriumUI_window, deliriumUI_ADSR, 1, 7.52,7,3,3,"PITCH",stegosaurus_KICK_OSC2_PITCH_ATTACK);
 	addDeliriumUIWidget(&self->deliriumUI_window, deliriumUI_Fader, 1, 11,7,1,4,"VOL", stegosaurus_KICK_OSC2_VOLUME);
 
+	addDeliriumUIWidget(&self->deliriumUI_window, deliriumUI_Selector, 1,12.5,2,3,3,"OUTS",stegosaurus_OUT_SELECTOR_1);
+	setMinMax(&self->deliriumUI_window, stegosaurus_OUT_SELECTOR_1,0,4);
+
 	addDeliriumUIWidget(&self->deliriumUI_window, deliriumUI_Switch, 2, 0.5,3,1,2,"OSC 1",stegosaurus_SNARE_OSC1_ACTIVE);
 	addDeliriumUIWidget(&self->deliriumUI_window, deliriumUI_Fader, 2, 1.5,2,1,4,"NOISE",stegosaurus_SNARE_OSC1_NOISE);
 	addDeliriumUIWidget(&self->deliriumUI_window, deliriumUI_Fader, 2, 2.5,2,1,4,"PITCH",stegosaurus_SNARE_OSC1_PITCH);
@@ -209,6 +278,9 @@ instantiate(const LV2UI_Descriptor*   descriptor,
 	addDeliriumUIWidget(&self->deliriumUI_window, deliriumUI_ADSR, 2, 4,7,3,3,"AMP",stegosaurus_SNARE_OSC2_AMP_ATTACK);
 	addDeliriumUIWidget(&self->deliriumUI_window, deliriumUI_ADSR, 2, 7.52,7,3,3,"PITCH",stegosaurus_SNARE_OSC2_PITCH_ATTACK);
 	addDeliriumUIWidget(&self->deliriumUI_window, deliriumUI_Fader, 2, 11,7,1,4,"VOL", stegosaurus_SNARE_OSC2_VOLUME);
+
+	addDeliriumUIWidget(&self->deliriumUI_window, deliriumUI_Selector, 2,12.5,2,3,3,"OUTS",stegosaurus_OUT_SELECTOR_2);
+	setMinMax(&self->deliriumUI_window, stegosaurus_OUT_SELECTOR_2,0,4);
 
 	addDeliriumUIWidget(&self->deliriumUI_window, deliriumUI_Switch, 3, 0.5,3,1,2,"OSC 1",stegosaurus_CLHAT_OSC1_ACTIVE);
 	addDeliriumUIWidget(&self->deliriumUI_window, deliriumUI_Fader, 3, 1.5,2,1,4,"NOISE",stegosaurus_CLHAT_OSC1_NOISE);
@@ -224,6 +296,9 @@ instantiate(const LV2UI_Descriptor*   descriptor,
 	addDeliriumUIWidget(&self->deliriumUI_window, deliriumUI_ADSR, 3, 7.52,7,3,3,"PITCH",stegosaurus_CLHAT_OSC2_PITCH_ATTACK);
 	addDeliriumUIWidget(&self->deliriumUI_window, deliriumUI_Fader, 3, 11,7,1,4,"VOL", stegosaurus_CLHAT_OSC2_VOLUME);
 
+	addDeliriumUIWidget(&self->deliriumUI_window, deliriumUI_Selector, 3,12.5,2,3,3,"OUTS",stegosaurus_OUT_SELECTOR_3);
+	setMinMax(&self->deliriumUI_window, stegosaurus_OUT_SELECTOR_3,0,4);
+
 	addDeliriumUIWidget(&self->deliriumUI_window, deliriumUI_Switch, 4, 0.5,3,1,2,"OSC 1",stegosaurus_OPHAT_OSC1_ACTIVE);
 	addDeliriumUIWidget(&self->deliriumUI_window, deliriumUI_Fader, 4, 1.5,2,1,4,"NOISE",stegosaurus_OPHAT_OSC1_NOISE);
 	addDeliriumUIWidget(&self->deliriumUI_window, deliriumUI_Fader, 4, 2.5,2,1,4,"PITCH",stegosaurus_OPHAT_OSC1_PITCH);
@@ -238,7 +313,11 @@ instantiate(const LV2UI_Descriptor*   descriptor,
 	addDeliriumUIWidget(&self->deliriumUI_window, deliriumUI_ADSR, 4, 7.52,7,3,3,"PITCH",stegosaurus_OPHAT_OSC2_PITCH_ATTACK);
 	addDeliriumUIWidget(&self->deliriumUI_window, deliriumUI_Fader, 4, 11,7,1,4,"VOL", stegosaurus_OPHAT_OSC2_VOLUME);
 
+	addDeliriumUIWidget(&self->deliriumUI_window, deliriumUI_Selector, 4,12.5,2,3,3,"OUTS",stegosaurus_OUT_SELECTOR_4);
+	setMinMax(&self->deliriumUI_window, stegosaurus_OUT_SELECTOR_4,0,4);
+
 	addDeliriumUIWidget(&self->deliriumUI_window, deliriumUI_Knob, 5, 13.5,6,2,4,"VOLUME",stegosaurus_VOLUME);
+
 
 	self->deliriumUI_window.group_visible[1] = true;
 	self->deliriumUI_window.group_visible[2] = false;

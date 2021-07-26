@@ -1,7 +1,6 @@
  
 #include "deliriumUI.h"
 #include <math.h>
-#define M_PI 3.14159265358979323846264338327
 
 
 void setValuedeliriumUILFO(deliriumUI* deliriumUI_window, int widgetNumber, float _value)

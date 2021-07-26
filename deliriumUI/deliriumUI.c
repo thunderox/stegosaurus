@@ -292,7 +292,7 @@ void setValue(deliriumUI* deliriumUI_window, cairo_t* cr, int port_number, float
 		if (current_value == 2) unscaled_value = 1 - value;
 		if (current_value == 3) unscaled_value = 1 - value;
 
-		printf("%d - %f\n", current_value, unscaled_value);
+		// printf("%d - %f\n", current_value, unscaled_value);
 
 	}	
 

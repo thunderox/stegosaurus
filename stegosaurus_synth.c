@@ -659,7 +659,7 @@ void stegosaurus_synth_note_on(int note, int volume)
 
 	if (note == 60)
 	{
-		printf("Kick triggered..\n");
+		// printf("Kick triggered..\n");
 		voices[0]->active = true;
 		voices[0]->env_osc1_amp_state = ENV_STATE_ATTACK;
 		voices[0]->env_osc1_pitch_state = ENV_STATE_ATTACK;
@@ -676,7 +676,7 @@ void stegosaurus_synth_note_on(int note, int volume)
 
 	if (note == 62)
 	{
-		printf("Snare triggered..\n");
+		// printf("Snare triggered..\n");
 		voices[1]->active = true;
 		voices[1]->env_osc1_amp_state = ENV_STATE_ATTACK;
 		voices[1]->env_osc1_pitch_state = ENV_STATE_ATTACK;
@@ -693,7 +693,7 @@ void stegosaurus_synth_note_on(int note, int volume)
 
 	if (note == 64)
 	{
-		printf("Closed hat triggered..\n");
+		// printf("Closed hat triggered..\n");
 		voices[2]->active = true;
 		voices[2]->env_osc1_amp_state = ENV_STATE_ATTACK;
 		voices[2]->env_osc1_pitch_state = ENV_STATE_ATTACK;
@@ -710,7 +710,7 @@ void stegosaurus_synth_note_on(int note, int volume)
 
 	if (note == 65)
 	{
-		printf("Open hat triggered..\n");
+		// printf("Open hat triggered..\n");
 		voices[3]->active = true;
 		voices[3]->env_osc1_amp_state = ENV_STATE_ATTACK;
 		voices[3]->env_osc1_pitch_state = ENV_STATE_ATTACK;

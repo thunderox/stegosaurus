@@ -4,7 +4,7 @@
 #include <string.h>
 #include <stdbool.h>
 #include <cairo/cairo.h>
-#include "pugl/pugl.h"
+#include "../pugl/pugl.h"
 
 char* bundle_path;
 float* wavetable_buffer;

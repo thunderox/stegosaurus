@@ -1,6 +1,7 @@
 @prefix lv2: <http://lv2plug.in/ns/lv2core#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix ui: <http://lv2plug.in/ns/extensions/ui#> .
+@prefix pset: <http://lv2plug.in/ns/ext/presets#> .
 
 <http://nickbailey.co.nr/plugins/stegosaurus>
 	a lv2:Plugin ;
@@ -11,3 +12,70 @@
 	a <@UI_TYPE@> ;
 	ui:binary <stegosaurus_ui@LIB_EXT@> ;
 	rdfs:seeAlso <stegosaurus.ttl> .
+	
+<stegosaurus-presets.lv2/electro.ttl>
+	a pset:Preset ;
+	rdfs:seeAlso <stegosaurus-presets.lv2/electro.ttl> ;
+	lv2:appliesTo <http://nickbailey.co.nr/plugins/stegosaurus> .
+		
+<stegosaurus-presets.lv2/electro_new.ttl>
+	a pset:Preset ;
+	rdfs:seeAlso <stegosaurus-presets.lv2/electro_new.ttl> ;
+	lv2:appliesTo <http://nickbailey.co.nr/plugins/stegosaurus> .
+
+<stegosaurus-presets.lv2/electro_new2.ttl>
+	a pset:Preset ;
+	rdfs:seeAlso <stegosaurus-presets.lv2/electro_new2.ttl> ;
+	lv2:appliesTo <http://nickbailey.co.nr/plugins/stegosaurus> .
+
+<stegosaurus-presets.lv2/selectro_new3.ttl>
+	a pset:Preset ;
+	rdfs:seeAlso <stegosaurus-presets.lv2/electro_new3.ttl> ;
+	lv2:appliesTo <http://nickbailey.co.nr/plugins/stegosaurus> .
+
+<stegosaurus-presets.lv2/electronic.ttl>
+	a pset:Preset ;
+	rdfs:seeAlso <stegosaurus-presets.lv2/electronic.ttl> ;
+	lv2:appliesTo <http://nickbailey.co.nr/plugins/stegosaurus> .
+
+<stegosaurus-presets.lv2/electronicq.ttl>
+	a pset:Preset ;
+	rdfs:seeAlso <stegosaurus-presets.lv2/electronicq.ttl> ;
+	lv2:appliesTo <http://nickbailey.co.nr/plugins/stegosaurus> .
+
+<stegosaurus-presets.lv2/electronic2.ttl>
+	a pset:Preset ;
+	rdfs:seeAlso <stegosaurus-presets.lv2/electronic2.ttl> ;
+	lv2:appliesTo <http://nickbailey.co.nr/plugins/stegosaurus> .
+
+<stegosaurus-presets.lv2/electronic3.ttl>
+	a pset:Preset ;
+	rdfs:seeAlso <stegosaurus-presets.lv2/electronic.ttl> ;
+	lv2:appliesTo <http://nickbailey.co.nr/plugins/stegosaurus> .
+
+<stegosaurus-presets.lv2/electro2.ttl>
+	a pset:Preset ;
+	rdfs:seeAlso <stegosaurus-presets.lv2/electro2.ttl> ;
+	lv2:appliesTo <http://nickbailey.co.nr/plugins/stegosaurus> .
+
+<stegosaurus-presets.lv2/electro3.ttl>
+	a pset:Preset ;
+	rdfs:seeAlso <stegosaurus-presets.lv2/electro3.ttl> ;
+	lv2:appliesTo <http://nickbailey.co.nr/plugins/stegosaurus> .
+
+<stegosaurus-presets.lv2/electro4.ttl>
+	a pset:Preset ;
+	rdfs:seeAlso <stegosaurus-presets.lv2/electro4.ttl> ;
+	lv2:appliesTo <http://nickbailey.co.nr/plugins/stegosaurus> .
+
+<stegosaurus-presets.lv2/electro5.ttl>
+	a pset:Preset ;
+	rdfs:seeAlso <stegosaurus-presets.lv2/electro5.ttl> ;
+	lv2:appliesTo <http://nickbailey.co.nr/plugins/stegosaurus> .
+
+<stegosaurus-presets.lv2/electro6.ttl>
+	a pset:Preset ;
+	rdfs:seeAlso <stegosaurus-presets.lv2/electro6.ttl> ;
+	lv2:appliesTo <http://nickbailey.co.nr/plugins/stegosaurus> .
+
+

@@ -96,7 +96,7 @@ def build(bld):
     obj.env['%sshlib_PATTERN' % ui_lang] = module_pat
 
     bld.install_files('${LV2DIR}/%s/waves' % bundle, bld.path.ant_glob('waves/*.*'))
-    bld.install_files('${LV2DIR}/stegosaurus-presets.lv2', bld.path.ant_glob('presets.lv2/*.*'))
+    bld.install_files('${LV2DIR}/%s/stegosaurus-presets.lv2' % bundle, bld.path.ant_glob('presets.lv2/*.*'))
 
 
 

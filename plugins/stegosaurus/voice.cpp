@@ -50,15 +50,15 @@ void voice::init(double _sample_rate)
 	selectivity_right=90, gain1_right=0, gain2_right=0.25, ratio_right=7, cap_right=0; 
 
 
-	osc1_amp.state = ENV_STATE_DORMANT;
-	osc1_amp.level = 0;
-	osc1_pitch.state = ENV_STATE_DORMANT;
-	osc1_pitch.level = 0;
+	adsr_osc1_amp.state = ENV_STATE_DORMANT;
+	adsr_osc1_amp.level = 0;
+	adsr_osc1_pitch.state = ENV_STATE_DORMANT;
+	adsr_osc1_pitch.level = 0;
 
-	osc2_amp.state = ENV_STATE_DORMANT;
-	osc2_amp.level = 0;
-	osc2_pitch.state = ENV_STATE_DORMANT;
-	osc2_pitch.level = 0;
+	adsr_osc2_amp.state = ENV_STATE_DORMANT;
+	adsr_osc2_amp.level = 0;
+	adsr_osc2_pitch.state = ENV_STATE_DORMANT;
+	adsr_osc2_pitch.level = 0;
 }
 
 

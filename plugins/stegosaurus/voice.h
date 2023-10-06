@@ -73,10 +73,10 @@ class voice
 
 	// Envelopes
 		
-	adsr osc1_amp;
-	adsr osc1_pitch;
-	adsr osc2_amp;
-	adsr osc2_pitch;
+	adsr adsr_osc1_amp;
+	adsr adsr_osc1_pitch;
+	adsr adsr_osc2_amp;
+	adsr adsr_osc2_pitch;
 
 };
 	

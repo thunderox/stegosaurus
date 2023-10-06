@@ -46,9 +46,8 @@ clean:
 install:
 	cp $(CURDIR)/bin/stegosaurus.lv2 /usr/lib/lv2 -r
 	cp $(CURDIR)/bin/stegosaurus-vst.so /usr/lib/vst
-	cp $(CURDIR)/plugins/stegosaurus/logo.png /usr/lib/lv2/stegosaurus.lv2
-	mkdir /home/$(SUDO_USER)/.lv2/stegosaurus.lv2
-	cp $(CURDIR)/plugins/stegosaurus/waves /home/$(SUDO_USER)/.lv2/stegosaurus.lv2/waves -r
+	mkdir /home/$(SUDO_USER)/.lv2/stegosaurus.lv2 -p
+	cp $(CURDIR)/plugins/stegosaurus/waves /home/$(SUDO_USER)/.lv2/stegosaurus.lv2/waves -rf
 
 # --------------------------------------------------------------
 uninstall:

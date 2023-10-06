@@ -16,7 +16,7 @@ using namespace std;
 
 START_NAMESPACE_DISTRHO
 
-const int max_voices = 4;
+const int number_of_voices = 4;
 
 float buf0,buf1;
 float f, pc, q;             //filter coefficients
@@ -31,7 +31,7 @@ class stegosaurus : public Plugin
 	float fParameters[kParameterCount];
 	double srate;
 	int keys[128];
-	voice voices[max_voices];
+	voice voices[number_of_voices];
 	vector <wavetable> wavetables;
 
 	stegosaurus() : Plugin(kParameterCount, 0, 0)
@@ -41,7 +41,7 @@ class stegosaurus : public Plugin
 		for (int x=0; x<128; x++) { keys[x] = -1; }
 		fParameters[kParameterBufferSize] = getBufferSize();
 		
-		for (int x=0; x<max_voices; x++)
+		for (int x=0; x<number_of_voices; x++)
 		{
 			voices[x].init(srate);
 		}
@@ -1069,8 +1069,9 @@ Plugin *createPlugin()
 
 			FILE* fp = fopen (wave_file.str().c_str(),"r");
 			fseek(fp, 0, SEEK_END); // We can use rewind(fp); also
+
 			
-			if (ftell(fp) == 35360 )
+			if (ftell(fp) == 17720 )
 			{					
 				length = (ftell(fp) - 80 )/ 4;
 				
@@ -1159,6 +1160,23 @@ Plugin *createPlugin()
 			}
 		}	
 	}	
+	
+	for (int o=0; o<number_of_oscillators; o++)
+	{
+		for (int v=0; v<number_of_voices; v++)
+		{
+			if (new_stegosaurus->wavetables.size() > 0)
+			{
+				new_stegosaurus->voices[v].osc[o].wave_a = new_stegosaurus->wavetables[0].buffer;
+				new_stegosaurus->voices[v].osc[o].wave_b = new_stegosaurus->wavetables[0].buffer;
+			}
+			else
+			{
+				new_stegosaurus->voices[v].osc[o].wave_a = NULL;
+				new_stegosaurus->voices[v].osc[o].wave_b = NULL;
+			}
+		}
+	}
 
 	return new_stegosaurus;
 }

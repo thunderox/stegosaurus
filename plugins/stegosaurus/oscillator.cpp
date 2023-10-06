@@ -10,6 +10,8 @@ oscillator::oscillator()
 	index = 0;
 	increment = 1;
 	bandlimit_offset = 0;
+	active = false;
+	noise = 0;
 	
 	sample_rate = 44100;
 }

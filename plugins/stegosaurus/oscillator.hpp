@@ -17,8 +17,9 @@ class oscillator
 	oscillator();
 	~oscillator();
 	float tick();
-	
+	bool active;
 	float frequency;
+	float noise;
 
 	int length;
 	int note;

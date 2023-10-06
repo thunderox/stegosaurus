@@ -1007,7 +1007,8 @@ class stegosaurus : public Plugin
 	{
 	}
 
-    
+    	//----------------------------------------------	//----------------------------------------------
+    	
 	void run(const float** inputs, float** outputs, uint32_t frames,
              const MidiEvent* midiEvents, uint32_t midiEventCount) override
 	{
@@ -1024,6 +1025,273 @@ class stegosaurus : public Plugin
 		float *const out_left4 = outputs[6];
 		float *const out_right4 = outputs[7];
 		
+		voices[0].osc[0].active = fParameters[stegosaurus_KICK_OSC1_ACTIVE];
+		voices[0].osc[1].active = fParameters[stegosaurus_KICK_OSC2_ACTIVE];
+		voices[1].osc[0].active = fParameters[stegosaurus_SNARE_OSC1_ACTIVE];
+		voices[1].osc[1].active = fParameters[stegosaurus_SNARE_OSC2_ACTIVE];
+		voices[2].osc[0].active = fParameters[stegosaurus_CLHAT_OSC1_ACTIVE];
+		voices[2].osc[1].active = fParameters[stegosaurus_CLHAT_OSC2_ACTIVE];
+		voices[3].osc[0].active = fParameters[stegosaurus_OPHAT_OSC1_ACTIVE];
+		voices[3].osc[1].active = fParameters[stegosaurus_OPHAT_OSC2_ACTIVE];
+				
+		// OSCILATOR ONES PARAMS
+		
+		voices[0].osc1_amp.attack = fast_pow(1-fParameters[stegosaurus_KICK_OSC1_AMP_ATTACK],10); 
+		voices[1].osc1_amp.attack = fast_pow(1-fParameters[stegosaurus_SNARE_OSC1_AMP_ATTACK],10); 
+		voices[2].osc1_amp.attack = fast_pow(1-fParameters[stegosaurus_CLHAT_OSC1_AMP_ATTACK],10); 
+		voices[3].osc1_amp.attack = fast_pow(1-fParameters[stegosaurus_OPHAT_OSC1_AMP_ATTACK],10);
+		
+		voices[0].osc1_amp.decay = fast_pow(1-fParameters[stegosaurus_KICK_OSC1_AMP_DECAY],10); 
+		voices[1].osc1_amp.decay = fast_pow(1-fParameters[stegosaurus_SNARE_OSC1_AMP_DECAY],10); 
+		voices[2].osc1_amp.decay = fast_pow(1-fParameters[stegosaurus_CLHAT_OSC1_AMP_DECAY],10); 
+		voices[3].osc1_amp.decay = fast_pow(1-fParameters[stegosaurus_OPHAT_OSC1_AMP_DECAY],10);
+		
+		voices[0].osc1_amp.sustain = fast_pow(fParameters[stegosaurus_KICK_OSC1_AMP_SUSTAIN],10); 
+		voices[1].osc1_amp.sustain = fast_pow(fParameters[stegosaurus_SNARE_OSC1_AMP_SUSTAIN],10); 
+		voices[2].osc1_amp.sustain = fast_pow(fParameters[stegosaurus_CLHAT_OSC1_AMP_SUSTAIN],10); 
+		voices[3].osc1_amp.sustain = fast_pow(fParameters[stegosaurus_OPHAT_OSC1_AMP_SUSTAIN],10);
+		
+		voices[0].osc1_amp.release = fast_pow(1-fParameters[stegosaurus_KICK_OSC1_AMP_RELEASE],10); 
+		voices[1].osc1_amp.release = fast_pow(1-fParameters[stegosaurus_SNARE_OSC1_AMP_RELEASE],10); 
+		voices[2].osc1_amp.release = fast_pow(1-fParameters[stegosaurus_CLHAT_OSC1_AMP_RELEASE],10); 
+		voices[3].osc1_amp.release = fast_pow(1-fParameters[stegosaurus_OPHAT_OSC1_AMP_RELEASE],10);
+		
+		voices[0].osc1_pitch.attack = fast_pow(1-fParameters[stegosaurus_KICK_OSC1_PITCH_ATTACK],10); 
+		voices[1].osc1_pitch.attack = fast_pow(1-fParameters[stegosaurus_SNARE_OSC1_PITCH_ATTACK],10); 
+		voices[2].osc1_pitch.attack = fast_pow(1-fParameters[stegosaurus_CLHAT_OSC1_PITCH_ATTACK],10); 
+		voices[3].osc1_pitch.attack = fast_pow(1-fParameters[stegosaurus_OPHAT_OSC1_PITCH_ATTACK],10);
+		
+		voices[0].osc1_pitch.decay = fast_pow(1-fParameters[stegosaurus_KICK_OSC1_PITCH_DECAY],10); 
+		voices[1].osc1_pitch.decay = fast_pow(1-fParameters[stegosaurus_SNARE_OSC1_PITCH_DECAY],10); 
+		voices[2].osc1_pitch.decay = fast_pow(1-fParameters[stegosaurus_CLHAT_OSC1_PITCH_DECAY],10); 
+		voices[3].osc1_pitch.decay = fast_pow(1-fParameters[stegosaurus_OPHAT_OSC1_PITCH_DECAY],10);
+		
+		voices[0].osc1_pitch.sustain = fast_pow(fParameters[stegosaurus_KICK_OSC1_PITCH_SUSTAIN],10); 
+		voices[1].osc1_pitch.sustain = fast_pow(fParameters[stegosaurus_SNARE_OSC1_PITCH_SUSTAIN],10); 
+		voices[2].osc1_pitch.sustain = fast_pow(fParameters[stegosaurus_CLHAT_OSC1_PITCH_SUSTAIN],10); 
+		voices[3].osc1_pitch.sustain = fast_pow(fParameters[stegosaurus_OPHAT_OSC1_PITCH_SUSTAIN],10);
+		
+		voices[0].osc1_pitch.release = fast_pow(1-fParameters[stegosaurus_KICK_OSC1_PITCH_RELEASE],10); 
+		voices[1].osc1_pitch.release = fast_pow(1-fParameters[stegosaurus_SNARE_OSC1_PITCH_RELEASE],10); 
+		voices[2].osc1_pitch.release = fast_pow(1-fParameters[stegosaurus_CLHAT_OSC1_PITCH_RELEASE],10); 
+		voices[3].osc1_pitch.release = fast_pow(1-fParameters[stegosaurus_OPHAT_OSC1_PITCH_RELEASE],10);
+		
+		voices[0].osc[0].frequency = fParameters[stegosaurus_KICK_OSC1_PITCH] * 128;
+		voices[1].osc[0].frequency = fParameters[stegosaurus_SNARE_OSC1_PITCH] * 128;
+		voices[2].osc[0].frequency = fParameters[stegosaurus_CLHAT_OSC1_PITCH] * 128;
+		voices[3].osc[0].frequency = fParameters[stegosaurus_OPHAT_OSC1_PITCH] * 128;
+		
+		voices[0].osc[0].noise = fParameters[stegosaurus_KICK_OSC1_NOISE];
+		voices[1].osc[0].noise = fParameters[stegosaurus_SNARE_OSC1_NOISE];
+		voices[2].osc[0].noise = fParameters[stegosaurus_CLHAT_OSC1_NOISE];
+		voices[3].osc[0].noise = fParameters[stegosaurus_OPHAT_OSC1_NOISE];
+		
+		voices[0].volume = fParameters[stegosaurus_KICK_OSC1_VOLUME];
+		voices[1].volume = fParameters[stegosaurus_SNARE_OSC1_VOLUME];
+		voices[2].volume = fParameters[stegosaurus_CLHAT_OSC1_VOLUME];
+		voices[3].volume = fParameters[stegosaurus_OPHAT_OSC1_VOLUME];
+
+				
+		// OSCILATOR TWOS PARAMS
+		
+		voices[0].osc2_amp.attack = fast_pow(1-fParameters[stegosaurus_KICK_OSC2_AMP_ATTACK],10); 
+		voices[1].osc2_amp.attack = fast_pow(1-fParameters[stegosaurus_SNARE_OSC2_AMP_ATTACK],10); 
+		voices[2].osc2_amp.attack = fast_pow(1-fParameters[stegosaurus_CLHAT_OSC2_AMP_ATTACK],10); 
+		voices[3].osc2_amp.attack = fast_pow(1-fParameters[stegosaurus_OPHAT_OSC2_AMP_ATTACK],10);
+		
+		voices[0].osc2_amp.decay = fast_pow(1-fParameters[stegosaurus_KICK_OSC2_AMP_DECAY],10); 
+		voices[1].osc2_amp.decay = fast_pow(1-fParameters[stegosaurus_SNARE_OSC2_AMP_DECAY],10); 
+		voices[2].osc2_amp.decay = fast_pow(1-fParameters[stegosaurus_CLHAT_OSC2_AMP_DECAY],10); 
+		voices[3].osc2_amp.decay = fast_pow(1-fParameters[stegosaurus_OPHAT_OSC2_AMP_DECAY],10);
+		
+		voices[0].osc2_amp.sustain = fast_pow(fParameters[stegosaurus_KICK_OSC2_AMP_SUSTAIN],10); 
+		voices[1].osc2_amp.sustain = fast_pow(fParameters[stegosaurus_SNARE_OSC2_AMP_SUSTAIN],10); 
+		voices[2].osc2_amp.sustain = fast_pow(fParameters[stegosaurus_CLHAT_OSC2_AMP_SUSTAIN],10); 
+		voices[3].osc2_amp.sustain = fast_pow(fParameters[stegosaurus_OPHAT_OSC2_AMP_SUSTAIN],10);
+		
+		voices[0].osc2_amp.release = fast_pow(1-fParameters[stegosaurus_KICK_OSC2_AMP_RELEASE],10); 
+		voices[1].osc2_amp.release = fast_pow(1-fParameters[stegosaurus_SNARE_OSC2_AMP_RELEASE],10); 
+		voices[2].osc2_amp.release = fast_pow(1-fParameters[stegosaurus_CLHAT_OSC2_AMP_RELEASE],10); 
+		voices[3].osc2_amp.release = fast_pow(1-fParameters[stegosaurus_OPHAT_OSC2_AMP_RELEASE],10);
+		
+		voices[0].osc2_pitch.attack = fast_pow(1-fParameters[stegosaurus_KICK_OSC2_PITCH_ATTACK],10); 
+		voices[1].osc2_pitch.attack = fast_pow(1-fParameters[stegosaurus_SNARE_OSC2_PITCH_ATTACK],10); 
+		voices[2].osc2_pitch.attack = fast_pow(1-fParameters[stegosaurus_CLHAT_OSC2_PITCH_ATTACK],10); 
+		voices[3].osc2_pitch.attack = fast_pow(1-fParameters[stegosaurus_OPHAT_OSC2_PITCH_ATTACK],10);
+		
+		voices[0].osc2_pitch.decay = fast_pow(1-fParameters[stegosaurus_KICK_OSC2_PITCH_DECAY],10); 
+		voices[1].osc2_pitch.decay = fast_pow(1-fParameters[stegosaurus_SNARE_OSC2_PITCH_DECAY],10); 
+		voices[2].osc2_pitch.decay = fast_pow(1-fParameters[stegosaurus_CLHAT_OSC2_PITCH_DECAY],10); 
+		voices[3].osc2_pitch.decay = fast_pow(1-fParameters[stegosaurus_OPHAT_OSC2_PITCH_DECAY],10);
+		
+		voices[0].osc2_pitch.sustain = fast_pow(fParameters[stegosaurus_KICK_OSC2_PITCH_SUSTAIN],10); 
+		voices[1].osc2_pitch.sustain = fast_pow(fParameters[stegosaurus_SNARE_OSC2_PITCH_SUSTAIN],10); 
+		voices[2].osc2_pitch.sustain = fast_pow(fParameters[stegosaurus_CLHAT_OSC2_PITCH_SUSTAIN],10); 
+		voices[3].osc2_pitch.sustain = fast_pow(fParameters[stegosaurus_OPHAT_OSC2_PITCH_SUSTAIN],10);
+		
+		voices[0].osc2_pitch.release = fast_pow(1-fParameters[stegosaurus_KICK_OSC2_PITCH_RELEASE],10); 
+		voices[1].osc2_pitch.release = fast_pow(1-fParameters[stegosaurus_SNARE_OSC2_PITCH_RELEASE],10); 
+		voices[2].osc2_pitch.release = fast_pow(1-fParameters[stegosaurus_CLHAT_OSC2_PITCH_RELEASE],10); 
+		voices[3].osc2_pitch.release = fast_pow(1-fParameters[stegosaurus_OPHAT_OSC2_PITCH_RELEASE],10);
+		
+		voices[0].osc[0].frequency = fParameters[stegosaurus_KICK_OSC2_PITCH] * 128;
+		voices[1].osc[0].frequency = fParameters[stegosaurus_SNARE_OSC2_PITCH] * 128;
+		voices[2].osc[0].frequency = fParameters[stegosaurus_CLHAT_OSC2_PITCH] * 128;
+		voices[3].osc[0].frequency = fParameters[stegosaurus_OPHAT_OSC2_PITCH] * 128;
+		
+		voices[0].osc[0].noise = fParameters[stegosaurus_KICK_OSC2_NOISE];
+		voices[1].osc[0].noise = fParameters[stegosaurus_SNARE_OSC2_NOISE];
+		voices[2].osc[0].noise = fParameters[stegosaurus_CLHAT_OSC2_NOISE];
+		voices[3].osc[0].noise = fParameters[stegosaurus_OPHAT_OSC2_NOISE];
+		
+		voices[0].volume = fParameters[stegosaurus_KICK_OSC2_VOLUME];
+		voices[1].volume = fParameters[stegosaurus_SNARE_OSC2_VOLUME];
+		voices[2].volume = fParameters[stegosaurus_CLHAT_OSC2_VOLUME];
+		voices[3].volume = fParameters[stegosaurus_OPHAT_OSC2_VOLUME];
+		
+		// DO ENVELOPES
+		
+		for (int v=0; v<4; v++)
+		{
+			if ( voices[v].active)
+			{
+
+				// DO OSCILLATOR 1 ------------------------------------------------------
+		
+				if (voices[v].osc[0].active && voices[v].osc1_amp.attack != ENV_STATE_DORMANT)
+				{
+
+					//--------- ADSR AMP
+					// ATTACK
+
+					switch (voices[v].osc1_amp.state)
+					{
+
+
+					case ENV_STATE_ATTACK:
+						if (voices[v].osc1_amp.level < 1) 
+						{
+							voices[v].osc1_amp.level += voices[v].osc1_amp.attack;
+							if (voices[v].osc1_amp.level >= 1)
+							{
+								voices[v].osc1_amp.level = 1;
+								voices[v].osc1_amp.state = ENV_STATE_DECAY;
+							}
+						}
+						break;
+
+					// DECAY / SUSTAIN
+
+					case ENV_STATE_DECAY:
+					{	
+						if (voices[v].osc1_amp.level > voices[v].osc1_amp.sustain) 
+						{
+							voices[v].osc1_amp.level -=voices[v].osc1_amp.decay;
+								if (voices[v].osc1_amp.level <= voices[v].osc1_amp.sustain)
+								{
+									voices[v].osc1_amp.level = voices[v].osc1_amp.sustain;
+									voices[v].osc1_amp.state = ENV_STATE_WAIT;
+								}
+						}
+
+						if (voices[v].osc1_amp.level < voices[v].osc1_amp.sustain ) 
+						{
+							voices[v].osc1_amp.level +=voices[v].osc1_amp.decay;
+								if (voices[v].osc1_amp.level >= voices[v].osc1_amp.sustain )
+								{
+									voices[v].osc1_amp.level = voices[v].osc1_amp.sustain;
+									voices[v].osc1_amp.state = ENV_STATE_WAIT;
+								}
+						}
+						break;
+
+						// RELEASE
+
+						case ENV_STATE_RELEASE:
+							if (voices[v].osc1_amp.level > 0) 
+							{
+								voices[v].osc1_amp.level -= voices[v].osc1_amp.release;
+								if (voices[v].osc1_amp.level <= 0)
+								{
+									voices[v].osc1_amp.level = 0;
+									voices[v].osc1_amp.state = ENV_STATE_DORMANT;
+								}
+							}
+							break;
+						}
+					}
+
+		
+
+				float env_osc1_amp_level_db = (voices[v].osc1_amp.level * voices[v].osc1_amp.level
+					* voices[v].osc1_amp.level) * fParameters[stegosaurus_VOLUME]; 
+
+					//--------- ADSR pitch
+					// ATTACK
+
+					switch (voices[v].osc1_pitch.state)
+					{
+
+
+					case ENV_STATE_ATTACK:
+						if (voices[v].osc1_pitch.level < 1) 
+						{
+							voices[v].osc1_pitch.level += voices[v].osc1_pitch.attack;
+							if (voices[v].osc1_pitch.level >= 1)
+							{
+								voices[v].osc1_pitch.level = 1;
+								voices[v].osc1_pitch.state = ENV_STATE_DECAY;
+							}
+						}
+						break;
+
+					// DECAY / SUSTAIN
+
+					case ENV_STATE_DECAY:
+					{	
+						if (voices[v].osc1_pitch.level > voices[v].osc1_pitch.sustain) 
+						{
+							voices[v].osc1_pitch.level -= voices[v].osc1_pitch.decay;
+								if (voices[v].osc1_pitch.level <= voices[v].osc1_pitch.sustain )
+								{
+									voices[v].osc1_pitch.level = voices[v].osc1_pitch.sustain;
+									voices[v].osc1_pitch.state = ENV_STATE_WAIT;
+								}
+						}
+
+						if (voices[v].osc1_pitch.level < voices[v].osc1_pitch.sustain) 
+						{
+							voices[v].osc1_pitch.level += voices[v].osc1_pitch.decay;
+								if (voices[v].osc1_pitch.level >= voices[v].osc1_pitch.sustain )
+								{
+									voices[v].osc1_pitch.level = voices[v].osc1_pitch.sustain;
+									voices[v].osc1_pitch.state = ENV_STATE_WAIT;
+								}
+						}
+						break;
+
+						// RELEASE
+
+						case ENV_STATE_RELEASE:
+							if (voices[v].osc1_pitch.level > 0) 
+							{
+								voices[v].osc1_pitch.level -= voices[v].osc1_pitch.release;
+								if (voices[v].osc1_pitch.level <= 0)
+								{
+									voices[v].osc1_pitch.level = 0;
+									voices[v].osc1_pitch.state = ENV_STATE_DORMANT;
+								}
+							}
+							break;
+						}
+					}
+				}
+			}
+		}
+
+		
+		// MAIN AUDIO LOOP
+
 		for (uint32_t i = 0; i < frames; i++)
 		{
        
@@ -1031,8 +1299,98 @@ class stegosaurus : public Plugin
 	}
 	
 	//-------------------------------------------------------------------------------------------------------
+	
+	void note_on(int note, int volume)
+	{
 
 
+		if (note == 60)
+		{
+			// printf("Kick triggered..\n");
+			voices[0].active = true;
+			voices[0].osc1_amp.state = ENV_STATE_ATTACK;
+			voices[0].osc1_amp.state = ENV_STATE_ATTACK;
+			voices[0].osc1_amp.level = 0;
+			voices[0].osc1_pitch.level = 0;
+			voices[0].osc2_amp.state = ENV_STATE_ATTACK;
+			voices[0].osc2_amp.state = ENV_STATE_ATTACK;
+			voices[0].osc2_amp.level = 0;
+			voices[0].osc2_pitch.level = 0;
+			voices[0].frequency = note;
+			voices[0].volume = (float)volume/128 ;
+			keys[note] = 0;
+		}
+
+		if (note == 62)
+		{
+			// printf("Snare triggered..\n");
+			voices[1].active = true;
+			voices[1].osc1_amp.state = ENV_STATE_ATTACK;
+			voices[1].osc1_amp.state = ENV_STATE_ATTACK;
+			voices[1].osc1_amp.level = 0;
+			voices[1].osc1_pitch.level = 0;
+			voices[1].osc2_amp.state = ENV_STATE_ATTACK;
+			voices[1].osc2_amp.state = ENV_STATE_ATTACK;
+			voices[1].osc2_amp.level = 0;
+			voices[1].osc2_pitch.level = 0;
+			voices[1].frequency = note;
+			voices[1].volume = (float)volume/128 ;
+			keys[note] = 1;
+		}
+
+		if (note == 64)
+		{
+			// printf("Closed hat triggered..\n");
+			voices[2].active = true;
+			voices[2].osc1_amp.state = ENV_STATE_ATTACK;
+			voices[2].osc1_amp.state = ENV_STATE_ATTACK;
+			voices[2].osc1_amp.level = 0;
+			voices[2].osc1_pitch.level = 0;
+			voices[2].osc2_amp.state = ENV_STATE_ATTACK;
+			voices[2].osc2_amp.state = ENV_STATE_ATTACK;
+			voices[2].osc2_amp.level = 0;
+			voices[2].osc2_pitch.level = 0;
+			voices[2].frequency = note;
+			voices[2].volume = (float)volume/128 ;
+			keys[note] = 2;
+		}
+
+		if (note == 65)
+		{
+			// printf("Open hat triggered..\n");
+			voices[3].active = true;
+			voices[3].osc1_amp.state = ENV_STATE_ATTACK;
+			voices[3].osc1_amp.state = ENV_STATE_ATTACK;
+			voices[3].osc1_amp.level = 0;
+			voices[3].osc1_pitch.level = 0;
+			voices[3].osc2_amp.state = ENV_STATE_ATTACK;
+			voices[3].osc2_amp.state = ENV_STATE_ATTACK;
+			voices[3].osc2_amp.level = 0;
+			voices[3].osc2_pitch.level = 0;
+			voices[3].frequency = note;
+			voices[3].volume = (float)volume/128 ;
+			keys[note] = 3;
+		}
+	}
+	
+	//-------------------------------------------------------------------------------------------------------
+	
+	void note_off(int note)
+	{
+		int v = keys[note];
+
+		if (v == -1) return;
+
+		voices[v].osc1_amp.state = ENV_STATE_RELEASE;
+		voices[v].osc1_pitch.state = ENV_STATE_RELEASE;
+		voices[v].osc2_amp.state = ENV_STATE_RELEASE;
+		voices[v].osc2_pitch.state = ENV_STATE_RELEASE;
+
+		keys[note] = -1;
+
+	}
+
+	//-------------------------------------------------------------------------------------------------------
 
 	private:
 

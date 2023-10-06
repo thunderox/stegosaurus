@@ -18,6 +18,23 @@
 
 const int number_of_oscillators = 4;
 
+struct wavetable
+{
+	string name;
+	float* buffer;
+	long length;
+};
+
+struct adsr
+{
+	float attack;
+	float decay;
+	float sustain;
+	float release;
+	float level;
+	int state;
+};
+
 class voice
 {
 
@@ -55,24 +72,11 @@ class voice
 	float filter_frequency_right,filter_resonance_right;
 
 	// Envelopes
-
-	int env_osc1_amp_state;
-	float env_osc1_amp_level;
-
-	int env_osc1_pitch_state;
-	float env_osc1_pitch_level;
-
-	int env_osc2_amp_state;
-	float env_osc2_amp_level;
-
-	int env_osc2_pitch_state;
-	float env_osc2_pitch_level;
-
-	int env_wave_state;
-	float env_wave_level;
-
-	int env_filt_state;
-	float env_filt_level;
+		
+	adsr osc1_amp;
+	adsr osc1_pitch;
+	adsr osc2_amp;
+	adsr osc2_pitch;
 
 };
 	

@@ -1247,16 +1247,6 @@ class stegosaurus : public Plugin
 		voices[1].osc[0].frequency = fParameters[stegosaurus_SNARE_OSC1_PITCH] * 128;
 		voices[2].osc[0].frequency = fParameters[stegosaurus_CLHAT_OSC1_PITCH] * 128;
 		voices[3].osc[0].frequency = fParameters[stegosaurus_OPHAT_OSC1_PITCH] * 128;
-		
-		voices[0].osc[0].noise = fParameters[stegosaurus_KICK_OSC1_NOISE];
-		voices[1].osc[0].noise = fParameters[stegosaurus_SNARE_OSC1_NOISE];
-		voices[2].osc[0].noise = fParameters[stegosaurus_CLHAT_OSC1_NOISE];
-		voices[3].osc[0].noise = fParameters[stegosaurus_OPHAT_OSC1_NOISE];
-		
-		voices[0].volume = fParameters[stegosaurus_KICK_OSC1_VOLUME];
-		voices[1].volume = fParameters[stegosaurus_SNARE_OSC1_VOLUME];
-		voices[2].volume = fParameters[stegosaurus_CLHAT_OSC1_VOLUME];
-		voices[3].volume = fParameters[stegosaurus_OPHAT_OSC1_VOLUME];
 
 				
 		// OSCILATOR TWOS PARAMS
@@ -1305,16 +1295,8 @@ class stegosaurus : public Plugin
 		voices[1].osc[0].frequency = fParameters[stegosaurus_SNARE_OSC2_PITCH] * 128;
 		voices[2].osc[0].frequency = fParameters[stegosaurus_CLHAT_OSC2_PITCH] * 128;
 		voices[3].osc[0].frequency = fParameters[stegosaurus_OPHAT_OSC2_PITCH] * 128;
-		
-		voices[0].osc[0].noise = fParameters[stegosaurus_KICK_OSC2_NOISE];
-		voices[1].osc[0].noise = fParameters[stegosaurus_SNARE_OSC2_NOISE];
-		voices[2].osc[0].noise = fParameters[stegosaurus_CLHAT_OSC2_NOISE];
-		voices[3].osc[0].noise = fParameters[stegosaurus_OPHAT_OSC2_NOISE];
-		
-		voices[0].volume = fParameters[stegosaurus_KICK_OSC2_VOLUME];
-		voices[1].volume = fParameters[stegosaurus_SNARE_OSC2_VOLUME];
-		voices[2].volume = fParameters[stegosaurus_CLHAT_OSC2_VOLUME];
-		voices[3].volume = fParameters[stegosaurus_OPHAT_OSC2_VOLUME];
+
+	
 		
 		// MAIN AUDIO LOOP
 
@@ -1467,20 +1449,20 @@ class stegosaurus : public Plugin
 						
 						voices[v].osc[0].wave_mix = 0;	
 						float new_pitch = adsr_osc1_pitch_level_db;
-						float pitch_mod = noise1.tick() * voices[v].osc[0].noise;
+						float pitch_mod = noise1.tick() *  osc1_noise[v];
 						new_pitch += pitch_mod;
 						new_pitch *= 512;	
 						if (new_pitch < 0) new_pitch = 0;
 						voices[v].osc[0].frequency = new_pitch;
 
-						voice_out[v] += (voices[v].volume * (voices[v].osc[0].tick() ) * 0.5) * env_adsr_osc1_amp_level_db;
+						voice_out[v] += (osc1_volume[v]  * (voices[v].osc[0].tick() ) * 0.5) * env_adsr_osc1_amp_level_db;
 						
 					}
 						
 						
 						// DO OSCILLATOR 2------------------------------------------------------
 				
-						if (voices[v].osc[0].active && voices[v].adsr_osc2_amp.state != ENV_STATE_DORMANT)
+						if (voices[v].osc[1].active && voices[v].adsr_osc2_amp.state != ENV_STATE_DORMANT)
 						{
 
 							//--------- ADSR AMP
@@ -1610,20 +1592,19 @@ class stegosaurus : public Plugin
 						
 						voices[v].osc[1].wave_mix = 0;	
 						float new_pitch = adsr_osc2_pitch_level_db;
-						float pitch_mod = noise1.tick() * voices[v].osc[1].noise;
-						new_pitch += pitch_mod * 512;	
+						float pitch_mod = noise1.tick() *  osc2_noise[v];
+						new_pitch += pitch_mod;
+						new_pitch *= 512;	
 						if (new_pitch < 0) new_pitch = 0;
 						voices[v].osc[1].frequency = new_pitch;
 
-						voice_out[v] += (voices[v].volume * (voices[v].osc[1].tick() ) * 0.5) * env_adsr_osc2_amp_level_db;
+						voice_out[v] += (osc2_volume[v]  * (voices[v].osc[1].tick() ) * 0.5) * env_adsr_osc2_amp_level_db;
 					}
 				}
 			}
-
-
+			
 			out_left1[fr] += voice_out[0];
 			out_right1[fr] += voice_out[0];
-			
 			
 			out_left1[fr] += voice_out[1];
 			out_right1[fr] += voice_out[1];

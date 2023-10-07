@@ -12,6 +12,7 @@ oscillator::oscillator()
 	bandlimit_offset = 0;
 	active = false;
 	noise = 0;
+	length = 17720;
 	
 	sample_rate = 44100;
 }
@@ -80,6 +81,8 @@ float oscillator::tick()
 	}
 
 	increment = (44100 * frequency) / sample_rate;
+	
+	// cout << result1 << " - " << result2 << " - " << frequency << endl;
 	
 
 

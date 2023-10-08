@@ -1037,7 +1037,7 @@ class stegosaurus : public Plugin
 			
 			// CHECK FOR NOTE ON - OMNI MODE SOME PEOPLE PREFER 10 BUT I WANT IT ALL GRRR!
 			
-		      	if ( midi_command >= 0x90 && midi_command <= 0x9f && (int)ev[2] > 0)
+		      	if ( midi_command >= 0x90 && midi_command <= 0x9f && midi_volume > 0)
 			{
 				if (midi_note == 60)
 				{
@@ -1091,6 +1091,11 @@ class stegosaurus : public Plugin
 					voices[2].frequency = midi_note;
 					voices[2].volume = (float)midi_volume/128 ;
 					keys[midi_note] = 2;
+					
+					voices[3].adsr_osc1_amp.state = ENV_STATE_DORMANT;
+					voices[3].adsr_osc1_pitch.state = ENV_STATE_DORMANT;
+					voices[3].adsr_osc2_amp.state = ENV_STATE_DORMANT;
+					voices[3].adsr_osc2_pitch.state = ENV_STATE_DORMANT;
 				}
 				
 				if (midi_note == 65)
@@ -1109,12 +1114,18 @@ class stegosaurus : public Plugin
 					voices[3].frequency = midi_note;
 					voices[3].volume = (float)midi_volume/128 ;
 					keys[midi_note] = 3;
+					
+					voices[2].adsr_osc1_amp.state = ENV_STATE_DORMANT;
+					voices[2].adsr_osc1_pitch.state = ENV_STATE_DORMANT;
+					voices[2].adsr_osc2_amp.state = ENV_STATE_DORMANT;
+					voices[2].adsr_osc2_pitch.state = ENV_STATE_DORMANT;
 				}
 			}
 			
 			// CHECK FOR NOTE OFF - OMNI MODE
 			
-		      	if ( midi_command >= 0x80 && midi_command <= 0x8f && (int)ev[2] > 0)
+		      	if ( midi_command >= 0x80 && midi_command <= 0x8f
+				||  midi_command >= 0x90 && midi_command <= 0x9f && midi_volume == 0)
 			{
 				if (midi_note == 60)
 				{

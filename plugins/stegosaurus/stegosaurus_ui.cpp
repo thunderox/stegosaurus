@@ -56,6 +56,7 @@ class stegosaurus_ui : public UI
 			Delirium_UI_Group_Add_Member(GUI, "drums", "CLHAT");
 			Delirium_UI_Group_Add_Member(GUI, "drums", "OPHAT");
 			Delirium_UI_Group_Add_Member(GUI, "drums", "FX");
+			Delirium_UI_Group_Add_Member(GUI, "drums", "PRESETS");
 			
 			int nav_drumss = Delirium_UI_Create_Widget(GUI,  deliriumUI_Tabbed_Navigator,
 				0, panelX + 0, panelY + 0.25, 11.5,0.5,"",-1);	
@@ -65,6 +66,7 @@ class stegosaurus_ui : public UI
 			Delirium_UI_Group_Add_Navigator_Tab(GUI, nav_drumss, "CLOSED HAT", "drums", "CLHAT");
 			Delirium_UI_Group_Add_Navigator_Tab(GUI, nav_drumss, "OPEN HAT", "drums", "OPHAT");
 			Delirium_UI_Group_Add_Navigator_Tab(GUI, nav_drumss, "FX", "drums", "FX");
+			Delirium_UI_Group_Add_Navigator_Tab(GUI, nav_drumss, "PRESETS", "drums", "PRESETS");
 			Delirium_UI_Group_Set_Visible_member(GUI, "drums", "KICK");
 			
 			Delirium_UI_Widget_Set_Group_And_Member(GUI, nav_drumss, "global", "");
@@ -76,6 +78,8 @@ class stegosaurus_ui : public UI
 				panelX + 11.25, panelY + 4.25, 3, 3, "VOLUME", stegosaurus_VOLUME);
 			Delirium_UI_Widget_Set_Min_Max(GUI, gui_VOLUME, 0,2);
 			Delirium_UI_Widget_Set_Group_And_Member(GUI, gui_VOLUME, "global", "");
+			fParameters_widget_number[stegosaurus_VOLUME] = gui_VOLUME;
+
 			
 			//------------------------------------------------------------------------------------
 			// DRUMS GUI - KICK
@@ -420,7 +424,21 @@ class stegosaurus_ui : public UI
 			Delirium_UI_Widget_Set_Group_And_Member(GUI, gui_OPHAT_OSC2_VOLUME, "drums", "OPHAT");
 			fParameters_widget_number[gui_OPHAT_OSC2_VOLUME] = stegosaurus_OPHAT_OSC2_VOLUME;
 				
-			//-----------------------------
+			//--------------------------------------------------------------------------------------
+			
+			// PRESETS
+
+			widget_categories_list = Delirium_UI_Create_Widget(GUI, deliriumUI_List, 0, panelX + 0.25,panelY + 1.25, 5,5.9, "CATEGORIES", -1);
+			Delirium_UI_Widget_Set_Group_And_Member(GUI, widget_categories_list, "drums", "PRESETS");
+					
+			widget_presets_list = Delirium_UI_Create_Widget(GUI, deliriumUI_List, 0, panelX + 5.75,panelY + 1.25, 8.5, 5.9, "PRESETS", -1);
+			Delirium_UI_Widget_Set_Group_And_Member(GUI, widget_presets_list, "drums", "PRESETS");			
+			
+			//--------------------------------------------------------------------------------------
+			
+			
+			loadSymbols();
+			searchPresets();
 
 			GUI->draw_flag = true;					
 			GUI->drag = 0;
@@ -430,6 +448,316 @@ class stegosaurus_ui : public UI
 			Delirium_UI_Group_Set_Active_Widgets(GUI);
 
 		}
+		
+		//------------------------------------------------------------------------------------------------------
+
+		vector<string> split (const string &s, char delim) {
+			    vector<string> result;
+			    stringstream ss (s);
+			    string item;
+	
+			    while (getline (ss, item, delim)) {
+			        result.push_back (item);
+				    }
+
+		    return result;
+		}
+		
+		//------------------------------------------------------------------------------------------------------
+		void loadSymbols()
+		{
+			string lv2_path = getenv("LV2_PATH");
+			string line;
+			struct dirent *d;
+			struct stat st;
+			DIR *dr;
+			stringstream stegosaurus_ttl_file_name;
+			number_of_symbols = 0;
+					
+			for (int x=0; x<200; x++) symbols.push_back("");
+			
+			vector<string> v = split (lv2_path, ':');
+			
+			for (int z=0; z<v.size(); z++)
+			{
+				stegosaurus_ttl_file_name.str("");
+				stegosaurus_ttl_file_name << v[z] << "/stegosaurus.lv2/stegosaurus_dsp.ttl";
+
+
+				ifstream stegosaurus_ttl_file(stegosaurus_ttl_file_name.str().c_str(), ios::in);
+				
+				while (getline(stegosaurus_ttl_file,line))  
+				{
+				
+					stringstream symbol_name;
+					symbol_name.str("");
+					int symbol_index;
+					bool symbol_found = false;
+						
+					int search_pos = line.rfind("lv2:symbol");
+					if (search_pos > 0)
+					{
+						symbol_found = true;
+						int add_this_char = 0;
+						
+						for (int char_number = 0; char_number < line.length(); char_number++)
+						{
+							if (line[char_number] == 34) add_this_char = 1 - add_this_char;
+							else if (add_this_char) symbol_name << line[char_number];
+						}
+						
+						
+
+					}					
+					
+					search_pos = line.rfind("lv2:index");
+					
+					if (search_pos > 0)
+					{
+						istringstream (line.substr(search_pos+10)) >> symbol_index;
+					}
+					
+					if (symbol_found)
+					{
+						symbols[symbol_index] = symbol_name.str();
+						if (symbol_index > number_of_symbols) number_of_symbols = symbol_index;
+						
+					}	
+				}
+				
+				stegosaurus_ttl_file.close();
+			}
+		}
+
+		
+
+		//------------------------------------------------------------------------------------------------------
+		
+		void searchPresets()
+		{
+			string lv2_path = getenv("LV2_PATH");
+			stringstream ss;
+			struct dirent *d, *pr_d;
+			struct stat st;
+			DIR *dr, *prDr;
+			stringstream file_name_and_path;
+			stringstream path_name;
+			
+
+			vector<string> v = split (lv2_path, ':');
+			    
+			for (int z=0; z<v.size(); z++)
+			{
+				dr = opendir(v[z].c_str()); // search through LV2 folders in LV2_PATH 
+				
+				if (dr!=NULL)
+				{
+					for( d=readdir(dr); d!=NULL; d=readdir(dr)) // List all files here
+					{
+						string file_name = d->d_name;
+							if (file_name == "stegosaurus.lv2")
+							{
+								file_name = "stegosaurus.lv2/stegosaurus_presets.lv2";
+							}
+							
+							if (stat(file_name.c_str(),&st)) // Look in each folder
+							{
+								path_name.str("");
+								path_name << v[z] << "/" << file_name;
+								prDr = opendir(path_name.str().c_str()); // Read file see if it applies to our plugin
+
+								if (prDr!=NULL)
+								{
+									for( pr_d=readdir(prDr); pr_d!=NULL; pr_d=readdir(prDr))
+									{
+										file_name_and_path.str("");
+										file_name_and_path <<  v[z] << "/" << file_name << "/" << pr_d->d_name;
+										
+										int file_is_ttl = file_name_and_path.str().rfind(".ttl");
+										int file_is_manifest = file_name_and_path.str().rfind("manifest.ttl");
+										int file_is_stegosaurus = file_name_and_path.str().rfind("stegosaurus.ttl");
+										
+										if (file_is_ttl > 0 && file_is_manifest < 0 && file_is_stegosaurus < 0)
+										{
+																
+											bool is_stegosaurus_preset = false;
+											ifstream preset_file(file_name_and_path.str().c_str(), ios::in);
+											string line;
+									
+											while (getline(preset_file,line))  
+											{
+												int search_pos = line.rfind("stegosaurus");
+												if (search_pos > 0)
+												{
+													is_stegosaurus_preset = true;
+
+												}
+										
+											}
+																			
+											preset_file.close();
+											if (is_stegosaurus_preset)
+											{
+											
+												preset new_preset;
+												new_preset.file = file_name_and_path.str().c_str();
+												string preset_name = pr_d->d_name;
+												new_preset.name = preset_name.substr(0,preset_name.length()-4);
+												
+												string category_name = Find_Preset_Category(new_preset.file);
+												bool category_found = false;
+												
+												for (int x=0; x<categories.size(); x++)
+												{
+													if (categories[x].name == category_name)
+													{
+														categories[x].presets.push_back(new_preset);
+														category_found = true;
+													}
+												}
+												
+												if (!category_found)
+												{
+													category new_category;
+													new_category.name = category_name;
+													new_category.presets.push_back(new_preset);	
+																				categories.push_back(new_category);																																					
+												}
+												// Find_Preset_Category(new_preset.file);
+											}	
+										}			
+								}
+								closedir(prDr);
+							}
+						}
+					}
+					closedir(dr);
+				}				
+			}		
+			
+			sort(categories.begin(),categories.end(),alphasort_category());
+			
+			for (int x=0; x<categories.size(); x++)
+			{
+				Delirium_UI_Widget_List_Add_Item(GUI, widget_categories_list, categories[x].name);
+			}
+			
+			for (int x=0; x<categories.size(); x++)
+			{
+				sort(categories[x].presets.begin(),categories[x].presets.end(),alphasort_preset());	
+			}
+			
+		}
+		
+		//--------------------------------------------------------------------------------------
+		// GET SYMBOL INDEX NUMBER (PORT)
+		
+		int getSymbolIndex(string symbol_name)
+		{
+			int symbol_index = -1;
+			
+			for (int x=0; x<number_of_symbols; x++)
+			{
+				if (symbols[x] == symbol_name)
+					symbol_index = x;
+			}	
+			return symbol_index;
+		}
+		
+		//--------------------------------------------------------------------------------------
+		// LOAD PRESET
+
+		void loadPreset()
+		{ 	
+			int category_number = current_category;
+
+			int preset_number = GUI->Widgets[widget_presets_list]->list_position
+				+ GUI->Widgets[widget_presets_list]->list_scroll;
+				
+			if ( preset_number > categories[category_number].presets.size()-1
+				|| category_number > categories.size()-1
+				|| categories[category_number].presets.size() == 0) return;
+				
+			string preset_path_and_file_name = categories[category_number].presets[preset_number].file;			
+
+			ifstream preset_file;
+	
+			preset_file.open(preset_path_and_file_name );
+
+			string preset_symbol;
+
+			string temp_str;
+			string line;
+			double preset_value;
+			string symbol_name = "";
+			
+			while (getline(preset_file,line))  
+			{
+				int preset_index = line.rfind("lv2:symbol ");
+				if (preset_index > 0) preset_symbol = line.substr(preset_index + 12, line.length() - preset_index - 15);
+
+				preset_index = line.rfind("pset:value");
+				if (preset_index > 0) istringstream ( line.substr(preset_index + 11, line.length()+1 ) ) >> preset_value;
+
+				if (preset_index > 0)
+				{
+				
+					int symbol_index = getSymbolIndex(preset_symbol) - 5;
+					
+					if (symbol_index > -1) 
+					{ 
+						cout << preset_symbol << " - " << symbol_index << " - " << preset_value << endl;
+						parameterChanged(symbol_index, preset_value); 
+					}
+
+				} 
+			}
+			
+		
+						
+			preset_file.close();
+
+		}
+
+		//------------------------------------------------------------------------------------------------------
+		string Find_Preset_Category(string file_name)
+		{
+		
+			ifstream preset_file;
+			preset_file.open(file_name );
+
+			
+			string category_name = "Unsorted";
+			string line;
+			
+			while (getline(preset_file,line))  
+			{
+
+				int preset_index = line.rfind("pset:bank");
+
+				if (preset_index > 0)
+				{
+				
+					int start_index = line.rfind("<");
+					int end_index = line.rfind(">") - start_index - 1;
+					category_name =  line.substr(start_index+1, end_index);
+					
+
+				} 
+			}
+			
+		
+						
+			preset_file.close();
+		
+			return category_name;
+		}
+
+
+
+
+
+
 
 	protected:
 	
@@ -477,7 +805,7 @@ class stegosaurus_ui : public UI
 			fParameters[index] = value;
 			setParameterValue(index, value);
 			
-			if (index == stegosaurus_KICK_OSC1_ACTIVE) cout << index << " - " << value << " - " << widget_number <<  endl;
+			cout << widget_number << " - " << index << " - " << value << endl;
 			
 			GUI->draw_flag = true;		
 			repaint();
@@ -505,6 +833,28 @@ class stegosaurus_ui : public UI
 				repaint();
 				
 				int parameter_number = Delirium_UI_Widget_Get_Parameter_Number(GUI);
+				
+								
+				if ( GUI->current_widget == widget_categories_list)
+				{
+					int category_number = GUI->Widgets[widget_categories_list]->list_position
+						+ GUI->Widgets[widget_categories_list]->list_scroll;
+				
+					GUI->Widgets[widget_presets_list]->list_items.clear();
+					GUI->Widgets[widget_presets_list]->list_scroll = 0;
+					current_category = category_number;
+
+					for (int pr=0; pr<categories[category_number].presets.size(); pr++)
+					{			
+						Delirium_UI_Widget_List_Add_Item(GUI, widget_presets_list, categories[category_number].presets[pr].name);
+					}
+					
+				}
+				
+				if ( GUI->current_widget == widget_presets_list )
+				{
+					loadPreset();
+				}
 			
 				if (parameter_number > -1)
 				{	
@@ -612,6 +962,40 @@ class stegosaurus_ui : public UI
 		
 		vector <string> symbols;
 		int number_of_symbols;
+		
+		struct preset
+		{
+			string name;
+			string file;
+		};
+		
+		struct category
+		{
+			string name;
+			vector <preset> presets;
+		};
+		
+		struct alphasort_preset
+		{
+			inline bool operator() (const preset& struct1, const preset& struct2)
+			{
+				return (struct1.name < struct2.name);
+			}
+		};
+
+		vector <category> categories;
+		
+		int widget_categories_list;
+		int widget_presets_list;
+		int current_category;
+		
+		struct alphasort_category
+		{
+			inline bool operator() (const category& struct1, const category& struct2)
+			{
+				return (struct1.name < struct2.name);
+			}
+		};
 
 
 };

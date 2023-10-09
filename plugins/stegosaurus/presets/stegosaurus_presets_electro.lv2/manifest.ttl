@@ -13,9 +13,9 @@
 	rdfs:seeAlso <electro.ttl> ;
 	lv2:appliesTo <http://thunderox.com/stegosaurus> .
 		
-
-
-
-
-
-
+<nu_electro.ttl>
+	a pset:Preset ;
+	rdfs:seeAlso <nu_electro.ttl> ;
+	lv2:appliesTo <http://thunderox.com/stegosaurus> .
+	
+	

@@ -61,6 +61,15 @@ void voice::init(double _sample_rate)
 	adsr_osc2_pitch.level = 0;
 }
 
+//-----------------------------------------------------------------------------------------------------------------------------
+
+void voice::reset_phase()
+{
+	for (int x=0; x<number_of_oscillators; x++)
+	{
+		osc[x].sg.reset_phase(x);
+	}
+}
 
 
 

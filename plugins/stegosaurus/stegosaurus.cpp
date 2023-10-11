@@ -77,7 +77,7 @@ class stegosaurus : public Plugin
 
 	uint32_t getVersion() const override
 	{
-		return d_version(1, 0, 0);
+		return d_version(0, 0, 1);
 	}
 
 	int64_t getUniqueId() const
@@ -95,7 +95,7 @@ class stegosaurus : public Plugin
 			case stegosaurus_VOLUME:
 				parameter.name = "Volume";
 				parameter.symbol = "stegosaurus_VOLUME";
-				parameter.ranges.def = 1.0f;
+				parameter.ranges.def = 1.8f;
 				parameter.ranges.min = 0.0f;
 				parameter.ranges.max = 2.0f;
 				fParameters[stegosaurus_VOLUME] = parameter.ranges.def;
@@ -119,16 +119,16 @@ class stegosaurus : public Plugin
 				parameter.symbol = "stegosaurus_KICK_OSC1_NOISE";
 				parameter.ranges.def = 0.0f;
 				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 1.0f;
+				parameter.ranges.max = 0.25f;
 				fParameters[stegosaurus_KICK_OSC1_NOISE] = parameter.ranges.def;
 				break;
 				
 			case stegosaurus_KICK_OSC1_PITCH:
 				parameter.name = "stegosaurus_KICK_OSC1_PITCH";
 				parameter.symbol = "stegosaurus_KICK_OSC1_PITCH";
-				parameter.ranges.def = 0.0f;
+				parameter.ranges.def = 0.02f;
 				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 1.0f;
+				parameter.ranges.max = 0.25f;
 				fParameters[stegosaurus_KICK_OSC1_PITCH] = parameter.ranges.def;
 				break;
 				
@@ -144,7 +144,7 @@ class stegosaurus : public Plugin
 			case stegosaurus_KICK_OSC1_AMP_DECAY:
 				parameter.name = "stegosaurus_KICK_OSC1_AMP_DECAY";
 				parameter.symbol = "stegosaurus_KICK_OSC1_AMP_DECAY";
-				parameter.ranges.def = 1.0f;
+				parameter.ranges.def = 0.1865f;
 				parameter.ranges.min = 0.0f;
 				parameter.ranges.max = 1.0f;
 				fParameters[stegosaurus_KICK_OSC1_AMP_DECAY] = parameter.ranges.def;
@@ -162,7 +162,7 @@ class stegosaurus : public Plugin
 			case stegosaurus_KICK_OSC1_AMP_RELEASE:
 				parameter.name = "stegosaurus_KICK_OSC1_AMP_RELEASE";
 				parameter.symbol = "stegosaurus_KICK_OSC1_AMP_RELEASE";
-				parameter.ranges.def = 1.0f;
+				parameter.ranges.def = 0.393f;
 				parameter.ranges.min = 0.0f;
 				parameter.ranges.max = 1.0f;
 				fParameters[stegosaurus_KICK_OSC1_AMP_RELEASE] = parameter.ranges.def;
@@ -180,7 +180,7 @@ class stegosaurus : public Plugin
 			case stegosaurus_KICK_OSC1_PITCH_DECAY:
 				parameter.name = "stegosaurus_KICK_OSC1_PITCH_DECAY";
 				parameter.symbol = "stegosaurus_KICK_OSC1_PITCH_DECAY";
-				parameter.ranges.def = 1.0f;
+				parameter.ranges.def = 0.423f;
 				parameter.ranges.min = 0.0f;
 				parameter.ranges.max = 1.0f;
 				fParameters[stegosaurus_KICK_OSC1_PITCH_DECAY] = parameter.ranges.def;
@@ -198,7 +198,7 @@ class stegosaurus : public Plugin
 			case stegosaurus_KICK_OSC1_PITCH_RELEASE:
 				parameter.name = "stegosaurus_KICK_OSC1_PITCH_RELEASE";
 				parameter.symbol = "stegosaurus_KICK_OSC1_PITCH_RELEASE";
-				parameter.ranges.def = 1.0f;
+				parameter.ranges.def = 0.3913f;
 				parameter.ranges.min = 0.0f;
 				parameter.ranges.max = 1.0f;
 				fParameters[stegosaurus_KICK_OSC1_PITCH_RELEASE] = parameter.ranges.def;
@@ -207,7 +207,7 @@ class stegosaurus : public Plugin
 			case stegosaurus_KICK_OSC1_VOLUME:
 				parameter.name = "stegosaurus_KICK_OSC1_VOLUME";
 				parameter.symbol = "stegosaurus_KICK_OSC1_VOLUME";
-				parameter.ranges.def = 0.0f;
+				parameter.ranges.def = 0.9537f;
 				parameter.ranges.min = 0.0f;
 				parameter.ranges.max = 1.0f;
 				fParameters[stegosaurus_KICK_OSC1_VOLUME] = parameter.ranges.def;
@@ -236,9 +236,9 @@ class stegosaurus : public Plugin
 			case stegosaurus_KICK_OSC2_PITCH:
 				parameter.name = "stegosaurus_KICK_OSC2_PITCH";
 				parameter.symbol = "stegosaurus_KICK_OSC2_PITCH";
-				parameter.ranges.def = 0.0f;
+				parameter.ranges.def = 1.6204f;
 				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 1.0f;
+				parameter.ranges.max = 2.0f;
 				fParameters[stegosaurus_KICK_OSC2_PITCH] = parameter.ranges.def;
 				break;
 				
@@ -254,7 +254,7 @@ class stegosaurus : public Plugin
 			case stegosaurus_KICK_OSC2_AMP_DECAY:
 				parameter.name = "stegosaurus_KICK_OSC2_AMP_DECAY";
 				parameter.symbol = "stegosaurus_KICK_OSC2_AMP_DECAY";
-				parameter.ranges.def = 1.0f;
+				parameter.ranges.def = 0.4309f;
 				parameter.ranges.min = 0.0f;
 				parameter.ranges.max = 1.0f;
 				fParameters[stegosaurus_KICK_OSC2_AMP_DECAY] = parameter.ranges.def;
@@ -272,7 +272,7 @@ class stegosaurus : public Plugin
 			case stegosaurus_KICK_OSC2_AMP_RELEASE:
 				parameter.name = "stegosaurus_KICK_OSC2_AMP_RELEASE";
 				parameter.symbol = "stegosaurus_KICK_OSC2_AMP_RELEASE";
-				parameter.ranges.def = 1.0f;
+				parameter.ranges.def = 0.3370f;
 				parameter.ranges.min = 0.0f;
 				parameter.ranges.max = 1.0f;
 				fParameters[stegosaurus_KICK_OSC2_AMP_RELEASE] = parameter.ranges.def;
@@ -290,7 +290,7 @@ class stegosaurus : public Plugin
 			case stegosaurus_KICK_OSC2_PITCH_DECAY:
 				parameter.name = "stegosaurus_KICK_OSC2_PITCH_DECAY";
 				parameter.symbol = "stegosaurus_KICK_OSC2_PITCH_DECAY";
-				parameter.ranges.def = 1.0f;
+				parameter.ranges.def = 0.7004f;
 				parameter.ranges.min = 0.0f;
 				parameter.ranges.max = 1.0f;
 				fParameters[stegosaurus_KICK_OSC2_PITCH_DECAY] = parameter.ranges.def;
@@ -308,7 +308,7 @@ class stegosaurus : public Plugin
 			case stegosaurus_KICK_OSC2_PITCH_RELEASE:
 				parameter.name = "stegosaurus_KICK_OSC2_PITCH_RELEASE";
 				parameter.symbol = "stegosaurus_KICK_OSC2_PITCH_RELEASE";
-				parameter.ranges.def = 1.0f;
+				parameter.ranges.def = 0.2717f;
 				parameter.ranges.min = 0.0f;
 				parameter.ranges.max = 1.0f;
 				fParameters[stegosaurus_KICK_OSC2_PITCH_RELEASE] = parameter.ranges.def;
@@ -317,7 +317,7 @@ class stegosaurus : public Plugin
 			case stegosaurus_KICK_OSC2_VOLUME:
 				parameter.name = "stegosaurus_KICK_OSC2_VOLUME";
 				parameter.symbol = "stegosaurus_KICK_OSC2_VOLUME";
-				parameter.ranges.def = 0.0f;
+				parameter.ranges.def = 0.4120f;
 				parameter.ranges.min = 0.0f;
 				parameter.ranges.max = 1.0f;
 				fParameters[stegosaurus_KICK_OSC2_VOLUME] = parameter.ranges.def;
@@ -339,7 +339,7 @@ class stegosaurus : public Plugin
 			case stegosaurus_SNARE_OSC1_NOISE:
 				parameter.name = "stegosaurus_SNARE_OSC1_NOISE";
 				parameter.symbol = "stegosaurus_SNARE_OSC1_NOISE";
-				parameter.ranges.def = 0.0f;
+				parameter.ranges.def = 0.3704f;
 				parameter.ranges.min = 0.0f;
 				parameter.ranges.max = 1.0f;
 				fParameters[stegosaurus_SNARE_OSC1_NOISE] = parameter.ranges.def;
@@ -348,9 +348,9 @@ class stegosaurus : public Plugin
 			case stegosaurus_SNARE_OSC1_PITCH:
 				parameter.name = "stegosaurus_SNARE_OSC1_PITCH";
 				parameter.symbol = "stegosaurus_SNARE_OSC1_PITCH";
-				parameter.ranges.def = 0.0f;
+				parameter.ranges.def = 1.9074f;
 				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 1.0f;
+				parameter.ranges.max = 2.0f;
 				fParameters[stegosaurus_SNARE_OSC1_PITCH] = parameter.ranges.def;
 				break;
 				
@@ -366,7 +366,7 @@ class stegosaurus : public Plugin
 			case stegosaurus_SNARE_OSC1_AMP_DECAY:
 				parameter.name = "stegosaurus_SNARE_OSC1_AMP_DECAY";
 				parameter.symbol = "stegosaurus_SNARE_OSC1_AMP_DECAY";
-				parameter.ranges.def = 1.0f;
+				parameter.ranges.def = 0.3878f;
 				parameter.ranges.min = 0.0f;
 				parameter.ranges.max = 1.0f;
 				fParameters[stegosaurus_SNARE_OSC1_AMP_DECAY] = parameter.ranges.def;
@@ -384,7 +384,7 @@ class stegosaurus : public Plugin
 			case stegosaurus_SNARE_OSC1_AMP_RELEASE:
 				parameter.name = "stegosaurus_SNARE_OSC1_AMP_RELEASE";
 				parameter.symbol = "stegosaurus_SNARE_OSC1_AMP_RELEASE";
-				parameter.ranges.def = 1.0f;
+				parameter.ranges.def = 0.3848f;
 				parameter.ranges.min = 0.0f;
 				parameter.ranges.max = 1.0f;
 				fParameters[stegosaurus_SNARE_OSC1_AMP_RELEASE] = parameter.ranges.def;
@@ -402,7 +402,7 @@ class stegosaurus : public Plugin
 			case stegosaurus_SNARE_OSC1_PITCH_DECAY:
 				parameter.name = "stegosaurus_SNARE_OSC1_PITCH_DECAY";
 				parameter.symbol = "stegosaurus_SNARE_OSC1_PITCH_DECAY";
-				parameter.ranges.def = 1.0f;
+				parameter.ranges.def = 0.0f;
 				parameter.ranges.min = 0.0f;
 				parameter.ranges.max = 1.0f;
 				fParameters[stegosaurus_SNARE_OSC1_PITCH_DECAY] = parameter.ranges.def;
@@ -411,7 +411,7 @@ class stegosaurus : public Plugin
 			case stegosaurus_SNARE_OSC1_PITCH_SUSTAIN:
 				parameter.name = "stegosaurus_SNARE_OSC1_PITCH_SUSTAIN";
 				parameter.symbol = "stegosaurus_SNARE_OSC1_PITCH_SUSTAIN";
-				parameter.ranges.def = 1.0f;
+				parameter.ranges.def = 0.0f;
 				parameter.ranges.min = 0.0f;
 				parameter.ranges.max = 1.0f;
 				fParameters[stegosaurus_SNARE_OSC1_PITCH_SUSTAIN] = parameter.ranges.def;
@@ -420,7 +420,7 @@ class stegosaurus : public Plugin
 			case stegosaurus_SNARE_OSC1_PITCH_RELEASE:
 				parameter.name = "stegosaurus_SNARE_OSC1_PITCH_RELEASE";
 				parameter.symbol = "stegosaurus_SNARE_OSC1_PITCH_RELEASE";
-				parameter.ranges.def = 1.0f;
+				parameter.ranges.def = 0.1087f;
 				parameter.ranges.min = 0.0f;
 				parameter.ranges.max = 1.0f;
 				fParameters[stegosaurus_SNARE_OSC1_PITCH_RELEASE] = parameter.ranges.def;
@@ -429,7 +429,7 @@ class stegosaurus : public Plugin
 			case stegosaurus_SNARE_OSC1_VOLUME:
 				parameter.name = "stegosaurus_SNARE_OSC1_VOLUME";
 				parameter.symbol = "stegosaurus_SNARE_OSC1_VOLUME";
-				parameter.ranges.def = 0.0f;
+				parameter.ranges.def = 0.2519;
 				parameter.ranges.min = 0.0f;
 				parameter.ranges.max = 1.0f;
 				fParameters[stegosaurus_SNARE_OSC1_VOLUME] = parameter.ranges.def;
@@ -458,9 +458,9 @@ class stegosaurus : public Plugin
 			case stegosaurus_SNARE_OSC2_PITCH:
 				parameter.name = "stegosaurus_SNARE_OSC2_PITCH";
 				parameter.symbol = "stegosaurus_SNARE_OSC2_PITCH";
-				parameter.ranges.def = 0.0f;
+				parameter.ranges.def = 0.0348f;
 				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 1.0f;
+				parameter.ranges.max = 2.0f;
 				fParameters[stegosaurus_SNARE_OSC2_PITCH] = parameter.ranges.def;
 				break;
 				
@@ -476,7 +476,7 @@ class stegosaurus : public Plugin
 			case stegosaurus_SNARE_OSC2_AMP_DECAY:
 				parameter.name = "stegosaurus_SNARE_OSC2_AMP_DECAY";
 				parameter.symbol = "stegosaurus_SNARE_OSC2_AMP_DECAY";
-				parameter.ranges.def = 1.0f;
+				parameter.ranges.def = 0.4f;
 				parameter.ranges.min = 0.0f;
 				parameter.ranges.max = 1.0f;
 				fParameters[stegosaurus_SNARE_OSC2_AMP_DECAY] = parameter.ranges.def;
@@ -485,7 +485,7 @@ class stegosaurus : public Plugin
 			case stegosaurus_SNARE_OSC2_AMP_SUSTAIN:
 				parameter.name = "stegosaurus_SNARE_OSC2_AMP_SUSTAIN";
 				parameter.symbol = "stegosaurus_SNARE_OSC2_AMP_SUSTAIN";
-				parameter.ranges.def = 1.0f;
+				parameter.ranges.def = 0.46f;
 				parameter.ranges.min = 0.0f;
 				parameter.ranges.max = 1.0f;
 				fParameters[stegosaurus_SNARE_OSC2_AMP_SUSTAIN] = parameter.ranges.def;
@@ -494,7 +494,7 @@ class stegosaurus : public Plugin
 			case stegosaurus_SNARE_OSC2_AMP_RELEASE:
 				parameter.name = "stegosaurus_SNARE_OSC2_AMP_RELEASE";
 				parameter.symbol = "stegosaurus_SNARE_OSC2_AMP_RELEASE";
-				parameter.ranges.def = 1.0f;
+				parameter.ranges.def = 0.3887f;
 				parameter.ranges.min = 0.0f;
 				parameter.ranges.max = 1.0f;
 				fParameters[stegosaurus_SNARE_OSC2_AMP_RELEASE] = parameter.ranges.def;
@@ -512,7 +512,7 @@ class stegosaurus : public Plugin
 			case stegosaurus_SNARE_OSC2_PITCH_DECAY:
 				parameter.name = "stegosaurus_SNARE_OSC2_PITCH_DECAY";
 				parameter.symbol = "stegosaurus_SNARE_OSC2_PITCH_DECAY";
-				parameter.ranges.def = 1.0f;
+				parameter.ranges.def = 0.4f;
 				parameter.ranges.min = 0.0f;
 				parameter.ranges.max = 1.0f;
 				fParameters[stegosaurus_SNARE_OSC2_PITCH_DECAY] = parameter.ranges.def;
@@ -530,7 +530,7 @@ class stegosaurus : public Plugin
 			case stegosaurus_SNARE_OSC2_PITCH_RELEASE:
 				parameter.name = "stegosaurus_SNARE_OSC2_PITCH_RELEASE";
 				parameter.symbol = "stegosaurus_SNARE_OSC2_PITCH_RELEASE";
-				parameter.ranges.def = 1.0f;
+				parameter.ranges.def = 0.39022f;
 				parameter.ranges.min = 0.0f;
 				parameter.ranges.max = 1.0f;
 				fParameters[stegosaurus_SNARE_OSC2_PITCH_RELEASE] = parameter.ranges.def;
@@ -539,7 +539,7 @@ class stegosaurus : public Plugin
 			case stegosaurus_SNARE_OSC2_VOLUME:
 				parameter.name = "stegosaurus_SNARE_OSC2_VOLUME";
 				parameter.symbol = "stegosaurus_SNARE_OSC2_VOLUME";
-				parameter.ranges.def = 0.0f;
+				parameter.ranges.def = 0.6387f;
 				parameter.ranges.min = 0.0f;
 				parameter.ranges.max = 1.0f;
 				fParameters[stegosaurus_SNARE_OSC2_VOLUME] = parameter.ranges.def;
@@ -570,9 +570,9 @@ class stegosaurus : public Plugin
 			case stegosaurus_CLHAT_OSC1_PITCH:
 				parameter.name = "stegosaurus_CLHAT_OSC1_PITCH";
 				parameter.symbol = "stegosaurus_CLHAT_OSC1_PITCH";
-				parameter.ranges.def = 0.0f;
+				parameter.ranges.def = 1.6111f;
 				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 1.0f;
+				parameter.ranges.max = 2.0f;
 				fParameters[stegosaurus_CLHAT_OSC1_PITCH] = parameter.ranges.def;
 				break;
 				
@@ -588,7 +588,7 @@ class stegosaurus : public Plugin
 			case stegosaurus_CLHAT_OSC1_AMP_DECAY:
 				parameter.name = "stegosaurus_CLHAT_OSC1_AMP_DECAY";
 				parameter.symbol = "stegosaurus_CLHAT_OSC1_AMP_DECAY";
-				parameter.ranges.def = 1.0f;
+				parameter.ranges.def = 0.4465f;
 				parameter.ranges.min = 0.0f;
 				parameter.ranges.max = 1.0f;
 				fParameters[stegosaurus_CLHAT_OSC1_AMP_DECAY] = parameter.ranges.def;
@@ -606,7 +606,7 @@ class stegosaurus : public Plugin
 			case stegosaurus_CLHAT_OSC1_AMP_RELEASE:
 				parameter.name = "stegosaurus_CLHAT_OSC1_AMP_RELEASE";
 				parameter.symbol = "stegosaurus_CLHAT_OSC1_AMP_RELEASE";
-				parameter.ranges.def = 1.0f;
+				parameter.ranges.def = 0.98f;
 				parameter.ranges.min = 0.0f;
 				parameter.ranges.max = 1.0f;
 				fParameters[stegosaurus_CLHAT_OSC1_AMP_RELEASE] = parameter.ranges.def;
@@ -624,7 +624,7 @@ class stegosaurus : public Plugin
 			case stegosaurus_CLHAT_OSC1_PITCH_DECAY:
 				parameter.name = "stegosaurus_CLHAT_OSC1_PITCH_DECAY";
 				parameter.symbol = "stegosaurus_CLHAT_OSC1_PITCH_DECAY";
-				parameter.ranges.def = 1.0f;
+				parameter.ranges.def = 0.0f;
 				parameter.ranges.min = 0.0f;
 				parameter.ranges.max = 1.0f;
 				fParameters[stegosaurus_CLHAT_OSC1_PITCH_DECAY] = parameter.ranges.def;
@@ -633,7 +633,7 @@ class stegosaurus : public Plugin
 			case stegosaurus_CLHAT_OSC1_PITCH_SUSTAIN:
 				parameter.name = "stegosaurus_CLHAT_OSC1_PITCH_SUSTAIN";
 				parameter.symbol = "stegosaurus_CLHAT_OSC1_PITCH_SUSTAIN";
-				parameter.ranges.def = 1.0f;
+				parameter.ranges.def = 0.0f;
 				parameter.ranges.min = 0.0f;
 				parameter.ranges.max = 1.0f;
 				fParameters[stegosaurus_CLHAT_OSC1_PITCH_SUSTAIN] = parameter.ranges.def;
@@ -651,7 +651,7 @@ class stegosaurus : public Plugin
 			case stegosaurus_CLHAT_OSC1_VOLUME:
 				parameter.name = "stegosaurus_CLHAT_OSC1_VOLUME";
 				parameter.symbol = "stegosaurus_CLHAT_OSC1_VOLUME";
-				parameter.ranges.def = 0.0f;
+				parameter.ranges.def = 0.5874f;
 				parameter.ranges.min = 0.0f;
 				parameter.ranges.max = 1.0f;
 				fParameters[stegosaurus_CLHAT_OSC1_VOLUME] = parameter.ranges.def;
@@ -662,7 +662,7 @@ class stegosaurus : public Plugin
 			case stegosaurus_CLHAT_OSC2_ACTIVE:
 				parameter.name = "stegosaurus_CLHAT_OSC2_ACTIVE";
 				parameter.symbol = "stegosaurus_CLHAT_OSC2_ACTIVE";
-				parameter.ranges.def = 1.0f;
+				parameter.ranges.def = 0.0f;
 				parameter.ranges.min = 0.0f;
 				parameter.ranges.max = 1.0f;
 				fParameters[stegosaurus_CLHAT_OSC2_ACTIVE] = parameter.ranges.def;
@@ -682,7 +682,7 @@ class stegosaurus : public Plugin
 				parameter.symbol = "stegosaurus_CLHAT_OSC2_PITCH";
 				parameter.ranges.def = 0.0f;
 				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 1.0f;
+				parameter.ranges.max = 2.0f;
 				fParameters[stegosaurus_CLHAT_OSC2_PITCH] = parameter.ranges.def;
 				break;
 				
@@ -784,7 +784,7 @@ class stegosaurus : public Plugin
 			case stegosaurus_OPHAT_OSC1_NOISE:
 				parameter.name = "stegosaurus_OPHAT_OSC1_NOISE";
 				parameter.symbol = "stegosaurus_OPHAT_OSC1_NOISE";
-				parameter.ranges.def = 0.0f;
+				parameter.ranges.def = 0.1f;
 				parameter.ranges.min = 0.0f;
 				parameter.ranges.max = 1.0f;
 				fParameters[stegosaurus_OPHAT_OSC1_NOISE] = parameter.ranges.def;
@@ -793,16 +793,16 @@ class stegosaurus : public Plugin
 			case stegosaurus_OPHAT_OSC1_PITCH:
 				parameter.name = "stegosaurus_OPHAT_OSC1_PITCH";
 				parameter.symbol = "stegosaurus_OPHAT_OSC1_PITCH";
-				parameter.ranges.def = 0.0f;
+				parameter.ranges.def = 1.6407f;
 				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 1.0f;
+				parameter.ranges.max = 2.0f;
 				fParameters[stegosaurus_OPHAT_OSC1_PITCH] = parameter.ranges.def;
 				break;
 				
 			case stegosaurus_OPHAT_OSC1_AMP_ATTACK:
 				parameter.name = "stegosaurus_OPHAT_OSC1_AMP_ATTACK";
 				parameter.symbol = "stegosaurus_OPHAT_OSC1_AMP_ATTACK";
-				parameter.ranges.def = 1.0f;
+				parameter.ranges.def = 0.8126f;
 				parameter.ranges.min = 0.0f;
 				parameter.ranges.max = 1.0f;
 				fParameters[stegosaurus_OPHAT_OSC1_AMP_ATTACK] = parameter.ranges.def;
@@ -811,7 +811,7 @@ class stegosaurus : public Plugin
 			case stegosaurus_OPHAT_OSC1_AMP_DECAY:
 				parameter.name = "stegosaurus_OPHAT_OSC1_AMP_DECAY";
 				parameter.symbol = "stegosaurus_OPHAT_OSC1_AMP_DECAY";
-				parameter.ranges.def = 1.0f;
+				parameter.ranges.def = 0.3278f;
 				parameter.ranges.min = 0.0f;
 				parameter.ranges.max = 1.0f;
 				fParameters[stegosaurus_OPHAT_OSC1_AMP_DECAY] = parameter.ranges.def;
@@ -820,7 +820,7 @@ class stegosaurus : public Plugin
 			case stegosaurus_OPHAT_OSC1_AMP_SUSTAIN:
 				parameter.name = "stegosaurus_OPHAT_OSC1_AMP_SUSTAIN";
 				parameter.symbol = "stegosaurus_OPHAT_OSC1_AMP_SUSTAIN";
-				parameter.ranges.def = 1.0f;
+				parameter.ranges.def = 0.76f;
 				parameter.ranges.min = 0.0f;
 				parameter.ranges.max = 1.0f;
 				fParameters[stegosaurus_OPHAT_OSC1_AMP_SUSTAIN] = parameter.ranges.def;
@@ -829,7 +829,7 @@ class stegosaurus : public Plugin
 			case stegosaurus_OPHAT_OSC1_AMP_RELEASE:
 				parameter.name = "stegosaurus_OPHAT_OSC1_AMP_RELEASE";
 				parameter.symbol = "stegosaurus_OPHAT_OSC1_AMP_RELEASE";
-				parameter.ranges.def = 1.0f;
+				parameter.ranges.def = 0.3496f;
 				parameter.ranges.min = 0.0f;
 				parameter.ranges.max = 1.0f;
 				fParameters[stegosaurus_OPHAT_OSC1_AMP_RELEASE] = parameter.ranges.def;
@@ -847,7 +847,7 @@ class stegosaurus : public Plugin
 			case stegosaurus_OPHAT_OSC1_PITCH_DECAY:
 				parameter.name = "stegosaurus_OPHAT_OSC1_PITCH_DECAY";
 				parameter.symbol = "stegosaurus_OPHAT_OSC1_PITCH_DECAY";
-				parameter.ranges.def = 1.0f;
+				parameter.ranges.def = 0.0f;
 				parameter.ranges.min = 0.0f;
 				parameter.ranges.max = 1.0f;
 				fParameters[stegosaurus_OPHAT_OSC1_PITCH_DECAY] = parameter.ranges.def;
@@ -856,7 +856,7 @@ class stegosaurus : public Plugin
 			case stegosaurus_OPHAT_OSC1_PITCH_SUSTAIN:
 				parameter.name = "stegosaurus_OPHAT_OSC1_PITCH_SUSTAIN";
 				parameter.symbol = "stegosaurus_OPHAT_OSC1_PITCH_SUSTAIN";
-				parameter.ranges.def = 1.0f;
+				parameter.ranges.def = 0.0f;
 				parameter.ranges.min = 0.0f;
 				parameter.ranges.max = 1.0f;
 				fParameters[stegosaurus_OPHAT_OSC1_PITCH_SUSTAIN] = parameter.ranges.def;
@@ -865,7 +865,7 @@ class stegosaurus : public Plugin
 			case stegosaurus_OPHAT_OSC1_PITCH_RELEASE:
 				parameter.name = "stegosaurus_OPHAT_OSC1_PITCH_RELEASE";
 				parameter.symbol = "stegosaurus_OPHAT_OSC1_PITCH_RELEASE";
-				parameter.ranges.def = 1.0f;
+				parameter.ranges.def = 0.1522f;
 				parameter.ranges.min = 0.0f;
 				parameter.ranges.max = 1.0f;
 				fParameters[stegosaurus_OPHAT_OSC1_PITCH_RELEASE] = parameter.ranges.def;
@@ -874,7 +874,7 @@ class stegosaurus : public Plugin
 			case stegosaurus_OPHAT_OSC1_VOLUME:
 				parameter.name = "stegosaurus_OPHAT_OSC1_VOLUME";
 				parameter.symbol = "stegosaurus_OPHAT_OSC1_VOLUME";
-				parameter.ranges.def = 0.0f;
+				parameter.ranges.def = 0.1737f;
 				parameter.ranges.min = 0.0f;
 				parameter.ranges.max = 1.0f;
 				fParameters[stegosaurus_OPHAT_OSC1_VOLUME] = parameter.ranges.def;
@@ -894,7 +894,7 @@ class stegosaurus : public Plugin
 			case stegosaurus_OPHAT_OSC2_NOISE:
 				parameter.name = "stegosaurus_OPHAT_OSC2_NOISE";
 				parameter.symbol = "stegosaurus_OPHAT_OSC2_NOISE";
-				parameter.ranges.def = 0.0f;
+				parameter.ranges.def = 0.2824f;
 				parameter.ranges.min = 0.0f;
 				parameter.ranges.max = 1.0f;
 				fParameters[stegosaurus_OPHAT_OSC2_NOISE] = parameter.ranges.def;
@@ -903,9 +903,9 @@ class stegosaurus : public Plugin
 			case stegosaurus_OPHAT_OSC2_PITCH:
 				parameter.name = "stegosaurus_OPHAT_OSC2_PITCH";
 				parameter.symbol = "stegosaurus_OPHAT_OSC2_PITCH";
-				parameter.ranges.def = 0.0f;
+				parameter.ranges.def = 2.0f;
 				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 1.0f;
+				parameter.ranges.max = 2.0f;
 				fParameters[stegosaurus_OPHAT_OSC2_PITCH] = parameter.ranges.def;
 				break;
 				
@@ -921,7 +921,7 @@ class stegosaurus : public Plugin
 			case stegosaurus_OPHAT_OSC2_AMP_DECAY:
 				parameter.name = "stegosaurus_OPHAT_OSC2_AMP_DECAY";
 				parameter.symbol = "stegosaurus_OPHAT_OSC2_AMP_DECAY";
-				parameter.ranges.def = 1.0f;
+				parameter.ranges.def = 0.4487f;
 				parameter.ranges.min = 0.0f;
 				parameter.ranges.max = 1.0f;
 				fParameters[stegosaurus_OPHAT_OSC2_AMP_DECAY] = parameter.ranges.def;
@@ -957,7 +957,7 @@ class stegosaurus : public Plugin
 			case stegosaurus_OPHAT_OSC2_PITCH_DECAY:
 				parameter.name = "stegosaurus_OPHAT_OSC2_PITCH_DECAY";
 				parameter.symbol = "stegosaurus_OPHAT_OSC2_PITCH_DECAY";
-				parameter.ranges.def = 1.0f;
+				parameter.ranges.def = 0.0f;
 				parameter.ranges.min = 0.0f;
 				parameter.ranges.max = 1.0f;
 				fParameters[stegosaurus_OPHAT_OSC2_PITCH_DECAY] = parameter.ranges.def;
@@ -966,7 +966,7 @@ class stegosaurus : public Plugin
 			case stegosaurus_OPHAT_OSC2_PITCH_SUSTAIN:
 				parameter.name = "stegosaurus_OPHAT_OSC2_PITCH_SUSTAIN";
 				parameter.symbol = "stegosaurus_OPHAT_OSC2_PITCH_SUSTAIN";
-				parameter.ranges.def = 1.0f;
+				parameter.ranges.def = 0.0f;
 				parameter.ranges.min = 0.0f;
 				parameter.ranges.max = 1.0f;
 				fParameters[stegosaurus_OPHAT_OSC2_PITCH_SUSTAIN] = parameter.ranges.def;
@@ -1041,9 +1041,10 @@ class stegosaurus : public Plugin
 			{
 				if (midi_note == 60)
 				{
-					cout << "Kick triggered" << endl;
+					// cout << "Kick triggered" << endl;
 					
 					voices[0].active = true;
+					voices[0].reset_phase();
 					voices[0].adsr_osc1_amp.state = ENV_STATE_ATTACK;
 					voices[0].adsr_osc1_pitch.state = ENV_STATE_ATTACK;
 					voices[0].adsr_osc1_amp.level = 0;
@@ -1059,9 +1060,10 @@ class stegosaurus : public Plugin
 		
 				if (midi_note == 62)
 				{
-					cout << "Snare triggered" << endl;
+					// cout << "Snare triggered" << endl;
 					
 					voices[1].active = true;
+					voices[1].reset_phase();
 					voices[1].adsr_osc1_amp.state = ENV_STATE_ATTACK;
 					voices[1].adsr_osc1_pitch.state = ENV_STATE_ATTACK;
 					voices[1].adsr_osc1_amp.level = 0;
@@ -1077,9 +1079,10 @@ class stegosaurus : public Plugin
 				
 				if (midi_note == 64)
 				{
-					cout << "Closed Hat triggered" << endl;
+					// cout << "Closed Hat triggered" << endl;
 					
 					voices[2].active = true;
+					voices[2].reset_phase();
 					voices[2].adsr_osc1_amp.state = ENV_STATE_ATTACK;
 					voices[2].adsr_osc1_pitch.state = ENV_STATE_ATTACK;
 					voices[2].adsr_osc1_amp.level = 0;
@@ -1100,9 +1103,10 @@ class stegosaurus : public Plugin
 				
 				if (midi_note == 65)
 				{
-					cout << "Open Hat triggered" << endl;
+					// cout << "Open Hat triggered" << endl;
 					
 					voices[3].active = true;
+					voices[3].reset_phase();
 					voices[3].adsr_osc1_amp.state = ENV_STATE_ATTACK;
 					voices[3].adsr_osc1_pitch.state = ENV_STATE_ATTACK;
 					voices[3].adsr_osc1_amp.level = 0;
@@ -1460,9 +1464,9 @@ class stegosaurus : public Plugin
 						
 						voices[v].osc[0].wave_mix = 0;	
 						float new_pitch = adsr_osc1_pitch_level_db;
-						float pitch_mod = noise1.tick() *  osc1_noise[v];
+						float pitch_mod = (8 * noise1.tick() ) *  osc1_noise[v];
 						new_pitch += pitch_mod;
-						new_pitch *= 512;	
+						new_pitch *= 1024;	
 						if (new_pitch < 0) new_pitch = 0;
 						voices[v].osc[0].frequency = new_pitch;
 
@@ -1603,9 +1607,9 @@ class stegosaurus : public Plugin
 						
 						voices[v].osc[1].wave_mix = 0;	
 						float new_pitch = adsr_osc2_pitch_level_db;
-						float pitch_mod = noise1.tick() *  osc2_noise[v];
+						float pitch_mod = (8 * noise1.tick() ) *  osc2_noise[v];
 						new_pitch += pitch_mod;
-						new_pitch *= 512;	
+						new_pitch *= 1024;	
 						if (new_pitch < 0) new_pitch = 0;
 						voices[v].osc[1].frequency = new_pitch;
 

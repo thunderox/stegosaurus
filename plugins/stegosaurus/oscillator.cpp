@@ -1,6 +1,8 @@
 
 #include "oscillator.hpp"
 
+
+
 //---------------------------------------------------------------------------------------------------
 
 oscillator::oscillator()
@@ -15,6 +17,8 @@ oscillator::oscillator()
 	length = 17720;
 	
 	sample_rate = 44100;
+	
+    sine_generator sg;
 }
 
 //---------------------------------------------------------------------------------------------------
@@ -30,11 +34,13 @@ oscillator::~oscillator()
 
 float oscillator::tick()
 {
+	if (frequency < 0.01) frequency = 0.01;
+	/*
 	tuning = 1;
 	float frq = frequency * tuning;
 	int index_int = index;
 	
-	if (frequency < 0.01) frequency = 0.01;
+
 	
 	float result1 = 0, result2 = 0;
 
@@ -79,14 +85,18 @@ float oscillator::tick()
 		if (bandlimit_number>11) bandlimit_number = 11;
 		bandlimit_offset = (bandlimit_number*length);
 	}
-
-	increment = (44100 * frequency) / sample_rate;
 	
+	*/
+
+	// increment = (44100 * frequency) / sample_rate;
 	// cout << result1 << " - " << result2 << " - " << frequency << endl;
 	
+	sg.set_frequency(frequency * 2 * 3.141592653589793 / 8000);
+	double test[16];
+	sg.generate(1,&test[0]);
 
-
-	return (result2 * wave_mix) + (result1 * (1-wave_mix));
+	return test[0];
+	// return (result2 * wave_mix) + (result1 * (1-wave_mix));
 
 }
 

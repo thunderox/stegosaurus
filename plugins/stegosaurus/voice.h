@@ -43,6 +43,7 @@ class voice
 	voice();
 	~voice();
 	void init(double);
+	void reset_phase();
 
 	oscillator osc[number_of_oscillators];
 	

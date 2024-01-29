@@ -1,9 +1,1 @@
-# stegosaurus
-stegosaurus is a Drum synth LV2 plugin.
-
-## Instalation
-```
-./waf configure
-./waf
-./waf install
-```
+Development has moved to [Gitlab](https://gitlab.com/thunderox_plugins/stegosaurus).

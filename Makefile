@@ -41,6 +41,9 @@ clean:
 	$(MAKE) clean -C dpf/utils/lv2-ttl-generator
 	$(MAKE) clean -C plugins/$(PLUGIN)
 	rm -rf bin build
+	rm -f delirium_ui/*.d
+	rm -f delirium_ui/*.o
+	find -name "*~" -delete
 
 # --------------------------------------------------------------
 install:
@@ -48,6 +51,7 @@ install:
 	cp $(CURDIR)/bin/stegosaurus-vst.so /usr/lib/vst
 	cp $(CURDIR)/plugins/stegosaurus/presets/stegosaurus_presets_electro.lv2 /usr/lib/lv2 -r
 	mkdir /home/$(SUDO_USER)/.lv2/stegosaurus.lv2 -p
+	chmod 777 /home/$(SUDO_USER)/.lv2/stegosaurus.lv2 -R
 	cp $(CURDIR)/plugins/stegosaurus/waves /home/$(SUDO_USER)/.lv2/stegosaurus.lv2/waves -rf
 	cp $(CURDIR)/bin/stegosaurus-dssi /usr/lib/dssi -r
 	cp $(CURDIR)/bin/stegosaurus-dssi.so /usr/lib/dssi

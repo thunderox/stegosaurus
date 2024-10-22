@@ -467,7 +467,7 @@ class stegosaurus_ui : public UI
 		//------------------------------------------------------------------------------------------------------
 		void loadSymbols()
 		{
-			string lv2_path = getenv("LV2_PATH");
+			string lv2_path = "/usr/lib/lv2"; // getenv("LV2_PATH");
 			string line;
 			struct dirent *d;
 			struct stat st;
@@ -536,7 +536,7 @@ class stegosaurus_ui : public UI
 		
 		void searchPresets()
 		{
-			string lv2_path = getenv("LV2_PATH");
+			string lv2_path = "/usr/lib/lv2"; // getenv("LV2_PATH");
 			stringstream ss;
 			struct dirent *d, *pr_d;
 			struct stat st;

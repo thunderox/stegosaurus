@@ -43,6 +43,8 @@ void Delirium_UI_Widget_Label::Draw(cairo_t* cr)
 
 void Delirium_UI_Widget_Label::Left_Button_Press(int xm, int ym)
 {
+	(void) xm;
+	(void) ym;
 }
 
 

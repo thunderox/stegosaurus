@@ -14,7 +14,7 @@ nixecho::nixecho()
 	old_in_left = 0;
 	old_in_right = 0;
 
-	for (int x=0; x<buffer_left.size(); x++)
+	for (unsigned long int x=0; x<buffer_left.size(); x++)
 	{
 		buffer_left[x] = 0;
 		buffer_right[x] = 0;
@@ -45,7 +45,7 @@ nixecho::~nixecho()
 // EMPTY BUFFER
 void nixecho::clear_buffer()
 {
-	for (int x=0; x<buffer_left.size(); x++)
+	for (unsigned long int x=0; x<buffer_left.size(); x++)
 	{
 		buffer_left[x] = 0;
 		buffer_right[x] = 0;
@@ -66,7 +66,7 @@ void nixecho::reset()
 {
 
 
-	for (int x=0; x<buffer_left.size(); x++)
+	for (unsigned long int x=0; x<buffer_left.size(); x++)
 	{
 		buffer_left[x] = 0;
 		buffer_right[x] = 0;

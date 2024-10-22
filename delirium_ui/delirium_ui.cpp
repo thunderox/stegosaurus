@@ -234,10 +234,8 @@ int Delirium_UI_Widget_Get_Parameter_Number(Delirium_UI_Surface* GUI)
 			return GUI->Widgets[GUI->current_widget]->parameter_number + GUI->Widgets[GUI->current_widget]->current_value;
 		}
 	}
-	else
-	{
-		return -1;
-	}
+
+	return -1;
 }
 
 
@@ -407,9 +405,6 @@ void Delirium_UI_Left_Button_Press(Delirium_UI_Surface* GUI, cairo_t* cr, int xm
 		}
 	}
 	
-	int current_value = GUI->Widgets[current_widget]->current_value;
-	// cout << GUI->Widgets[current_widget]->values[current_value] << endl;
-
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------
@@ -532,6 +527,7 @@ int Delirium_UI_Widget_Get_Type(Delirium_UI_Surface* GUI)
 	{
 		return GUI->Widgets[current_widget]->type;
 	}
+	return -1;
 }	
 
 
@@ -545,6 +541,7 @@ int Delirium_UI_Widget_Get_Route_Number(Delirium_UI_Surface* GUI)
 	{
 		return GUI->Widgets[current_widget]->route_number;
 	}
+	return -1;
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------
@@ -584,7 +581,7 @@ int Delirium_UI_Group_Create(Delirium_UI_Surface* GUI,string name)
 
 void Delirium_UI_Group_Add_Member(Delirium_UI_Surface* GUI, string group_name, string member_name)
 {
-	for (int x=0; x<GUI->groups.size(); x++)
+	for (unsigned long int x=0; x<GUI->groups.size(); x++)
 	{
 		if (GUI->groups[x].name == group_name)
 		{
@@ -599,11 +596,11 @@ void Delirium_UI_Group_Add_Member(Delirium_UI_Surface* GUI, string group_name, s
 void Delirium_UI_Group_Set_Visible_member(Delirium_UI_Surface* GUI, string group_name, string member_name)
 {
 
-	for (int x=0; x<GUI->groups.size(); x++)
+	for (unsigned long int x=0; x<GUI->groups.size(); x++)
 	{
 		if (GUI->groups[x].name == group_name)
 		{
-			for (int y=0; y<GUI->groups[x].members.size(); y++)
+			for (unsigned long int y=0; y<GUI->groups[x].members.size(); y++)
 			{
 				if (GUI->groups[x].members[y] == member_name)
 				{
@@ -623,11 +620,11 @@ bool Delirium_UI_Group_Is_Member_Visible(Delirium_UI_Surface* GUI, string group_
 {
 	bool visible = false;
 	
-		for (int x=0; x<GUI->groups.size(); x++)
+		for (unsigned long int x=0; x<GUI->groups.size(); x++)
 	{
 		if (GUI->groups[x].name == group_name)
 		{
-			for (int y=0; y<GUI->groups[x].members.size(); y++)
+			for (unsigned long int y=0; y<GUI->groups[x].members.size(); y++)
 			{
 				if (GUI->groups[x].members[y] == member_name)
 				{
@@ -644,7 +641,7 @@ bool Delirium_UI_Group_Is_Member_Visible(Delirium_UI_Surface* GUI, string group_
 void Delirium_UI_Group_Set_Active_Widgets(Delirium_UI_Surface* GUI)
 {
 
-	for (int wd=0; wd<GUI->Widgets.size(); wd++)
+	for (unsigned long int wd=0; wd<GUI->Widgets.size(); wd++)
 	{
 		if ( GUI->Widgets[wd]->group_name == "global")
 		{
@@ -657,7 +654,7 @@ void Delirium_UI_Group_Set_Active_Widgets(Delirium_UI_Surface* GUI)
 	}
 
 
-	for (int gr=1; gr<GUI->groups.size(); gr++)
+	for (unsigned long int gr=1; gr<GUI->groups.size(); gr++)
 	{
 		int visible_member = GUI->groups[gr].visible_member;
 
@@ -665,7 +662,7 @@ void Delirium_UI_Group_Set_Active_Widgets(Delirium_UI_Surface* GUI)
 		{
 			string member_name = GUI->groups[gr].members[visible_member];
 
-			for (int wd=0; wd<GUI->Widgets.size(); wd++)
+			for (unsigned long int wd=0; wd<GUI->Widgets.size(); wd++)
 			{
 				if (GUI->Widgets[wd]->group_name == GUI->groups[gr].name && 
 					GUI->Widgets[wd]->member_name == GUI->groups[gr].members[visible_member] )

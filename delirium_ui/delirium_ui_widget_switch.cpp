@@ -145,6 +145,8 @@ void Delirium_UI_Widget_Switch::Draw(cairo_t* cr)
 
 void Delirium_UI_Widget_Switch::Left_Button_Press(int xm, int ym)
 {
+	(void) xm;
+	(void) ym;
 	if (pressed) normalised_values[0] = 1 - normalised_values[0];
 }
 
@@ -154,6 +156,8 @@ void Delirium_UI_Widget_Switch::Left_Button_Press(int xm, int ym)
 
 void Delirium_UI_Widget_Switch::Mouse_Scroll(int xm, int ym, float delta)
 {
+	(void) xm;
+	(void) ym;
 	if (delta == -1) normalised_values[0] = false;
 	if (delta == 1) normalised_values[0] = true;
 

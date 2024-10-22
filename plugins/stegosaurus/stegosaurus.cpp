@@ -1006,6 +1006,8 @@ class stegosaurus : public Plugin
 		 				
 	void initProgramName(uint32_t index, String& program_name) override
 	{
+		(void) index;
+		(void) program_name;
 	}
 
     	//----------------------------------------------	//----------------------------------------------
@@ -1013,6 +1015,8 @@ class stegosaurus : public Plugin
 	void run(const float** inputs, float** outputs, uint32_t frames,
              const MidiEvent* midiEvents, uint32_t midiEventCount) override
 	{
+	
+		(void) inputs;
 		
 		float *const out_left1 = outputs[0];
 		float *const out_right1 = outputs[1];
@@ -1128,8 +1132,8 @@ class stegosaurus : public Plugin
 			
 			// CHECK FOR NOTE OFF - OMNI MODE
 			
-		      	if ( midi_command >= 0x80 && midi_command <= 0x8f
-				||  midi_command >= 0x90 && midi_command <= 0x9f && midi_volume == 0)
+		      	if ( (midi_command >= 0x80 && midi_command <= 0x8f)
+				||  (midi_command >= 0x90 && midi_command <= 0x9f && midi_volume == 0) )
 			{
 				if (midi_note == 60)
 				{
@@ -1653,8 +1657,7 @@ Plugin *createPlugin()
 	stringstream wave_path;
 	stringstream wave_file;
 	struct dirent *d;
-	struct stat st;
-	long length;
+	long length = 0;
 
 	DIR *dr;
 	wave_path.str("");
@@ -1685,7 +1688,8 @@ Plugin *createPlugin()
 				// LOAD RAW WAVEFORM
 							
 				fseek(fp, 80, SEEK_SET);
-				fread(source_waveform_buffer ,1, length*sizeof(float), fp);
+				int rd = fread(source_waveform_buffer ,1, length*sizeof(float), fp);
+				(void) rd;
 				fclose(fp);	
 								
 				//------ FILTER 8 DIFFERENT VERSINS OF WAVEFORM TO REDUCE ALIASING

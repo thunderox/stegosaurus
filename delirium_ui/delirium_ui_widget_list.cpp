@@ -70,6 +70,8 @@ void Delirium_UI_Widget_List::Draw(cairo_t* cr)
 
 void Delirium_UI_Widget_List::Left_Button_Press(int xm, int ym)
 {
+	(void) xm;
+	(void) ym;
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------
@@ -77,10 +79,12 @@ void Delirium_UI_Widget_List::Left_Button_Press(int xm, int ym)
 
 void Delirium_UI_Widget_List::Mouse_Over(int xm, int ym)
 {
-
+	(void) xm;
+	(void) ym;
+	
 	int wX = x_position * x_grid_size;
 	int wY = y_position * y_grid_size;
-	int wW = width * x_grid_size;
+	// int wW = width * x_grid_size;
 	int wH = height * y_grid_size;
 	
 	int mouseX = xm-wX;
@@ -88,8 +92,8 @@ void Delirium_UI_Widget_List::Mouse_Over(int xm, int ym)
 	
 	if (mouseY > font_size*1.5 && mouseX < wH)
 	{
-		list_position = (int)(mouseY / (font_size*1.5))-1;
-		if (list_position + list_scroll > list_items.size()-1 )
+		list_position = (unsigned long int)(mouseY / (font_size*1.5))-1;
+		if (list_position + list_scroll > (int)list_items.size()-1 )
 		{
 			list_position = (list_items.size()-1) - list_scroll;
 		}
@@ -101,11 +105,14 @@ void Delirium_UI_Widget_List::Mouse_Over(int xm, int ym)
 //----------------------------------------------------------------------------------------------------------------------------------------
 // MOUSE OVER
 
-void Delirium_UI_Widget_List::Mouse_Scroll(int mx,int my, float delta)
+void Delirium_UI_Widget_List::Mouse_Scroll(int xm, int ym, float delta)
 {
+	(void) xm;
+	(void) ym;
+
 	list_scroll -= delta;
 	
 	if (list_scroll < 0) list_scroll = 0;
-	if (list_scroll > list_items.size()-1) list_scroll = list_items.size()-1;
+	if (list_scroll > (int)list_items.size()-1) list_scroll = list_items.size()-1;
 }
 

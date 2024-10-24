@@ -212,6 +212,15 @@ class stegosaurus : public Plugin
 				fParameters[stegosaurus_KICK_OSC1_PITCH_RELEASE] = parameter.ranges.def;
 				break;
 				
+			case stegosaurus_KICK_OSC1_PITCH_ADSR2:
+				parameter.name = "stegosaurus_KICK_OSC1_PITCH_ADSR2";
+				parameter.symbol = "stegosaurus_KICK_OSC1_PITCH_ADSR2";
+				parameter.ranges.def = 0.02f;
+				parameter.ranges.min = 0.0f;
+				parameter.ranges.max = 0.25f;
+				fParameters[stegosaurus_KICK_OSC1_PITCH_ADSR2] = parameter.ranges.def;
+				break;
+				
 			case stegosaurus_KICK_OSC1_VOLUME:
 				parameter.name = "stegosaurus_KICK_OSC1_VOLUME";
 				parameter.symbol = "stegosaurus_KICK_OSC1_VOLUME";
@@ -322,6 +331,15 @@ class stegosaurus : public Plugin
 				fParameters[stegosaurus_KICK_OSC2_PITCH_RELEASE] = parameter.ranges.def;
 				break;
 				
+			case stegosaurus_KICK_OSC2_PITCH_ADSR2:
+				parameter.name = "stegosaurus_KICK_OSC2_PITCH_ADSR2";
+				parameter.symbol = "stegosaurus_KICK_OSC2_PITCH_ADSR2";
+				parameter.ranges.def = 1.6204f;
+				parameter.ranges.min = 0.0f;
+				parameter.ranges.max = 2.0f;
+				fParameters[stegosaurus_KICK_OSC2_PITCH_ADSR2] = parameter.ranges.def;
+				break;
+				
 			case stegosaurus_KICK_OSC2_VOLUME:
 				parameter.name = "stegosaurus_KICK_OSC2_VOLUME";
 				parameter.symbol = "stegosaurus_KICK_OSC2_VOLUME";
@@ -430,8 +448,17 @@ class stegosaurus : public Plugin
 				parameter.symbol = "stegosaurus_SNARE_OSC1_PITCH_RELEASE";
 				parameter.ranges.def = 0.1087f;
 				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 1.0f;
+				parameter.ranges.max = 2.0f;
 				fParameters[stegosaurus_SNARE_OSC1_PITCH_RELEASE] = parameter.ranges.def;
+				break;
+				
+			case stegosaurus_SNARE_OSC1_PITCH_ADSR2:
+				parameter.name = "stegosaurus_SNARE_OSC1_PITCH_ADSR2";
+				parameter.symbol = "stegosaurus_SNARE_OSC1_PITCH_ADSR2";
+				parameter.ranges.def = 1.9074f;
+				parameter.ranges.min = 0.0f;
+				parameter.ranges.max = 2.0f;
+				fParameters[stegosaurus_SNARE_OSC1_PITCH_ADSR2] = parameter.ranges.def;
 				break;
 				
 			case stegosaurus_SNARE_OSC1_VOLUME:
@@ -542,6 +569,15 @@ class stegosaurus : public Plugin
 				parameter.ranges.min = 0.0f;
 				parameter.ranges.max = 1.0f;
 				fParameters[stegosaurus_SNARE_OSC2_PITCH_RELEASE] = parameter.ranges.def;
+				break;
+				
+			case stegosaurus_SNARE_OSC2_PITCH_ADSR2:
+				parameter.name = "stegosaurus_SNARE_OSC2_PITCH_ADSR2";
+				parameter.symbol = "stegosaurus_SNARE_OSC2_PITCH_ADSR2";
+				parameter.ranges.def = 0.0348f;
+				parameter.ranges.min = 0.0f;
+				parameter.ranges.max = 2.0f;
+				fParameters[stegosaurus_SNARE_OSC2_PITCH_ADSR2] = parameter.ranges.def;
 				break;
 				
 			case stegosaurus_SNARE_OSC2_VOLUME:
@@ -656,6 +692,15 @@ class stegosaurus : public Plugin
 				fParameters[stegosaurus_CLHAT_OSC1_PITCH_RELEASE] = parameter.ranges.def;
 				break;
 				
+			case stegosaurus_CLHAT_OSC1_PITCH_ADSR2:
+				parameter.name = "stegosaurus_CLHAT_OSC1_PITCH_ADSR2";
+				parameter.symbol = "stegosaurus_CLHAT_OSC1_PITCH_ADSR2";
+				parameter.ranges.def = 1.6111f;
+				parameter.ranges.min = 0.0f;
+				parameter.ranges.max = 2.0f;
+				fParameters[stegosaurus_CLHAT_OSC1_PITCH_ADSR2] = parameter.ranges.def;
+				break;
+				
 			case stegosaurus_CLHAT_OSC1_VOLUME:
 				parameter.name = "stegosaurus_CLHAT_OSC1_VOLUME";
 				parameter.symbol = "stegosaurus_CLHAT_OSC1_VOLUME";
@@ -764,6 +809,15 @@ class stegosaurus : public Plugin
 				parameter.ranges.min = 0.0f;
 				parameter.ranges.max = 1.0f;
 				fParameters[stegosaurus_CLHAT_OSC2_PITCH_RELEASE] = parameter.ranges.def;
+				break;
+				
+			case stegosaurus_CLHAT_OSC2_PITCH_ADSR2:
+				parameter.name = "stegosaurus_CLHAT_OSC2_PITCH_ADSR2";
+				parameter.symbol = "stegosaurus_CLHAT_OSC2_PITCH_ADSR2";
+				parameter.ranges.def = 0.0f;
+				parameter.ranges.min = 0.0f;
+				parameter.ranges.max = 2.0f;
+				fParameters[stegosaurus_CLHAT_OSC2_PITCH_ADSR2] = parameter.ranges.def;
 				break;
 				
 			case stegosaurus_CLHAT_OSC2_VOLUME:
@@ -879,6 +933,15 @@ class stegosaurus : public Plugin
 				fParameters[stegosaurus_OPHAT_OSC1_PITCH_RELEASE] = parameter.ranges.def;
 				break;
 				
+			case stegosaurus_OPHAT_OSC1_PITCH_ADSR2:
+				parameter.name = "stegosaurus_OPHAT_OSC1_PITCH_ADSR2";
+				parameter.symbol = "stegosaurus_OPHAT_OSC1_PITCH_ADSR2";
+				parameter.ranges.def = 1.6407f;
+				parameter.ranges.min = 0.0f;
+				parameter.ranges.max = 2.0f;
+				fParameters[stegosaurus_OPHAT_OSC1_PITCH_ADSR2] = parameter.ranges.def;
+				break;
+				
 			case stegosaurus_OPHAT_OSC1_VOLUME:
 				parameter.name = "stegosaurus_OPHAT_OSC1_VOLUME";
 				parameter.symbol = "stegosaurus_OPHAT_OSC1_VOLUME";
@@ -987,6 +1050,15 @@ class stegosaurus : public Plugin
 				parameter.ranges.min = 0.0f;
 				parameter.ranges.max = 1.0f;
 				fParameters[stegosaurus_OPHAT_OSC2_PITCH_RELEASE] = parameter.ranges.def;
+				break;
+				
+			case stegosaurus_OPHAT_OSC2_PITCH_ADSR2:
+				parameter.name = "stegosaurus_OPHAT_OSC2_PITCH_ADSR2";
+				parameter.symbol = "stegosaurus_OPHAT_OSC2_PITCH_ADSR2";
+				parameter.ranges.def = 2.0f;
+				parameter.ranges.min = 0.0f;
+				parameter.ranges.max = 2.0f;
+				fParameters[stegosaurus_OPHAT_OSC2_PITCH_ADSR2] = parameter.ranges.def;
 				break;
 				
 			case stegosaurus_OPHAT_OSC2_VOLUME:
@@ -1103,6 +1175,15 @@ class stegosaurus : public Plugin
 				fParameters[stegosaurus_CLAP_OSC1_PITCH_RELEASE] = parameter.ranges.def;
 				break;
 				
+			case stegosaurus_CLAP_OSC1_PITCH_ADSR2:
+				parameter.name = "stegosaurus_CLAP_OSC1_PITCH_ADSR2";
+				parameter.symbol = "stegosaurus_CLAP_OSC1_PITCH_ADSR2";
+				parameter.ranges.def = 0.0f;
+				parameter.ranges.min = 0.0f;
+				parameter.ranges.max = 2.0f;
+				fParameters[stegosaurus_CLAP_OSC1_PITCH_ADSR2] = parameter.ranges.def;
+				break;
+				
 			case stegosaurus_CLAP_OSC1_VOLUME:
 				parameter.name = "stegosaurus_CLAP_OSC1_VOLUME";
 				parameter.symbol = "stegosaurus_CLAP_OSC1_VOLUME";
@@ -1211,6 +1292,15 @@ class stegosaurus : public Plugin
 				parameter.ranges.min = 0.0f;
 				parameter.ranges.max = 1.0f;
 				fParameters[stegosaurus_CLAP_OSC2_PITCH_RELEASE] = parameter.ranges.def;
+				break;
+				
+			case stegosaurus_CLAP_OSC2_PITCH_ADSR2:
+				parameter.name = "stegosaurus_CLAP_OSC2_PITCH_ADSR2";
+				parameter.symbol = "stegosaurus_CLAP_OSC2_PITCH_ADSR2";
+				parameter.ranges.def = 1.13888884f;
+				parameter.ranges.min = 0.0f;
+				parameter.ranges.max = 2.0f;
+				fParameters[stegosaurus_CLAP_OSC2_PITCH_ADSR2] = parameter.ranges.def;
 				break;
 				
 			case stegosaurus_CLAP_OSC2_VOLUME:

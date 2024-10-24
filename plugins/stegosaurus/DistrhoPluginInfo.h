@@ -36,6 +36,7 @@ enum Parameters {
 	stegosaurus_KICK_OSC1_PITCH_DECAY,
 	stegosaurus_KICK_OSC1_PITCH_SUSTAIN,
 	stegosaurus_KICK_OSC1_PITCH_RELEASE,
+	stegosaurus_KICK_OSC1_PITCH_ADSR2,
 	stegosaurus_KICK_OSC1_VOLUME,
 
 	stegosaurus_KICK_OSC2_ACTIVE,
@@ -49,6 +50,7 @@ enum Parameters {
 	stegosaurus_KICK_OSC2_PITCH_DECAY,
 	stegosaurus_KICK_OSC2_PITCH_SUSTAIN,
 	stegosaurus_KICK_OSC2_PITCH_RELEASE,
+	stegosaurus_KICK_OSC2_PITCH_ADSR2,
 	stegosaurus_KICK_OSC2_VOLUME,
 
 
@@ -63,6 +65,7 @@ enum Parameters {
 	stegosaurus_SNARE_OSC1_PITCH_DECAY,
 	stegosaurus_SNARE_OSC1_PITCH_SUSTAIN,
 	stegosaurus_SNARE_OSC1_PITCH_RELEASE,
+	stegosaurus_SNARE_OSC1_PITCH_ADSR2,
 	stegosaurus_SNARE_OSC1_VOLUME,
 
 	stegosaurus_SNARE_OSC2_ACTIVE,
@@ -76,6 +79,7 @@ enum Parameters {
 	stegosaurus_SNARE_OSC2_PITCH_DECAY,
 	stegosaurus_SNARE_OSC2_PITCH_SUSTAIN,
 	stegosaurus_SNARE_OSC2_PITCH_RELEASE,
+	stegosaurus_SNARE_OSC2_PITCH_ADSR2,
 	stegosaurus_SNARE_OSC2_VOLUME,
 
 
@@ -90,6 +94,7 @@ enum Parameters {
 	stegosaurus_CLHAT_OSC1_PITCH_DECAY,
 	stegosaurus_CLHAT_OSC1_PITCH_SUSTAIN,
 	stegosaurus_CLHAT_OSC1_PITCH_RELEASE,
+	stegosaurus_CLHAT_OSC1_PITCH_ADSR2,
 	stegosaurus_CLHAT_OSC1_VOLUME,
 
 	stegosaurus_CLHAT_OSC2_ACTIVE,
@@ -103,6 +108,7 @@ enum Parameters {
 	stegosaurus_CLHAT_OSC2_PITCH_DECAY,
 	stegosaurus_CLHAT_OSC2_PITCH_SUSTAIN,
 	stegosaurus_CLHAT_OSC2_PITCH_RELEASE,
+	stegosaurus_CLHAT_OSC2_PITCH_ADSR2,
 	stegosaurus_CLHAT_OSC2_VOLUME,
 
 
@@ -117,6 +123,7 @@ enum Parameters {
 	stegosaurus_OPHAT_OSC1_PITCH_DECAY,
 	stegosaurus_OPHAT_OSC1_PITCH_SUSTAIN,
 	stegosaurus_OPHAT_OSC1_PITCH_RELEASE,
+	stegosaurus_OPHAT_OSC1_PITCH_ADSR2,
 	stegosaurus_OPHAT_OSC1_VOLUME,
 
 	stegosaurus_OPHAT_OSC2_ACTIVE,
@@ -130,6 +137,7 @@ enum Parameters {
 	stegosaurus_OPHAT_OSC2_PITCH_DECAY,
 	stegosaurus_OPHAT_OSC2_PITCH_SUSTAIN,
 	stegosaurus_OPHAT_OSC2_PITCH_RELEASE,
+	stegosaurus_OPHAT_OSC2_PITCH_ADSR2,
 	stegosaurus_OPHAT_OSC2_VOLUME,
 	
 	stegosaurus_CLAP_OSC1_ACTIVE,
@@ -143,6 +151,7 @@ enum Parameters {
 	stegosaurus_CLAP_OSC1_PITCH_DECAY,
 	stegosaurus_CLAP_OSC1_PITCH_SUSTAIN,
 	stegosaurus_CLAP_OSC1_PITCH_RELEASE,
+	stegosaurus_CLAP_OSC1_PITCH_ADSR2,
 	stegosaurus_CLAP_OSC1_VOLUME,
 	
 	stegosaurus_CLAP_OSC2_ACTIVE,
@@ -156,6 +165,7 @@ enum Parameters {
 	stegosaurus_CLAP_OSC2_PITCH_DECAY,
 	stegosaurus_CLAP_OSC2_PITCH_SUSTAIN,
 	stegosaurus_CLAP_OSC2_PITCH_RELEASE,
+	stegosaurus_CLAP_OSC2_PITCH_ADSR2,
 	stegosaurus_CLAP_OSC2_VOLUME,
 	
 	stegosaurus_OUT_SELECTOR_1,

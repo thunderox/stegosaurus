@@ -78,7 +78,7 @@ class stegosaurus_ui : public UI
 			// MASTER CONTROLS
 			
 			int gui_VOLUME = Delirium_UI_Create_Widget(GUI, deliriumUI_Knob, 0,
-				panelX + 11.25, panelY + 4.25, 3, 3, "VOLUME", stegosaurus_VOLUME);
+				panelX + 11.75, panelY + 4.25, 3, 3, "VOLUME", stegosaurus_VOLUME);
 			Delirium_UI_Widget_Set_Min_Max(GUI, gui_VOLUME, 0,2);
 			Delirium_UI_Widget_Set_Group_And_Member(GUI, gui_VOLUME, "global", "");
 			fParameters_widget_number[stegosaurus_VOLUME] = gui_VOLUME;
@@ -124,8 +124,14 @@ class stegosaurus_ui : public UI
 			fParameters_widget_number[stegosaurus_KICK_OSC1_PITCH_ATTACK+3] = gui_KICK_OSC1_PITCH_ATTACK; 
 			Delirium_UI_Widget_Set_Group_And_Member(GUI, gui_KICK_OSC1_PITCH_ATTACK, "drums", "KICK");
 			
+			int gui_KICK_OSC1_PITCH_ADSR2 = Delirium_UI_Create_Widget(GUI, deliriumUI_Fader, 0,
+				panelX + 10.5, panelY + 1, 0.5, 3, "ADSR2", stegosaurus_KICK_OSC1_PITCH_ADSR2);
+			Delirium_UI_Widget_Set_Min_Max(GUI, gui_KICK_OSC1_PITCH_ADSR2, 0.25,0);
+			Delirium_UI_Widget_Set_Group_And_Member(GUI, gui_KICK_OSC1_PITCH_ADSR2, "drums", "KICK");
+			fParameters_widget_number[stegosaurus_KICK_OSC1_PITCH_ADSR2] = gui_KICK_OSC1_PITCH_ADSR2;
+			
 			int gui_KICK_OSC1_VOLUME = Delirium_UI_Create_Widget(GUI, deliriumUI_Fader, 0,
-				panelX + 10.5, panelY + 1, 0.5, 3, "VOL", stegosaurus_KICK_OSC1_VOLUME);
+				panelX + 11.5, panelY + 1, 0.5, 3, "VOL", stegosaurus_KICK_OSC1_VOLUME);
 			Delirium_UI_Widget_Set_Min_Max(GUI, gui_KICK_OSC1_VOLUME, 1,0);
 			Delirium_UI_Widget_Set_Group_And_Member(GUI, gui_KICK_OSC1_VOLUME, "drums", "KICK");
 			fParameters_widget_number[stegosaurus_KICK_OSC1_VOLUME] = gui_KICK_OSC1_VOLUME;
@@ -165,8 +171,14 @@ class stegosaurus_ui : public UI
 			fParameters_widget_number[stegosaurus_KICK_OSC2_PITCH_ATTACK+3] = gui_KICK_OSC2_PITCH_ATTACK; 
 			Delirium_UI_Widget_Set_Group_And_Member(GUI, gui_KICK_OSC2_PITCH_ATTACK, "drums", "KICK");
 			
+			int gui_KICK_OSC2_PITCH_ADSR2 = Delirium_UI_Create_Widget(GUI, deliriumUI_Fader, 0,
+				panelX + 10.5, panelY + 4.25, 0.5, 3, "ADSR2", stegosaurus_KICK_OSC2_PITCH_ADSR2);
+			Delirium_UI_Widget_Set_Min_Max(GUI, gui_KICK_OSC2_PITCH_ADSR2, 2,0);
+			Delirium_UI_Widget_Set_Group_And_Member(GUI, gui_KICK_OSC2_PITCH_ADSR2, "drums", "KICK");
+			fParameters_widget_number[stegosaurus_KICK_OSC2_PITCH_ADSR2] = gui_KICK_OSC2_PITCH_ADSR2;
+			
 			int gui_KICK_OSC2_VOLUME = Delirium_UI_Create_Widget(GUI, deliriumUI_Fader, 0,
-				panelX + 10.5, panelY + 4.25, 0.5, 3, "VOL", stegosaurus_KICK_OSC2_VOLUME);
+				panelX + 11.5, panelY + 4.25, 0.5, 3, "VOL", stegosaurus_KICK_OSC2_VOLUME);
 			Delirium_UI_Widget_Set_Min_Max(GUI, gui_KICK_OSC2_VOLUME, 1,0);
 			Delirium_UI_Widget_Set_Group_And_Member(GUI, gui_KICK_OSC2_VOLUME, "drums", "KICK");
 			fParameters_widget_number[stegosaurus_KICK_OSC2_VOLUME] = gui_KICK_OSC2_VOLUME;
@@ -209,8 +221,14 @@ class stegosaurus_ui : public UI
 			fParameters_widget_number[stegosaurus_SNARE_OSC1_PITCH_ATTACK+3] = gui_SNARE_OSC1_PITCH_ATTACK; 
 			Delirium_UI_Widget_Set_Group_And_Member(GUI, gui_SNARE_OSC1_PITCH_ATTACK, "drums", "SNARE");
 			
+			int gui_SNARE_OSC1_PITCH_ADSR2 = Delirium_UI_Create_Widget(GUI, deliriumUI_Fader, 0,
+				panelX + 10.5, panelY + 1, 0.5, 3, "ADSR2", stegosaurus_SNARE_OSC1_PITCH_ADSR2);
+			Delirium_UI_Widget_Set_Min_Max(GUI, gui_SNARE_OSC1_PITCH_ADSR2, 2,0);
+			Delirium_UI_Widget_Set_Group_And_Member(GUI, gui_SNARE_OSC1_PITCH_ADSR2, "drums", "SNARE");
+			fParameters_widget_number[stegosaurus_SNARE_OSC1_PITCH_ADSR2] = gui_SNARE_OSC1_PITCH_ADSR2;
+			
 			int gui_SNARE_OSC1_VOLUME = Delirium_UI_Create_Widget(GUI, deliriumUI_Fader, 0,
-				panelX + 10.5, panelY + 1, 0.5, 3, "VOL", stegosaurus_SNARE_OSC1_VOLUME);
+				panelX + 11.5, panelY + 1, 0.5, 3, "VOL", stegosaurus_SNARE_OSC1_VOLUME);
 			Delirium_UI_Widget_Set_Min_Max(GUI, gui_SNARE_OSC1_VOLUME, 1,0);
 			Delirium_UI_Widget_Set_Group_And_Member(GUI, gui_SNARE_OSC1_VOLUME, "drums", "SNARE");
 			fParameters_widget_number[stegosaurus_SNARE_OSC1_VOLUME] = gui_SNARE_OSC1_VOLUME;
@@ -251,8 +269,14 @@ class stegosaurus_ui : public UI
 			fParameters_widget_number[stegosaurus_SNARE_OSC2_PITCH_ATTACK+3] = gui_SNARE_OSC2_PITCH_ATTACK; 
 			Delirium_UI_Widget_Set_Group_And_Member(GUI, gui_SNARE_OSC2_PITCH_ATTACK, "drums", "SNARE");
 			
+			int gui_SNARE_OSC2_PITCH_ADSR2 = Delirium_UI_Create_Widget(GUI, deliriumUI_Fader, 0,
+				panelX + 10.5, panelY + 4.25, 0.5, 3, "ADSR2", stegosaurus_SNARE_OSC2_PITCH_ADSR2);
+			Delirium_UI_Widget_Set_Min_Max(GUI, gui_SNARE_OSC2_PITCH_ADSR2, 2,0);
+			Delirium_UI_Widget_Set_Group_And_Member(GUI, gui_SNARE_OSC2_PITCH_ADSR2, "drums", "SNARE");
+			fParameters_widget_number[stegosaurus_SNARE_OSC2_PITCH_ADSR2] = gui_SNARE_OSC2_PITCH_ADSR2;
+			
 			int gui_SNARE_OSC2_VOLUME = Delirium_UI_Create_Widget(GUI, deliriumUI_Fader, 0,
-				panelX + 10.5, panelY + 4.25, 0.5, 3, "VOL", stegosaurus_SNARE_OSC2_VOLUME);
+				panelX + 11.5, panelY + 4.25, 0.5, 3, "VOL", stegosaurus_SNARE_OSC2_VOLUME);
 			Delirium_UI_Widget_Set_Min_Max(GUI, gui_SNARE_OSC2_VOLUME, 1,0);
 			Delirium_UI_Widget_Set_Group_And_Member(GUI, gui_SNARE_OSC2_VOLUME, "drums", "SNARE");
 			fParameters_widget_number[stegosaurus_SNARE_OSC2_VOLUME] = gui_SNARE_OSC2_VOLUME;
@@ -295,8 +319,14 @@ class stegosaurus_ui : public UI
 			fParameters_widget_number[stegosaurus_CLHAT_OSC1_PITCH_ATTACK+3] = gui_CLHAT_OSC1_PITCH_ATTACK; 
 			Delirium_UI_Widget_Set_Group_And_Member(GUI, gui_CLHAT_OSC1_PITCH_ATTACK, "drums", "CLHAT");
 			
+			int gui_CLHAT_OSC1_PITCH_ADSR2 = Delirium_UI_Create_Widget(GUI, deliriumUI_Fader, 0,
+				panelX + 10.5, panelY + 1, 0.5, 3, "ADSR2", stegosaurus_CLHAT_OSC1_PITCH_ADSR2);
+			Delirium_UI_Widget_Set_Min_Max(GUI, gui_CLHAT_OSC1_PITCH_ADSR2, 2,0);
+			Delirium_UI_Widget_Set_Group_And_Member(GUI, gui_CLHAT_OSC1_PITCH_ADSR2, "drums", "CLHAT");
+			fParameters_widget_number[stegosaurus_CLHAT_OSC1_PITCH_ADSR2] = gui_CLHAT_OSC1_PITCH_ADSR2;
+			
 			int gui_CLHAT_OSC1_VOLUME = Delirium_UI_Create_Widget(GUI, deliriumUI_Fader, 0,
-				panelX + 10.5, panelY + 1, 0.5, 3, "VOL", stegosaurus_CLHAT_OSC1_VOLUME);
+				panelX + 11.5, panelY + 1, 0.5, 3, "VOL", stegosaurus_CLHAT_OSC1_VOLUME);
 			Delirium_UI_Widget_Set_Min_Max(GUI, gui_CLHAT_OSC1_VOLUME, 1,0);
 			Delirium_UI_Widget_Set_Group_And_Member(GUI, gui_CLHAT_OSC1_VOLUME, "drums", "CLHAT");
 			fParameters_widget_number[stegosaurus_CLHAT_OSC1_VOLUME] = gui_CLHAT_OSC1_VOLUME;
@@ -336,8 +366,14 @@ class stegosaurus_ui : public UI
 			fParameters_widget_number[stegosaurus_CLHAT_OSC2_PITCH_ATTACK+3] = gui_CLHAT_OSC2_PITCH_ATTACK; 
 			Delirium_UI_Widget_Set_Group_And_Member(GUI, gui_CLHAT_OSC2_PITCH_ATTACK, "drums", "CLHAT");
 			
+			int gui_CLHAT_OSC2_PITCH_ADSR2 = Delirium_UI_Create_Widget(GUI, deliriumUI_Fader, 0,
+				panelX + 10.5, panelY + 4.25, 0.5, 3, "ADSR2", stegosaurus_CLHAT_OSC2_PITCH_ADSR2);
+			Delirium_UI_Widget_Set_Min_Max(GUI, gui_CLHAT_OSC2_PITCH_ADSR2, 2,0);
+			Delirium_UI_Widget_Set_Group_And_Member(GUI, gui_CLHAT_OSC2_PITCH_ADSR2, "drums", "CLHAT");
+			fParameters_widget_number[stegosaurus_CLHAT_OSC2_PITCH_ADSR2] = gui_CLHAT_OSC2_PITCH_ADSR2;
+			
 			int gui_CLHAT_OSC2_VOLUME = Delirium_UI_Create_Widget(GUI, deliriumUI_Fader, 0,
-				panelX + 10.5, panelY + 4.25, 0.5, 3, "VOL", stegosaurus_CLHAT_OSC2_VOLUME);
+				panelX + 11.5, panelY + 4.25, 0.5, 3, "VOL", stegosaurus_CLHAT_OSC2_VOLUME);
 			Delirium_UI_Widget_Set_Min_Max(GUI, gui_CLHAT_OSC2_VOLUME, 1,0);
 			Delirium_UI_Widget_Set_Group_And_Member(GUI, gui_CLHAT_OSC2_VOLUME, "drums", "CLHAT");
 			fParameters_widget_number[stegosaurus_CLHAT_OSC2_VOLUME] = gui_CLHAT_OSC2_VOLUME;
@@ -380,8 +416,14 @@ class stegosaurus_ui : public UI
 			fParameters_widget_number[stegosaurus_OPHAT_OSC1_PITCH_ATTACK+3] = gui_OPHAT_OSC1_PITCH_ATTACK; 
 			Delirium_UI_Widget_Set_Group_And_Member(GUI, gui_OPHAT_OSC1_PITCH_ATTACK, "drums", "OPHAT");
 			
+			int gui_OPHAT_OSC1_PITCH_ADSR2 = Delirium_UI_Create_Widget(GUI, deliriumUI_Fader, 0,
+				panelX + 10.5, panelY + 1, 0.5, 3, "ADSR2", stegosaurus_OPHAT_OSC1_PITCH_ADSR2);
+			Delirium_UI_Widget_Set_Min_Max(GUI, gui_OPHAT_OSC1_PITCH_ADSR2, 2,0);
+			Delirium_UI_Widget_Set_Group_And_Member(GUI, gui_OPHAT_OSC1_PITCH_ADSR2, "drums", "OPHAT");
+			fParameters_widget_number[stegosaurus_OPHAT_OSC1_PITCH_ADSR2] = gui_OPHAT_OSC1_PITCH_ADSR2;
+			
 			int gui_OPHAT_OSC1_VOLUME = Delirium_UI_Create_Widget(GUI, deliriumUI_Fader, 0,
-				panelX + 10.5, panelY + 1, 0.5, 3, "VOL", stegosaurus_OPHAT_OSC1_VOLUME);
+				panelX + 11.5, panelY + 1, 0.5, 3, "VOL", stegosaurus_OPHAT_OSC1_VOLUME);
 			Delirium_UI_Widget_Set_Min_Max(GUI, gui_OPHAT_OSC1_VOLUME, 1,0);
 			Delirium_UI_Widget_Set_Group_And_Member(GUI, gui_OPHAT_OSC1_VOLUME, "drums", "OPHAT");
 			fParameters_widget_number[stegosaurus_OPHAT_OSC1_VOLUME] = gui_OPHAT_OSC1_VOLUME;
@@ -421,9 +463,14 @@ class stegosaurus_ui : public UI
 			fParameters_widget_number[stegosaurus_OPHAT_OSC2_PITCH_ATTACK+3] = gui_OPHAT_OSC2_PITCH_ATTACK; 
 			Delirium_UI_Widget_Set_Group_And_Member(GUI, gui_OPHAT_OSC2_PITCH_ATTACK, "drums", "OPHAT");
 			
+			int gui_OPHAT_OSC2_PITCH_ADSR2 = Delirium_UI_Create_Widget(GUI, deliriumUI_Fader, 0,
+				panelX + 10.5, panelY + 4.25, 0.5, 3, "ADSR2", stegosaurus_OPHAT_OSC2_PITCH_ADSR2);
+			Delirium_UI_Widget_Set_Min_Max(GUI, gui_OPHAT_OSC2_PITCH_ADSR2, 2,0);
+			Delirium_UI_Widget_Set_Group_And_Member(GUI, gui_OPHAT_OSC2_PITCH_ADSR2, "drums", "OPHAT");
+			fParameters_widget_number[stegosaurus_OPHAT_OSC2_PITCH_ADSR2] = gui_OPHAT_OSC2_PITCH_ADSR2;
 			
 			int gui_OPHAT_OSC2_VOLUME = Delirium_UI_Create_Widget(GUI, deliriumUI_Fader, 0,
-				panelX + 10.5, panelY + 4.25, 0.5, 3, "VOL", stegosaurus_OPHAT_OSC2_VOLUME);
+				panelX + 11.5, panelY + 4.25, 0.5, 3, "VOL", stegosaurus_OPHAT_OSC2_VOLUME);
 			Delirium_UI_Widget_Set_Min_Max(GUI, gui_OPHAT_OSC2_VOLUME, 1,0);
 			Delirium_UI_Widget_Set_Group_And_Member(GUI, gui_OPHAT_OSC2_VOLUME, "drums", "OPHAT");
 			fParameters_widget_number[stegosaurus_OPHAT_OSC2_VOLUME] = gui_OPHAT_OSC2_VOLUME;
@@ -468,8 +515,14 @@ class stegosaurus_ui : public UI
 			fParameters_widget_number[stegosaurus_CLAP_OSC1_PITCH_ATTACK+3] = gui_CLAP_OSC1_PITCH_ATTACK; 
 			Delirium_UI_Widget_Set_Group_And_Member(GUI, gui_CLAP_OSC1_PITCH_ATTACK, "drums", "CLAP");
 			
+			int gui_CLAP_OSC1_PITCH_ADSR2 = Delirium_UI_Create_Widget(GUI, deliriumUI_Fader, 0,
+				panelX + 10.5, panelY + 1, 0.5, 3, "ADSR2", stegosaurus_CLAP_OSC1_PITCH_ADSR2);
+			Delirium_UI_Widget_Set_Min_Max(GUI, gui_CLAP_OSC1_PITCH_ADSR2, 2,0);
+			Delirium_UI_Widget_Set_Group_And_Member(GUI, gui_CLAP_OSC1_PITCH_ADSR2, "drums", "CLAP");
+			fParameters_widget_number[stegosaurus_CLAP_OSC1_PITCH_ADSR2] = gui_CLAP_OSC1_PITCH_ADSR2;
+			
 			int gui_CLAP_OSC1_VOLUME = Delirium_UI_Create_Widget(GUI, deliriumUI_Fader, 0,
-				panelX + 10.5, panelY + 1, 0.5, 3, "VOL", stegosaurus_CLAP_OSC1_VOLUME);
+				panelX + 11.5, panelY + 1, 0.5, 3, "VOL", stegosaurus_CLAP_OSC1_VOLUME);
 			Delirium_UI_Widget_Set_Min_Max(GUI, gui_CLAP_OSC1_VOLUME, 1,0);
 			Delirium_UI_Widget_Set_Group_And_Member(GUI, gui_CLAP_OSC1_VOLUME, "drums", "CLAP");
 			fParameters_widget_number[stegosaurus_CLAP_OSC1_VOLUME] = gui_CLAP_OSC1_VOLUME;
@@ -509,9 +562,15 @@ class stegosaurus_ui : public UI
 			fParameters_widget_number[stegosaurus_CLAP_OSC2_PITCH_ATTACK+3] = gui_CLAP_OSC2_PITCH_ATTACK; 
 			Delirium_UI_Widget_Set_Group_And_Member(GUI, gui_CLAP_OSC2_PITCH_ATTACK, "drums", "CLAP");
 			
+			int gui_CLAP_OSC2_PITCH_ADSR2 = Delirium_UI_Create_Widget(GUI, deliriumUI_Fader, 0,
+				panelX + 10.5, panelY + 4.25, 0.5, 3, "ADSR2", stegosaurus_CLAP_OSC2_PITCH_ADSR2);
+			Delirium_UI_Widget_Set_Min_Max(GUI, gui_CLAP_OSC2_PITCH_ADSR2, 2,0);
+			Delirium_UI_Widget_Set_Group_And_Member(GUI, gui_CLAP_OSC2_PITCH_ADSR2, "drums", "CLAP");
+			fParameters_widget_number[stegosaurus_CLAP_OSC2_PITCH_ADSR2] = gui_CLAP_OSC2_PITCH_ADSR2;
+			
 			
 			int gui_CLAP_OSC2_VOLUME = Delirium_UI_Create_Widget(GUI, deliriumUI_Fader, 0,
-				panelX + 10.5, panelY + 4.25, 0.5, 3, "VOL", stegosaurus_CLAP_OSC2_VOLUME);
+				panelX + 11.5, panelY + 4.25, 0.5, 3, "VOL", stegosaurus_CLAP_OSC2_VOLUME);
 			Delirium_UI_Widget_Set_Min_Max(GUI, gui_CLAP_OSC2_VOLUME, 1,0);
 			Delirium_UI_Widget_Set_Group_And_Member(GUI, gui_CLAP_OSC2_VOLUME, "drums", "CLAP");
 			fParameters_widget_number[stegosaurus_CLAP_OSC2_VOLUME] = gui_CLAP_OSC2_VOLUME;

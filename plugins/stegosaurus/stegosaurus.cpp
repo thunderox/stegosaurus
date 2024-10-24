@@ -1531,56 +1531,68 @@ class stegosaurus : public Plugin
 		voices[4].osc[0].active = fParameters[stegosaurus_CLAP_OSC1_ACTIVE];
 		voices[4].osc[1].active = fParameters[stegosaurus_CLAP_OSC2_ACTIVE];
 		
-		float osc1_pitch[5];
-		float osc1_volume[5];
 		float osc1_noise[5];
+		float osc1_pitch[5];
+		float osc1_pitch_adsr2[5];
+		float osc1_volume[5];
 		
-		float osc2_pitch[5];
 		float osc2_volume[5];
+		float osc2_pitch[5];
+		float osc2_pitch_adsr2[5];
 		float osc2_noise[5];
 
-		osc1_volume[0] = fParameters[stegosaurus_KICK_OSC1_VOLUME];
-		osc1_pitch[0] = fParameters[stegosaurus_KICK_OSC1_PITCH];
+
+
 		osc1_noise[0] = fParameters[stegosaurus_KICK_OSC1_NOISE];
+		osc1_pitch[0] = fParameters[stegosaurus_KICK_OSC1_PITCH];
+		osc1_pitch_adsr2[0] = fParameters[stegosaurus_KICK_OSC1_PITCH_ADSR2];
+		osc1_volume[0] = fParameters[stegosaurus_KICK_OSC1_VOLUME];
 
-		osc2_volume[0] = fParameters[stegosaurus_KICK_OSC2_VOLUME];
-		osc2_pitch[0] = fParameters[stegosaurus_KICK_OSC2_PITCH];
 		osc2_noise[0] = fParameters[stegosaurus_KICK_OSC2_NOISE];
+		osc2_pitch[0] = fParameters[stegosaurus_KICK_OSC2_PITCH];
+		osc2_pitch_adsr2[0] = fParameters[stegosaurus_KICK_OSC2_PITCH_ADSR2];
+		osc2_volume[0] = fParameters[stegosaurus_KICK_OSC2_VOLUME];
 		
-		osc1_volume[1] = fParameters[stegosaurus_SNARE_OSC1_VOLUME];
-		osc1_pitch[1] = fParameters[stegosaurus_SNARE_OSC1_PITCH];
 		osc1_noise[1] = fParameters[stegosaurus_SNARE_OSC1_NOISE];
+		osc1_pitch[1] = fParameters[stegosaurus_SNARE_OSC1_PITCH];
+		osc1_pitch_adsr2[1] = fParameters[stegosaurus_SNARE_OSC1_PITCH_ADSR2];
+		osc1_volume[1] = fParameters[stegosaurus_SNARE_OSC1_VOLUME];
 
-		osc2_volume[1] = fParameters[stegosaurus_SNARE_OSC2_VOLUME];
-		osc2_pitch[1] = fParameters[stegosaurus_SNARE_OSC2_PITCH];
 		osc2_noise[1] = fParameters[stegosaurus_SNARE_OSC2_NOISE];
+		osc2_pitch[1] = fParameters[stegosaurus_SNARE_OSC2_PITCH];
+		osc2_pitch_adsr2[1] = fParameters[stegosaurus_SNARE_OSC2_PITCH_ADSR2];
+		osc2_volume[1] = fParameters[stegosaurus_SNARE_OSC2_VOLUME];
 		
-		osc1_volume[2] = fParameters[stegosaurus_CLHAT_OSC1_VOLUME];
-		osc1_pitch[2] = fParameters[stegosaurus_CLHAT_OSC1_PITCH];
 		osc1_noise[2] = fParameters[stegosaurus_CLHAT_OSC1_NOISE];
+		osc1_pitch[2] = fParameters[stegosaurus_CLHAT_OSC1_PITCH];
+		osc1_pitch_adsr2[2] = fParameters[stegosaurus_CLHAT_OSC1_PITCH_ADSR2];
+		osc1_volume[2] = fParameters[stegosaurus_CLHAT_OSC1_VOLUME];
 
-		osc2_volume[2] = fParameters[stegosaurus_CLHAT_OSC2_VOLUME];
-		osc2_pitch[2] = fParameters[stegosaurus_CLHAT_OSC2_PITCH];
 		osc2_noise[2] = fParameters[stegosaurus_CLHAT_OSC2_NOISE];
+		osc2_pitch[2] = fParameters[stegosaurus_CLHAT_OSC2_PITCH];
+		osc2_pitch_adsr2[2] = fParameters[stegosaurus_CLHAT_OSC2_PITCH_ADSR2];
+		osc2_volume[2] = fParameters[stegosaurus_CLHAT_OSC2_VOLUME];
 		
-		osc1_volume[3] = fParameters[stegosaurus_OPHAT_OSC1_VOLUME];
-		osc1_pitch[3] = fParameters[stegosaurus_OPHAT_OSC1_PITCH];
 		osc1_noise[3] = fParameters[stegosaurus_OPHAT_OSC1_NOISE];
+		osc1_pitch[3] = fParameters[stegosaurus_OPHAT_OSC1_PITCH];
+		osc1_pitch_adsr2[3] = fParameters[stegosaurus_OPHAT_OSC1_PITCH_ADSR2];
+		osc1_volume[3] = fParameters[stegosaurus_OPHAT_OSC1_VOLUME];
 
-		osc2_volume[3] = fParameters[stegosaurus_OPHAT_OSC2_VOLUME];
-		osc2_pitch[3] = fParameters[stegosaurus_OPHAT_OSC2_PITCH];
 		osc2_noise[3] = fParameters[stegosaurus_OPHAT_OSC2_NOISE];
+		osc2_pitch[3] = fParameters[stegosaurus_OPHAT_OSC2_PITCH];
+		osc2_pitch_adsr2[3] = fParameters[stegosaurus_OPHAT_OSC2_PITCH_ADSR2];
+		osc2_volume[3] = fParameters[stegosaurus_OPHAT_OSC2_VOLUME];
 		
-		osc1_volume[4] = fParameters[stegosaurus_CLAP_OSC1_VOLUME];
-		osc1_pitch[4] = fParameters[stegosaurus_CLAP_OSC1_PITCH];
 		osc1_noise[4] = fParameters[stegosaurus_CLAP_OSC1_NOISE];
+		osc1_pitch[4] = fParameters[stegosaurus_CLAP_OSC1_PITCH];
+		osc1_pitch_adsr2[4] = fParameters[stegosaurus_CLAP_OSC1_PITCH_ADSR2];
+		osc1_volume[4] = fParameters[stegosaurus_CLAP_OSC1_VOLUME];
 
-		osc2_volume[4] = fParameters[stegosaurus_CLAP_OSC2_VOLUME];
-		osc2_pitch[4] = fParameters[stegosaurus_CLAP_OSC2_PITCH];
 		osc2_noise[4] = fParameters[stegosaurus_CLAP_OSC2_NOISE];
+		osc2_pitch[4] = fParameters[stegosaurus_CLAP_OSC2_PITCH];
+		osc2_pitch_adsr2[4] = fParameters[stegosaurus_CLAP_OSC2_PITCH_ADSR2];
+		osc2_volume[4] = fParameters[stegosaurus_CLAP_OSC2_VOLUME];
 		
-
-				
 		// OSCILATOR ONES PARAMS
 		
 		voices[0].adsr_osc1_amp.attack = fast_pow(fParameters[stegosaurus_KICK_OSC1_AMP_ATTACK],10); 
@@ -1636,8 +1648,7 @@ class stegosaurus : public Plugin
 		voices[2].osc[0].frequency = fParameters[stegosaurus_CLHAT_OSC1_PITCH] * 128;
 		voices[3].osc[0].frequency = fParameters[stegosaurus_OPHAT_OSC1_PITCH] * 128;
 		voices[4].osc[0].frequency = fParameters[stegosaurus_OPHAT_OSC1_PITCH] * 128;
-
-				
+		
 		// OSCILATOR TWOS PARAMS
 		
 		voices[0].adsr_osc2_amp.attack = fast_pow(fParameters[stegosaurus_KICK_OSC2_AMP_ATTACK],10); 
@@ -1693,8 +1704,6 @@ class stegosaurus : public Plugin
 		voices[3].osc[0].frequency = fParameters[stegosaurus_OPHAT_OSC2_PITCH] * 128;
 		voices[4].osc[0].frequency = fParameters[stegosaurus_CLAP_OSC2_PITCH] * 128;
 
-	
-		
 		// MAIN AUDIO LOOP
 
 		for (uint32_t fr = 0; fr < frames; fr++)
@@ -1843,12 +1852,13 @@ class stegosaurus : public Plugin
 							}
 						}
 						
-						float adsr_osc1_pitch_level_db = voices[v].adsr_osc1_pitch.level * osc1_pitch[v]; 
+						float adsr_osc1_pitch_level_db = voices[v].adsr_osc1_pitch.level * osc1_pitch_adsr2[v]; 
 						
 						voices[v].osc[0].wave_mix = 0;	
 						float new_pitch = adsr_osc1_pitch_level_db;
 						float pitch_mod = (8 * noise1.tick() ) *  osc1_noise[v];
 						new_pitch += pitch_mod;
+						new_pitch += osc1_pitch[v];
 						new_pitch *= 1024;	
 						if (new_pitch < 0) new_pitch = 0;
 						voices[v].osc[0].frequency = new_pitch;
@@ -1986,12 +1996,13 @@ class stegosaurus : public Plugin
 							}
 						}
 						
-						float adsr_osc2_pitch_level_db = voices[v].adsr_osc2_pitch.level * osc2_pitch[v]; 
+						float adsr_osc2_pitch_level_db = voices[v].adsr_osc2_pitch.level * osc2_pitch_adsr2[v]; 
 						
 						voices[v].osc[1].wave_mix = 0;	
 						float new_pitch = adsr_osc2_pitch_level_db;
 						float pitch_mod = (8 * noise1.tick() ) *  osc2_noise[v];
 						new_pitch += pitch_mod;
+						new_pitch += osc2_pitch[v];
 						new_pitch *= 1024;	
 						if (new_pitch < 0) new_pitch = 0;
 						voices[v].osc[1].frequency = new_pitch;

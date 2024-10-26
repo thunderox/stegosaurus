@@ -53,6 +53,8 @@ enum Parameters {
 	stegosaurus_KICK_OSC2_PITCH_ADSR2,
 	stegosaurus_KICK_OSC2_VOLUME,
 
+	stegosaurus_KICK_OSC3_PITCH,
+	stegosaurus_KICK_OSC3_VOLUME,
 
 	stegosaurus_SNARE_OSC1_ACTIVE,
 	stegosaurus_SNARE_OSC1_NOISE,
@@ -81,7 +83,9 @@ enum Parameters {
 	stegosaurus_SNARE_OSC2_PITCH_RELEASE,
 	stegosaurus_SNARE_OSC2_PITCH_ADSR2,
 	stegosaurus_SNARE_OSC2_VOLUME,
-
+	
+	stegosaurus_SNARE_OSC3_PITCH,
+	stegosaurus_SNARE_OSC3_VOLUME,
 
 	stegosaurus_CLHAT_OSC1_ACTIVE,
 	stegosaurus_CLHAT_OSC1_NOISE,
@@ -111,6 +115,8 @@ enum Parameters {
 	stegosaurus_CLHAT_OSC2_PITCH_ADSR2,
 	stegosaurus_CLHAT_OSC2_VOLUME,
 
+	stegosaurus_CLHAT_OSC3_PITCH,
+	stegosaurus_CLHAT_OSC3_VOLUME,
 
 	stegosaurus_OPHAT_OSC1_ACTIVE,
 	stegosaurus_OPHAT_OSC1_NOISE,
@@ -140,6 +146,9 @@ enum Parameters {
 	stegosaurus_OPHAT_OSC2_PITCH_ADSR2,
 	stegosaurus_OPHAT_OSC2_VOLUME,
 	
+	stegosaurus_OPHAT_OSC3_PITCH,
+	stegosaurus_OPHAT_OSC3_VOLUME,
+	
 	stegosaurus_CLAP_OSC1_ACTIVE,
 	stegosaurus_CLAP_OSC1_NOISE,
 	stegosaurus_CLAP_OSC1_PITCH,
@@ -167,6 +176,26 @@ enum Parameters {
 	stegosaurus_CLAP_OSC2_PITCH_RELEASE,
 	stegosaurus_CLAP_OSC2_PITCH_ADSR2,
 	stegosaurus_CLAP_OSC2_VOLUME,
+	
+	stegosaurus_CLAP_OSC3_PITCH,
+	stegosaurus_CLAP_OSC3_VOLUME,
+	
+	stegosaurus_COWBELL_OSC2_ACTIVE,
+	stegosaurus_COWBELL_OSC2_NOISE,
+	stegosaurus_COWBELL_OSC2_PITCH,
+	stegosaurus_COWBELL_OSC2_AMP_ATTACK,
+	stegosaurus_COWBELL_OSC2_AMP_DECAY,
+	stegosaurus_COWBELL_OSC2_AMP_SUSTAIN,
+	stegosaurus_COWBELL_OSC2_AMP_RELEASE,
+	stegosaurus_COWBELL_OSC2_PITCH_ATTACK,
+	stegosaurus_COWBELL_OSC2_PITCH_DECAY,
+	stegosaurus_COWBELL_OSC2_PITCH_SUSTAIN,
+	stegosaurus_COWBELL_OSC2_PITCH_RELEASE,
+	stegosaurus_COWBELL_OSC2_PITCH_ADSR2,
+	stegosaurus_COWBELL_OSC2_VOLUME,
+	
+	stegosaurus_COWBELL_OSC3_PITCH,
+	stegosaurus_COWBELL_OSC3_VOLUME,
 	
 	stegosaurus_OUT_SELECTOR_1,
 	stegosaurus_OUT_SELECTOR_2,

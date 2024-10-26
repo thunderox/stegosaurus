@@ -92,21 +92,28 @@ class stegosaurus : public Plugin
 	{
 		return d_cconst('T','O','S','S');
 	}
+	
+	void set_param (Parameter& param, const char* name, int index, float min, float max, float def)
+	{	
+		param.name = name;
+		param.symbol = name;
+		param.ranges.min = min;
+		param.ranges.max = max;
+		param.ranges.def = def;
+		fParameters[index] = def; 
 		
+	}	
 		
  	void initParameter (uint32_t index, Parameter& parameter) override
  	{
+ 	
 		switch (index)
 		{
+		
 			// MASTER CONTROLS -----------------------------
 											
 			case stegosaurus_VOLUME:
-				parameter.name = "Volume";
-				parameter.symbol = "stegosaurus_VOLUME";
-				parameter.ranges.def = 1.8f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 2.0f;
-				fParameters[stegosaurus_VOLUME] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_VOLUME", index, 0.0f, 2.0f, 1.8f);
 				break;
 				
 			// KICK DRUM ------------------------------------
@@ -114,120 +121,43 @@ class stegosaurus : public Plugin
 			// OSCILLATOR ONE
 						
 			case stegosaurus_KICK_OSC1_ACTIVE:
-				parameter.name = "stegosaurus_KICK_OSC1_ACTIVE";
-				parameter.symbol = "stegosaurus_KICK_OSC1_ACTIVE";
-				parameter.ranges.def = 1.0f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 1.0f;
-				fParameters[stegosaurus_KICK_OSC1_ACTIVE] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_KICK_OSC1_ACTIVE", index, 0.0f, 1.0f, 1.0f);
 				break;
-				
 			case stegosaurus_KICK_OSC1_NOISE:
-				parameter.name = "stegosaurus_KICK_OSC1_NOISE";
-				parameter.symbol = "stegosaurus_KICK_OSC1_NOISE";
-				parameter.ranges.def = 0.0f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 0.25f;
-				fParameters[stegosaurus_KICK_OSC1_NOISE] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_KICK_OSC1_NOISE", index, 0.0f, 0.25f, 0.0f);
 				break;
-				
 			case stegosaurus_KICK_OSC1_PITCH:
-				parameter.name = "stegosaurus_KICK_OSC1_PITCH";
-				parameter.symbol = "stegosaurus_KICK_OSC1_PITCH";
-				parameter.ranges.def = 0.02f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 0.25f;
-				fParameters[stegosaurus_KICK_OSC1_PITCH] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_KICK_OSC1_PITCH", index, 0.0f, 0.25f, 0.02f);
 				break;
-				
 			case stegosaurus_KICK_OSC1_AMP_ATTACK:
-				parameter.name = "stegosaurus_KICK_OSC1_AMP_ATTACK";
-				parameter.symbol = "stegosaurus_KICK_OSC1_AMP_ATTACK";
-				parameter.ranges.def = 1.0f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 1.0f;
-				fParameters[stegosaurus_KICK_OSC1_AMP_ATTACK] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_KICK_OSC1_AMP_ATTACK", index, 0.0f, 1.0f, 1.0f);
 				break;
-				
 			case stegosaurus_KICK_OSC1_AMP_DECAY:
-				parameter.name = "stegosaurus_KICK_OSC1_AMP_DECAY";
-				parameter.symbol = "stegosaurus_KICK_OSC1_AMP_DECAY";
-				parameter.ranges.def = 0.1865f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 1.0f;
-				fParameters[stegosaurus_KICK_OSC1_AMP_DECAY] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_KICK_OSC1_AMP_DECAY", index, 0.0f, 1.0f, 0.1865f);
 				break;
-				
 			case stegosaurus_KICK_OSC1_AMP_SUSTAIN:
-				parameter.name = "stegosaurus_KICK_OSC1_AMP_SUSTAIN";
-				parameter.symbol = "stegosaurus_KICK_OSC1_AMP_SUSTAIN";
-				parameter.ranges.def = 1.0f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 1.0f;
-				fParameters[stegosaurus_KICK_OSC1_AMP_SUSTAIN] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_KICK_OSC1_AMP_SUSTAIN", index, 0.0f, 1.0f, 1.0f);
 				break;
-				
 			case stegosaurus_KICK_OSC1_AMP_RELEASE:
-				parameter.name = "stegosaurus_KICK_OSC1_AMP_RELEASE";
-				parameter.symbol = "stegosaurus_KICK_OSC1_AMP_RELEASE";
-				parameter.ranges.def = 0.393f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 1.0f;
-				fParameters[stegosaurus_KICK_OSC1_AMP_RELEASE] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_KICK_OSC1_AMP_RELEASE", index, 0.0f, 1.0f, 0.393f);
 				break;
-				
 			case stegosaurus_KICK_OSC1_PITCH_ATTACK:
-				parameter.name = "stegosaurus_KICK_OSC1_PITCH_ATTACK";
-				parameter.symbol = "stegosaurus_KICK_OSC1_PITCH_ATTACK";
-				parameter.ranges.def = 1.0f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 1.0f;
-				fParameters[stegosaurus_KICK_OSC1_PITCH_ATTACK] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_KICK_OSC1_PITCH_ATTACK", index, 0.0f, 1.0f, 1.0f);
 				break;
-				
 			case stegosaurus_KICK_OSC1_PITCH_DECAY:
-				parameter.name = "stegosaurus_KICK_OSC1_PITCH_DECAY";
-				parameter.symbol = "stegosaurus_KICK_OSC1_PITCH_DECAY";
-				parameter.ranges.def = 0.423f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 1.0f;
-				fParameters[stegosaurus_KICK_OSC1_PITCH_DECAY] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_KICK_OSC1_PITCH_DECAY", index, 0.0f, 1.0f, 0.423f);
 				break;
-				
 			case stegosaurus_KICK_OSC1_PITCH_SUSTAIN:
-				parameter.name = "stegosaurus_KICK_OSC1_PITCH_SUSTAIN";
-				parameter.symbol = "stegosaurus_KICK_OSC1_PITCH_SUSTAIN";
-				parameter.ranges.def = 1.0f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 1.0f;
-				fParameters[stegosaurus_KICK_OSC1_PITCH_SUSTAIN] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_KICK_OSC1_PITCH_SUSTAIN", index, 0.0f, 1.0f, 1.0f);
 				break;
-				
 			case stegosaurus_KICK_OSC1_PITCH_RELEASE:
-				parameter.name = "stegosaurus_KICK_OSC1_PITCH_RELEASE";
-				parameter.symbol = "stegosaurus_KICK_OSC1_PITCH_RELEASE";
-				parameter.ranges.def = 0.3913f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 1.0f;
-				fParameters[stegosaurus_KICK_OSC1_PITCH_RELEASE] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_KICK_OSC1_PITCH_RELEASE", index, 0.0f, 1.0f, 0.3913f);
 				break;
-				
 			case stegosaurus_KICK_OSC1_PITCH_ADSR2:
-				parameter.name = "stegosaurus_KICK_OSC1_PITCH_ADSR2";
-				parameter.symbol = "stegosaurus_KICK_OSC1_PITCH_ADSR2";
-				parameter.ranges.def = 0.02f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 0.25f;
-				fParameters[stegosaurus_KICK_OSC1_PITCH_ADSR2] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_KICK_OSC1_PITCH_ADSR2", index, 0.0f, 0.25f, 0.02f);
 				break;
-				
 			case stegosaurus_KICK_OSC1_VOLUME:
-				parameter.name = "stegosaurus_KICK_OSC1_VOLUME";
-				parameter.symbol = "stegosaurus_KICK_OSC1_VOLUME";
-				parameter.ranges.def = 0.9537f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 1.0f;
-				fParameters[stegosaurus_KICK_OSC1_VOLUME] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_KICK_OSC1_VOLUME", index, 0.0f, 1.0f, 0.9537f);
 				break;
 				
 			// OSCILLATOR TWO

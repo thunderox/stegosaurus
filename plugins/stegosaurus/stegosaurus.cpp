@@ -33,7 +33,6 @@ class stegosaurus : public Plugin
 	double srate;
 	int keys[128];
 	voice voices[number_of_voices];
-	vector <wavetable> wavetables;
 	noise noise1;
 	nixecho* echo;
 
@@ -124,7 +123,7 @@ class stegosaurus : public Plugin
 				set_param (parameter, "stegosaurus_KICK_OSC1_ACTIVE", index, 0.0f, 1.0f, 1.0f);
 				break;
 			case stegosaurus_KICK_OSC1_NOISE:
-				set_param (parameter, "stegosaurus_KICK_OSC1_NOISE", index, 0.0f, 0.25f, 0.0f);
+				set_param (parameter, "stegosaurus_KICK_OSC1_NOISE", index, 0.0f, 1.0f, 0.0f);
 				break;
 			case stegosaurus_KICK_OSC1_PITCH:
 				set_param (parameter, "stegosaurus_KICK_OSC1_PITCH", index, 0.0f, 0.25f, 0.02f);
@@ -133,7 +132,7 @@ class stegosaurus : public Plugin
 				set_param (parameter, "stegosaurus_KICK_OSC1_AMP_ATTACK", index, 0.0f, 1.0f, 1.0f);
 				break;
 			case stegosaurus_KICK_OSC1_AMP_DECAY:
-				set_param (parameter, "stegosaurus_KICK_OSC1_AMP_DECAY", index, 0.0f, 1.0f, 0.1865f);
+				set_param (parameter, "stegosaurus_KICK_OSC1_AMP_DECAY", index, 0.0f, 1.0f, 0.3565f);
 				break;
 			case stegosaurus_KICK_OSC1_AMP_SUSTAIN:
 				set_param (parameter, "stegosaurus_KICK_OSC1_AMP_SUSTAIN", index, 0.0f, 1.0f, 1.0f);
@@ -163,120 +162,50 @@ class stegosaurus : public Plugin
 			// OSCILLATOR TWO
 						
 			case stegosaurus_KICK_OSC2_ACTIVE:
-				parameter.name = "stegosaurus_KICK_OSC2_ACTIVE";
-				parameter.symbol = "stegosaurus_KICK_OSC2_ACTIVE";
-				parameter.ranges.def = 1.0f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 1.0f;
-				fParameters[stegosaurus_KICK_OSC2_ACTIVE] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_KICK_OSC2_ACTIVE", index, 0.0f, 1.0f, 1.0f);
 				break;
-				
 			case stegosaurus_KICK_OSC2_NOISE:
-				parameter.name = "stegosaurus_KICK_OSC2_NOISE";
-				parameter.symbol = "stegosaurus_KICK_OSC2_NOISE";
-				parameter.ranges.def = 0.0f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 1.0f;
-				fParameters[stegosaurus_KICK_OSC2_NOISE] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_KICK_OSC2_NOISE", index, 0.0f, 1.0f, 0.0f);
 				break;
-				
 			case stegosaurus_KICK_OSC2_PITCH:
-				parameter.name = "stegosaurus_KICK_OSC2_PITCH";
-				parameter.symbol = "stegosaurus_KICK_OSC2_PITCH";
-				parameter.ranges.def = 1.6204f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 2.0f;
-				fParameters[stegosaurus_KICK_OSC2_PITCH] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_KICK_OSC2_PITCH", index, 0.0f, 2.0f, 1.6204f);
 				break;
-				
 			case stegosaurus_KICK_OSC2_AMP_ATTACK:
-				parameter.name = "stegosaurus_KICK_OSC2_AMP_ATTACK";
-				parameter.symbol = "stegosaurus_KICK_OSC2_AMP_ATTACK";
-				parameter.ranges.def = 1.0f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 1.0f;
-				fParameters[stegosaurus_KICK_OSC2_AMP_ATTACK] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_KICK_OSC2_AMP_ATTACK", index, 0.0f, 2.0f, 1.0f);
 				break;
-				
 			case stegosaurus_KICK_OSC2_AMP_DECAY:
-				parameter.name = "stegosaurus_KICK_OSC2_AMP_DECAY";
-				parameter.symbol = "stegosaurus_KICK_OSC2_AMP_DECAY";
-				parameter.ranges.def = 0.4309f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 1.0f;
-				fParameters[stegosaurus_KICK_OSC2_AMP_DECAY] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_KICK_OSC2_AMP_DECAY", index, 0.0f, 1.0f, 0.4309f);
 				break;
-				
 			case stegosaurus_KICK_OSC2_AMP_SUSTAIN:
-				parameter.name = "stegosaurus_KICK_OSC2_AMP_SUSTAIN";
-				parameter.symbol = "stegosaurus_KICK_OSC2_AMP_SUSTAIN";
-				parameter.ranges.def = 1.0f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 1.0f;
-				fParameters[stegosaurus_KICK_OSC2_AMP_SUSTAIN] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_KICK_OSC2_AMP_SUSTAIN", index, 0.0f, 1.0f, 1.0f);
 				break;
-				
 			case stegosaurus_KICK_OSC2_AMP_RELEASE:
-				parameter.name = "stegosaurus_KICK_OSC2_AMP_RELEASE";
-				parameter.symbol = "stegosaurus_KICK_OSC2_AMP_RELEASE";
-				parameter.ranges.def = 0.3370f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 1.0f;
-				fParameters[stegosaurus_KICK_OSC2_AMP_RELEASE] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_KICK_OSC2_AMP_RELEASE", index, 0.0f, 1.0f, 0.3370f);
 				break;
-				
 			case stegosaurus_KICK_OSC2_PITCH_ATTACK:
-				parameter.name = "stegosaurus_KICK_OSC2_PITCH_ATTACK";
-				parameter.symbol = "stegosaurus_KICK_OSC2_PITCH_ATTACK";
-				parameter.ranges.def = 1.0f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 1.0f;
-				fParameters[stegosaurus_KICK_OSC2_PITCH_ATTACK] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_KICK_OSC2_PITCH_ATTACK", index, 0.0f, 1.0f, 1.0f);
 				break;
-				
 			case stegosaurus_KICK_OSC2_PITCH_DECAY:
-				parameter.name = "stegosaurus_KICK_OSC2_PITCH_DECAY";
-				parameter.symbol = "stegosaurus_KICK_OSC2_PITCH_DECAY";
-				parameter.ranges.def = 0.7004f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 1.0f;
-				fParameters[stegosaurus_KICK_OSC2_PITCH_DECAY] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_KICK_OSC2_PITCH_DECAY", index, 0.0f, 1.0f, 0.7004f);
 				break;
-				
 			case stegosaurus_KICK_OSC2_PITCH_SUSTAIN:
-				parameter.name = "stegosaurus_KICK_OSC2_PITCH_SUSTAIN";
-				parameter.symbol = "stegosaurus_KICK_OSC2_PITCH_SUSTAIN";
-				parameter.ranges.def = 1.0f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 1.0f;
-				fParameters[stegosaurus_KICK_OSC2_PITCH_SUSTAIN] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_KICK_OSC2_PITCH_SUSTAIN", index, 0.0f, 1.0f, 1.0f);
 				break;
-				
 			case stegosaurus_KICK_OSC2_PITCH_RELEASE:
-				parameter.name = "stegosaurus_KICK_OSC2_PITCH_RELEASE";
-				parameter.symbol = "stegosaurus_KICK_OSC2_PITCH_RELEASE";
-				parameter.ranges.def = 0.2717f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 1.0f;
-				fParameters[stegosaurus_KICK_OSC2_PITCH_RELEASE] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_KICK_OSC2_PITCH_RELEASE", index, 0.0f, 1.0f, 0.2717f);
 				break;
-				
 			case stegosaurus_KICK_OSC2_PITCH_ADSR2:
-				parameter.name = "stegosaurus_KICK_OSC2_PITCH_ADSR2";
-				parameter.symbol = "stegosaurus_KICK_OSC2_PITCH_ADSR2";
-				parameter.ranges.def = 1.6204f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 2.0f;
-				fParameters[stegosaurus_KICK_OSC2_PITCH_ADSR2] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_KICK_OSC2_PITCH_ADSR2", index, 0.0f, 2.0f, 1.6204f);
+				break;
+			case stegosaurus_KICK_OSC2_VOLUME:
+				set_param (parameter, "stegosaurus_KICK_OSC2_VOLUME", index, 0.0f, 1.0f, 0.4120f);
 				break;
 				
-			case stegosaurus_KICK_OSC2_VOLUME:
-				parameter.name = "stegosaurus_KICK_OSC2_VOLUME";
-				parameter.symbol = "stegosaurus_KICK_OSC2_VOLUME";
-				parameter.ranges.def = 0.4120f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 1.0f;
-				fParameters[stegosaurus_KICK_OSC2_VOLUME] = parameter.ranges.def;
+			case stegosaurus_KICK_OSC3_PITCH:
+				set_param (parameter, "stegosaurus_KICK_OSC3_PITCH", index, 0.0f, 1.0f, 0.0f);
+				break;
+			case stegosaurus_KICK_OSC3_VOLUME:
+				set_param (parameter, "stegosaurus_KICK_OSC3_VOLUME", index, 0.0f, 1.0f, 0.0f);
 				break;
 				
 			// SNARE DRUM ------------------------------------
@@ -284,239 +213,92 @@ class stegosaurus : public Plugin
 			// OSCILLATOR ONE
 				
 			case stegosaurus_SNARE_OSC1_ACTIVE:
-				parameter.name = "stegosaurus_SNARE_OSC1_ACTIVE";
-				parameter.symbol = "stegosaurus_SNARE_OSC1_ACTIVE";
-				parameter.ranges.def = 1.0f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 1.0f;
-				fParameters[stegosaurus_SNARE_OSC1_ACTIVE] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_SNARE_OSC1_ACTIVE", index, 0.0f, 1.0f, 1.0f);
 				break;
-				
 			case stegosaurus_SNARE_OSC1_NOISE:
-				parameter.name = "stegosaurus_SNARE_OSC1_NOISE";
-				parameter.symbol = "stegosaurus_SNARE_OSC1_NOISE";
-				parameter.ranges.def = 0.3704f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 1.0f;
-				fParameters[stegosaurus_SNARE_OSC1_NOISE] = parameter.ranges.def;
-				break;
-				
+				set_param (parameter, "stegosaurus_SNARE_OSC1_NOISE", index, 0.0f, 1.0f, 0.24f);
+				break;			
 			case stegosaurus_SNARE_OSC1_PITCH:
-				parameter.name = "stegosaurus_SNARE_OSC1_PITCH";
-				parameter.symbol = "stegosaurus_SNARE_OSC1_PITCH";
-				parameter.ranges.def = 1.9074f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 2.0f;
-				fParameters[stegosaurus_SNARE_OSC1_PITCH] = parameter.ranges.def;
-				break;
-				
+				set_param (parameter, "stegosaurus_SNARE_OSC1_PITCH", index, 0.0f, 2.0f, 1.9074f);
+				break;	
 			case stegosaurus_SNARE_OSC1_AMP_ATTACK:
-				parameter.name = "stegosaurus_SNARE_OSC1_AMP_ATTACK";
-				parameter.symbol = "stegosaurus_SNARE_OSC1_AMP_ATTACK";
-				parameter.ranges.def = 1.0f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 1.0f;
-				fParameters[stegosaurus_SNARE_OSC1_AMP_ATTACK] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_SNARE_OSC1_AMP_ATTACK", index, 0.0f, 2.0f, 1.0f);
 				break;
-				
 			case stegosaurus_SNARE_OSC1_AMP_DECAY:
-				parameter.name = "stegosaurus_SNARE_OSC1_AMP_DECAY";
-				parameter.symbol = "stegosaurus_SNARE_OSC1_AMP_DECAY";
-				parameter.ranges.def = 0.3878f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 1.0f;
-				fParameters[stegosaurus_SNARE_OSC1_AMP_DECAY] = parameter.ranges.def;
-				break;
-				
+				set_param (parameter, "stegosaurus_SNARE_OSC1_AMP_DECAY", index, 0.0f, 1.0f, 0.3878f);
+				break;	
 			case stegosaurus_SNARE_OSC1_AMP_SUSTAIN:
-				parameter.name = "stegosaurus_SNARE_OSC1_AMP_SUSTAIN";
-				parameter.symbol = "stegosaurus_SNARE_OSC1_AMP_SUSTAIN";
-				parameter.ranges.def = 1.0f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 1.0f;
-				fParameters[stegosaurus_SNARE_OSC1_AMP_SUSTAIN] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_SNARE_OSC1_AMP_SUSTAIN", index, 0.0f, 1.0f, 1.0f);
 				break;
-				
 			case stegosaurus_SNARE_OSC1_AMP_RELEASE:
-				parameter.name = "stegosaurus_SNARE_OSC1_AMP_RELEASE";
-				parameter.symbol = "stegosaurus_SNARE_OSC1_AMP_RELEASE";
-				parameter.ranges.def = 0.3848f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 1.0f;
-				fParameters[stegosaurus_SNARE_OSC1_AMP_RELEASE] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_SNARE_OSC1_AMP_RELEASE", index, 0.0f, 1.0f, 0.3848f);
 				break;
-				
 			case stegosaurus_SNARE_OSC1_PITCH_ATTACK:
-				parameter.name = "stegosaurus_SNARE_OSC1_PITCH_ATTACK";
-				parameter.symbol = "stegosaurus_SNARE_OSC1_PITCH_ATTACK";
-				parameter.ranges.def = 1.0f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 1.0f;
-				fParameters[stegosaurus_SNARE_OSC1_PITCH_ATTACK] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_SNARE_OSC1_PITCH_ATTACK", index, 0.0f, 1.0f, 1.0f);
 				break;
-				
 			case stegosaurus_SNARE_OSC1_PITCH_DECAY:
-				parameter.name = "stegosaurus_SNARE_OSC1_PITCH_DECAY";
-				parameter.symbol = "stegosaurus_SNARE_OSC1_PITCH_DECAY";
-				parameter.ranges.def = 0.0f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 1.0f;
-				fParameters[stegosaurus_SNARE_OSC1_PITCH_DECAY] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_SNARE_OSC1_PITCH_DECAY", index, 0.0f, 1.0f, 0.0f);
 				break;
-				
 			case stegosaurus_SNARE_OSC1_PITCH_SUSTAIN:
-				parameter.name = "stegosaurus_SNARE_OSC1_PITCH_SUSTAIN";
-				parameter.symbol = "stegosaurus_SNARE_OSC1_PITCH_SUSTAIN";
-				parameter.ranges.def = 0.0f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 1.0f;
-				fParameters[stegosaurus_SNARE_OSC1_PITCH_SUSTAIN] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_SNARE_OSC1_PITCH_SUSTAIN", index, 0.0f, 1.0f, 0.0f);
 				break;
-				
 			case stegosaurus_SNARE_OSC1_PITCH_RELEASE:
-				parameter.name = "stegosaurus_SNARE_OSC1_PITCH_RELEASE";
-				parameter.symbol = "stegosaurus_SNARE_OSC1_PITCH_RELEASE";
-				parameter.ranges.def = 0.1087f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 2.0f;
-				fParameters[stegosaurus_SNARE_OSC1_PITCH_RELEASE] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_SNARE_OSC1_PITCH_RELEASE", index, 0.0f, 2.0f, 0.1087f);
 				break;
-				
 			case stegosaurus_SNARE_OSC1_PITCH_ADSR2:
-				parameter.name = "stegosaurus_SNARE_OSC1_PITCH_ADSR2";
-				parameter.symbol = "stegosaurus_SNARE_OSC1_PITCH_ADSR2";
-				parameter.ranges.def = 1.9074f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 2.0f;
-				fParameters[stegosaurus_SNARE_OSC1_PITCH_ADSR2] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_SNARE_OSC1_PITCH_ADSR2", index, 0.0f, 2.0f, 1.9074f);
 				break;
-				
 			case stegosaurus_SNARE_OSC1_VOLUME:
-				parameter.name = "stegosaurus_SNARE_OSC1_VOLUME";
-				parameter.symbol = "stegosaurus_SNARE_OSC1_VOLUME";
-				parameter.ranges.def = 0.2519;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 1.0f;
-				fParameters[stegosaurus_SNARE_OSC1_VOLUME] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_SNARE_OSC1_PITCH_ADSR2", index, 0.0f, 1.0f, 0.2519f);
 				break;
 				
 			// OSCILLATOR TWO
 				
 			case stegosaurus_SNARE_OSC2_ACTIVE:
-				parameter.name = "stegosaurus_SNARE_OSC2_ACTIVE";
-				parameter.symbol = "stegosaurus_SNARE_OSC2_ACTIVE";
-				parameter.ranges.def = 1.0f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 1.0f;
-				fParameters[stegosaurus_SNARE_OSC2_ACTIVE] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_SNARE_OSC2_ACTIVE", index, 0.0f, 1.0f, 1.0f);
 				break;
-				
 			case stegosaurus_SNARE_OSC2_NOISE:
-				parameter.name = "stegosaurus_SNARE_OSC2_NOISE";
-				parameter.symbol = "stegosaurus_SNARE_OSC2_NOISE";
-				parameter.ranges.def = 0.0f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 1.0f;
-				fParameters[stegosaurus_SNARE_OSC2_NOISE] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_SNARE_OSC2_NOISE", index, 0.0f, 1.0f, 0.0f);
 				break;
-				
 			case stegosaurus_SNARE_OSC2_PITCH:
-				parameter.name = "stegosaurus_SNARE_OSC2_PITCH";
-				parameter.symbol = "stegosaurus_SNARE_OSC2_PITCH";
-				parameter.ranges.def = 0.0348f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 2.0f;
-				fParameters[stegosaurus_SNARE_OSC2_PITCH] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_SNARE_OSC2_PITCH", index, 0.0f, 2.0f, 0.0348f);
 				break;
-				
 			case stegosaurus_SNARE_OSC2_AMP_ATTACK:
-				parameter.name = "stegosaurus_SNARE_OSC2_AMP_ATTACK";
-				parameter.symbol = "stegosaurus_SNARE_OSC2_AMP_ATTACK";
-				parameter.ranges.def = 1.0f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 1.0f;
-				fParameters[stegosaurus_SNARE_OSC2_AMP_ATTACK] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_SNARE_OSC2_AMP_ATTACK", index, 0.0f, 1.0f, 1.0f);
 				break;
-				
 			case stegosaurus_SNARE_OSC2_AMP_DECAY:
-				parameter.name = "stegosaurus_SNARE_OSC2_AMP_DECAY";
-				parameter.symbol = "stegosaurus_SNARE_OSC2_AMP_DECAY";
-				parameter.ranges.def = 0.4f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 1.0f;
-				fParameters[stegosaurus_SNARE_OSC2_AMP_DECAY] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_SNARE_OSC2_AMP_DECAY", index, 0.0f, 1.0f, 0.4f);
 				break;
-				
 			case stegosaurus_SNARE_OSC2_AMP_SUSTAIN:
-				parameter.name = "stegosaurus_SNARE_OSC2_AMP_SUSTAIN";
-				parameter.symbol = "stegosaurus_SNARE_OSC2_AMP_SUSTAIN";
-				parameter.ranges.def = 0.46f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 1.0f;
-				fParameters[stegosaurus_SNARE_OSC2_AMP_SUSTAIN] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_SNARE_OSC2_AMP_SUSTAIN", index, 0.0f, 1.0f, 0.64f);
 				break;
-				
 			case stegosaurus_SNARE_OSC2_AMP_RELEASE:
-				parameter.name = "stegosaurus_SNARE_OSC2_AMP_RELEASE";
-				parameter.symbol = "stegosaurus_SNARE_OSC2_AMP_RELEASE";
-				parameter.ranges.def = 0.3887f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 1.0f;
-				fParameters[stegosaurus_SNARE_OSC2_AMP_RELEASE] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_SNARE_OSC2_AMP_RELEASE", index, 0.0f, 1.0f, 0.3887f);
 				break;
-				
 			case stegosaurus_SNARE_OSC2_PITCH_ATTACK:
-				parameter.name = "stegosaurus_SNARE_OSC2_PITCH_ATTACK";
-				parameter.symbol = "stegosaurus_SNARE_OSC2_PITCH_ATTACK";
-				parameter.ranges.def = 1.0f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 1.0f;
-				fParameters[stegosaurus_SNARE_OSC2_PITCH_ATTACK] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_SNARE_OSC2_PITCH_ATTACK", index, 0.0f, 1.0f, 1.0f);
 				break;
-				
 			case stegosaurus_SNARE_OSC2_PITCH_DECAY:
-				parameter.name = "stegosaurus_SNARE_OSC2_PITCH_DECAY";
-				parameter.symbol = "stegosaurus_SNARE_OSC2_PITCH_DECAY";
-				parameter.ranges.def = 0.4f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 1.0f;
-				fParameters[stegosaurus_SNARE_OSC2_PITCH_DECAY] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_SNARE_OSC2_PITCH_DECAY", index, 0.0f, 1.0f, 0.4f);
 				break;
-				
 			case stegosaurus_SNARE_OSC2_PITCH_SUSTAIN:
-				parameter.name = "stegosaurus_SNARE_OSC2_PITCH_SUSTAIN";
-				parameter.symbol = "stegosaurus_SNARE_OSC2_PITCH_SUSTAIN";
-				parameter.ranges.def = 1.0f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 1.0f;
-				fParameters[stegosaurus_SNARE_OSC2_PITCH_SUSTAIN] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_SNARE_OSC2_PITCH_SUSTAIN", index, 0.0f, 1.0f, 1.0f);
 				break;
-				
 			case stegosaurus_SNARE_OSC2_PITCH_RELEASE:
-				parameter.name = "stegosaurus_SNARE_OSC2_PITCH_RELEASE";
-				parameter.symbol = "stegosaurus_SNARE_OSC2_PITCH_RELEASE";
-				parameter.ranges.def = 0.39022f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 1.0f;
-				fParameters[stegosaurus_SNARE_OSC2_PITCH_RELEASE] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_SNARE_OSC2_PITCH_RELEASE", index, 0.0f, 1.0f, 0.39022f);
 				break;
-				
 			case stegosaurus_SNARE_OSC2_PITCH_ADSR2:
-				parameter.name = "stegosaurus_SNARE_OSC2_PITCH_ADSR2";
-				parameter.symbol = "stegosaurus_SNARE_OSC2_PITCH_ADSR2";
-				parameter.ranges.def = 0.0348f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 2.0f;
-				fParameters[stegosaurus_SNARE_OSC2_PITCH_ADSR2] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_SNARE_OSC2_PITCH_ADSR2", index, 0.0f, 2.0f, 0.0348f);
+				break;
+			case stegosaurus_SNARE_OSC2_VOLUME:
+				set_param (parameter, "stegosaurus_SNARE_OSC2_VOLUME", index, 0.0f, 1.0f, 0.6387f);
 				break;
 				
-			case stegosaurus_SNARE_OSC2_VOLUME:
-				parameter.name = "stegosaurus_SNARE_OSC2_VOLUME";
-				parameter.symbol = "stegosaurus_SNARE_OSC2_VOLUME";
-				parameter.ranges.def = 0.6387f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 1.0f;
-				fParameters[stegosaurus_SNARE_OSC2_VOLUME] = parameter.ranges.def;
+			case stegosaurus_SNARE_OSC3_PITCH:
+				set_param (parameter, "stegosaurus_SNARE_OSC3_PITCH", index, 0.0f, 1.0f, 0.0f);
+				break;
+			case stegosaurus_SNARE_OSC3_VOLUME:
+				set_param (parameter, "stegosaurus_SNARE_OSC3_VOLUME", index, 0.0f, 1.0f, 0.0f);
 				break;
 				
 			// CLOSED HAT DRUM ------------------------------------
@@ -524,239 +306,92 @@ class stegosaurus : public Plugin
 			// OSCILLATOR ONE
 				
 			case stegosaurus_CLHAT_OSC1_ACTIVE:
-				parameter.name = "stegosaurus_CLHAT_OSC1_ACTIVE";
-				parameter.symbol = "stegosaurus_CLHAT_OSC1_ACTIVE";
-				parameter.ranges.def = 1.0f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 1.0f;
-				fParameters[stegosaurus_CLHAT_OSC1_ACTIVE] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_CLHAT_OSC1_ACTIVE", index, 0.0f, 1.0f, 1.0f);
 				break;
-				
 			case stegosaurus_CLHAT_OSC1_NOISE:
-				parameter.name = "stegosaurus_CLHAT_OSC1_NOISE";
-				parameter.symbol = "stegosaurus_CLHAT_OSC1_NOISE";
-				parameter.ranges.def = 0.0f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 1.0f;
-				fParameters[stegosaurus_CLHAT_OSC1_NOISE] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_CLHAT_OSC1_NOISE", index, 0.0f, 1.0f, 0.0f);
 				break;
-				
 			case stegosaurus_CLHAT_OSC1_PITCH:
-				parameter.name = "stegosaurus_CLHAT_OSC1_PITCH";
-				parameter.symbol = "stegosaurus_CLHAT_OSC1_PITCH";
-				parameter.ranges.def = 1.6111f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 2.0f;
-				fParameters[stegosaurus_CLHAT_OSC1_PITCH] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_CLHAT_OSC1_PITCH", index, 0.0f, 2.0f, 1.6111f);
 				break;
-				
 			case stegosaurus_CLHAT_OSC1_AMP_ATTACK:
-				parameter.name = "stegosaurus_CLHAT_OSC1_AMP_ATTACK";
-				parameter.symbol = "stegosaurus_CLHAT_OSC1_AMP_ATTACK";
-				parameter.ranges.def = 1.0f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 1.0f;
-				fParameters[stegosaurus_CLHAT_OSC1_AMP_ATTACK] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_CLHAT_OSC1_AMP_ATTACK", index, 0.0f, 2.0f, 1.0f);
 				break;
-				
 			case stegosaurus_CLHAT_OSC1_AMP_DECAY:
-				parameter.name = "stegosaurus_CLHAT_OSC1_AMP_DECAY";
-				parameter.symbol = "stegosaurus_CLHAT_OSC1_AMP_DECAY";
-				parameter.ranges.def = 0.4465f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 1.0f;
-				fParameters[stegosaurus_CLHAT_OSC1_AMP_DECAY] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_CLHAT_OSC1_AMP_DECAY", index, 0.0f, 1.0f, 0.4465f);
 				break;
-				
 			case stegosaurus_CLHAT_OSC1_AMP_SUSTAIN:
-				parameter.name = "stegosaurus_CLHAT_OSC1_AMP_SUSTAIN";
-				parameter.symbol = "stegosaurus_CLHAT_OSC1_AMP_SUSTAIN";
-				parameter.ranges.def = 1.0f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 1.0f;
-				fParameters[stegosaurus_CLHAT_OSC1_AMP_SUSTAIN] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_CLHAT_OSC1_AMP_SUSTAIN", index, 0.0f, 1.0f, 1.0f);
 				break;
-				
 			case stegosaurus_CLHAT_OSC1_AMP_RELEASE:
-				parameter.name = "stegosaurus_CLHAT_OSC1_AMP_RELEASE";
-				parameter.symbol = "stegosaurus_CLHAT_OSC1_AMP_RELEASE";
-				parameter.ranges.def = 0.98f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 1.0f;
-				fParameters[stegosaurus_CLHAT_OSC1_AMP_RELEASE] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_CLHAT_OSC1_AMP_RELEASE", index, 0.0f, 1.0f, 0.98f);
 				break;
-				
 			case stegosaurus_CLHAT_OSC1_PITCH_ATTACK:
-				parameter.name = "stegosaurus_CLHAT_OSC1_PITCH_ATTACK";
-				parameter.symbol = "stegosaurus_CLHAT_OSC1_PITCH_ATTACK";
-				parameter.ranges.def = 1.0f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 1.0f;
-				fParameters[stegosaurus_CLHAT_OSC1_PITCH_ATTACK] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_CLHAT_OSC1_PITCH_ATTACK", index, 0.0f, 1.0f, 1.0f);
 				break;
-				
 			case stegosaurus_CLHAT_OSC1_PITCH_DECAY:
-				parameter.name = "stegosaurus_CLHAT_OSC1_PITCH_DECAY";
-				parameter.symbol = "stegosaurus_CLHAT_OSC1_PITCH_DECAY";
-				parameter.ranges.def = 0.0f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 1.0f;
-				fParameters[stegosaurus_CLHAT_OSC1_PITCH_DECAY] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_CLHAT_OSC1_PITCH_DECAY", index, 0.0f, 1.0f, 0.0f);
 				break;
-				
 			case stegosaurus_CLHAT_OSC1_PITCH_SUSTAIN:
-				parameter.name = "stegosaurus_CLHAT_OSC1_PITCH_SUSTAIN";
-				parameter.symbol = "stegosaurus_CLHAT_OSC1_PITCH_SUSTAIN";
-				parameter.ranges.def = 0.0f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 1.0f;
-				fParameters[stegosaurus_CLHAT_OSC1_PITCH_SUSTAIN] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_CLHAT_OSC1_PITCH_SUSTAIN", index, 0.0f, 1.0f, 0.0f);
 				break;
-				
 			case stegosaurus_CLHAT_OSC1_PITCH_RELEASE:
-				parameter.name = "stegosaurus_CLHAT_OSC1_PITCH_RELEASE";
-				parameter.symbol = "stegosaurus_CLHAT_OSC1_PITCH_RELEASE";
-				parameter.ranges.def = 1.0f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 1.0f;
-				fParameters[stegosaurus_CLHAT_OSC1_PITCH_RELEASE] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_CLHAT_OSC1_PITCH_RELEASE", index, 0.0f, 1.0f, 1.0f);
 				break;
-				
 			case stegosaurus_CLHAT_OSC1_PITCH_ADSR2:
-				parameter.name = "stegosaurus_CLHAT_OSC1_PITCH_ADSR2";
-				parameter.symbol = "stegosaurus_CLHAT_OSC1_PITCH_ADSR2";
-				parameter.ranges.def = 1.6111f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 2.0f;
-				fParameters[stegosaurus_CLHAT_OSC1_PITCH_ADSR2] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_CLHAT_OSC1_PITCH_ADSR2", index, 0.0f, 2.0f, 1.6111f);
 				break;
-				
 			case stegosaurus_CLHAT_OSC1_VOLUME:
-				parameter.name = "stegosaurus_CLHAT_OSC1_VOLUME";
-				parameter.symbol = "stegosaurus_CLHAT_OSC1_VOLUME";
-				parameter.ranges.def = 0.5874f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 1.0f;
-				fParameters[stegosaurus_CLHAT_OSC1_VOLUME] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_CLHAT_OSC1_VOLUME", index, 0.0f, 1.0f, 0.5874f);
 				break;
 
 			// OSCILLATOR TWO
 				
 			case stegosaurus_CLHAT_OSC2_ACTIVE:
-				parameter.name = "stegosaurus_CLHAT_OSC2_ACTIVE";
-				parameter.symbol = "stegosaurus_CLHAT_OSC2_ACTIVE";
-				parameter.ranges.def = 0.0f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 1.0f;
-				fParameters[stegosaurus_CLHAT_OSC2_ACTIVE] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_CLHAT_OSC2_ACTIVE", index, 0.0f, 1.0f, 0.0f);
 				break;
-				
 			case stegosaurus_CLHAT_OSC2_NOISE:
-				parameter.name = "stegosaurus_CLHAT_OSC2_NOISE";
-				parameter.symbol = "stegosaurus_CLHAT_OSC2_NOISE";
-				parameter.ranges.def = 0.0f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 1.0f;
-				fParameters[stegosaurus_CLHAT_OSC2_NOISE] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_CLHAT_OSC2_NOISE", index, 0.0f, 1.0f, 0.0f);
 				break;
-				
 			case stegosaurus_CLHAT_OSC2_PITCH:
-				parameter.name = "stegosaurus_CLHAT_OSC2_PITCH";
-				parameter.symbol = "stegosaurus_CLHAT_OSC2_PITCH";
-				parameter.ranges.def = 0.0f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 2.0f;
-				fParameters[stegosaurus_CLHAT_OSC2_PITCH] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_CLHAT_OSC2_PITCH", index, 0.0f, 2.0f, 0.0f);
 				break;
-				
 			case stegosaurus_CLHAT_OSC2_AMP_ATTACK:
-				parameter.name = "stegosaurus_CLHAT_OSC2_AMP_ATTACK";
-				parameter.symbol = "stegosaurus_CLHAT_OSC2_AMP_ATTACK";
-				parameter.ranges.def = 1.0f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 1.0f;
-				fParameters[stegosaurus_CLHAT_OSC2_AMP_ATTACK] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_CLHAT_OSC2_AMP_ATTACK", index, 0.0f, 1.0f, 0.0f);
 				break;
-				
 			case stegosaurus_CLHAT_OSC2_AMP_DECAY:
-				parameter.name = "stegosaurus_CLHAT_OSC2_AMP_DECAY";
-				parameter.symbol = "stegosaurus_CLHAT_OSC2_AMP_DECAY";
-				parameter.ranges.def = 1.0f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 1.0f;
-				fParameters[stegosaurus_CLHAT_OSC2_AMP_DECAY] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_CLHAT_OSC2_AMP_DECAY", index, 0.0f, 1.0f, 1.0f);
 				break;
-				
 			case stegosaurus_CLHAT_OSC2_AMP_SUSTAIN:
-				parameter.name = "stegosaurus_CLHAT_OSC2_AMP_SUSTAIN";
-				parameter.symbol = "stegosaurus_CLHAT_OSC2_AMP_SUSTAIN";
-				parameter.ranges.def = 1.0f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 1.0f;
-				fParameters[stegosaurus_CLHAT_OSC2_AMP_SUSTAIN] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_CLHAT_OSC2_AMP_SUSTAIN", index, 0.0f, 1.0f, 1.0f);
 				break;
-				
 			case stegosaurus_CLHAT_OSC2_AMP_RELEASE:
-				parameter.name = "stegosaurus_CLHAT_OSC2_AMP_RELEASE";
-				parameter.symbol = "stegosaurus_CLHAT_OSC2_AMP_RELEASE";
-				parameter.ranges.def = 1.0f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 1.0f;
-				fParameters[stegosaurus_CLHAT_OSC2_AMP_RELEASE] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_CLHAT_OSC2_AMP_RELEASE", index, 0.0f, 1.0f, 1.0f);
 				break;
-				
 			case stegosaurus_CLHAT_OSC2_PITCH_ATTACK:
-				parameter.name = "stegosaurus_CLHAT_OSC2_PITCH_ATTACK";
-				parameter.symbol = "stegosaurus_CLHAT_OSC2_PITCH_ATTACK";
-				parameter.ranges.def = 1.0f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 1.0f;
-				fParameters[stegosaurus_CLHAT_OSC2_PITCH_ATTACK] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_CLHAT_OSC2_PITCH_ATTACK", index, 0.0f, 1.0f, 1.0f);
 				break;
-				
 			case stegosaurus_CLHAT_OSC2_PITCH_DECAY:
-				parameter.name = "stegosaurus_CLHAT_OSC2_PITCH_DECAY";
-				parameter.symbol = "stegosaurus_CLHAT_OSC2_PITCH_DECAY";
-				parameter.ranges.def = 1.0f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 1.0f;
-				fParameters[stegosaurus_CLHAT_OSC2_PITCH_DECAY] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_CLHAT_OSC2_PITCH_DECAY", index, 0.0f, 1.0f, 1.0f);
 				break;
-				
 			case stegosaurus_CLHAT_OSC2_PITCH_SUSTAIN:
-				parameter.name = "stegosaurus_CLHAT_OSC2_PITCH_SUSTAIN";
-				parameter.symbol = "stegosaurus_CLHAT_OSC2_PITCH_SUSTAIN";
-				parameter.ranges.def = 1.0f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 1.0f;
-				fParameters[stegosaurus_CLHAT_OSC2_PITCH_SUSTAIN] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_CLHAT_OSC2_PITCH_SUSTAIN", index, 0.0f, 1.0f, 1.0f);
 				break;
-				
 			case stegosaurus_CLHAT_OSC2_PITCH_RELEASE:
-				parameter.name = "stegosaurus_CLHAT_OSC2_PITCH_RELEASE";
-				parameter.symbol = "stegosaurus_CLHAT_OSC2_PITCH_RELEASE";
-				parameter.ranges.def = 1.0f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 1.0f;
-				fParameters[stegosaurus_CLHAT_OSC2_PITCH_RELEASE] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_CLHAT_OSC2_PITCH_RELEASE", index, 0.0f, 1.0f, 1.0f);
 				break;
-				
 			case stegosaurus_CLHAT_OSC2_PITCH_ADSR2:
-				parameter.name = "stegosaurus_CLHAT_OSC2_PITCH_ADSR2";
-				parameter.symbol = "stegosaurus_CLHAT_OSC2_PITCH_ADSR2";
-				parameter.ranges.def = 0.0f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 2.0f;
-				fParameters[stegosaurus_CLHAT_OSC2_PITCH_ADSR2] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_CLHAT_OSC2_PITCH_ADSR2", index, 0.0f, 2.0f, 0.0f);
+				break;
+			case stegosaurus_CLHAT_OSC2_VOLUME:
+				set_param (parameter, "stegosaurus_CLHAT_OSC2_VOLUME", index, 0.0f, 1.0f, 0.0f);
 				break;
 				
-			case stegosaurus_CLHAT_OSC2_VOLUME:
-				parameter.name = "stegosaurus_CLHAT_OSC2_VOLUME";
-				parameter.symbol = "stegosaurus_CLHAT_OSC2_VOLUME";
-				parameter.ranges.def = 0.0f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 1.0f;
-				fParameters[stegosaurus_CLHAT_OSC2_VOLUME] = parameter.ranges.def;
+			case stegosaurus_CLHAT_OSC3_PITCH:
+				set_param (parameter, "stegosaurus_CLHAT_OSC3_PITCH", index, 0.0f, 1.0f, 0.0f);
+				break;
+			case stegosaurus_CLHAT_OSC3_VOLUME:
+				set_param (parameter, "stegosaurus_CLHAT_OSC3_VOLUME", index, 0.0f, 1.0f, 0.0f);
 				break;
 
 
@@ -765,239 +400,92 @@ class stegosaurus : public Plugin
 			// OSCILLATOR ONE
 				
 			case stegosaurus_OPHAT_OSC1_ACTIVE:
-				parameter.name = "stegosaurus_OPHAT_OSC1_ACTIVE";
-				parameter.symbol = "stegosaurus_OPHAT_OSC1_ACTIVE";
-				parameter.ranges.def = 1.0f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 1.0f;
-				fParameters[stegosaurus_OPHAT_OSC1_ACTIVE] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_OPHAT_OSC1_ACTIVE", index, 0.0f, 1.0f, 1.0f);
 				break;
-				
 			case stegosaurus_OPHAT_OSC1_NOISE:
-				parameter.name = "stegosaurus_OPHAT_OSC1_NOISE";
-				parameter.symbol = "stegosaurus_OPHAT_OSC1_NOISE";
-				parameter.ranges.def = 0.1f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 1.0f;
-				fParameters[stegosaurus_OPHAT_OSC1_NOISE] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_OPHAT_OSC1_NOISE", index, 0.0f, 1.0f, 0.1f);
 				break;
-				
 			case stegosaurus_OPHAT_OSC1_PITCH:
-				parameter.name = "stegosaurus_OPHAT_OSC1_PITCH";
-				parameter.symbol = "stegosaurus_OPHAT_OSC1_PITCH";
-				parameter.ranges.def = 1.6407f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 2.0f;
-				fParameters[stegosaurus_OPHAT_OSC1_PITCH] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_OPHAT_OSC1_PITCH", index, 0.0f, 2.0f, 1.6407f);
 				break;
-				
 			case stegosaurus_OPHAT_OSC1_AMP_ATTACK:
-				parameter.name = "stegosaurus_OPHAT_OSC1_AMP_ATTACK";
-				parameter.symbol = "stegosaurus_OPHAT_OSC1_AMP_ATTACK";
-				parameter.ranges.def = 0.8126f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 1.0f;
-				fParameters[stegosaurus_OPHAT_OSC1_AMP_ATTACK] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_OPHAT_OSC1_AMP_ATTACK", index, 0.0f, 1.0f, 0.8126f);
 				break;
-				
 			case stegosaurus_OPHAT_OSC1_AMP_DECAY:
-				parameter.name = "stegosaurus_OPHAT_OSC1_AMP_DECAY";
-				parameter.symbol = "stegosaurus_OPHAT_OSC1_AMP_DECAY";
-				parameter.ranges.def = 0.3278f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 1.0f;
-				fParameters[stegosaurus_OPHAT_OSC1_AMP_DECAY] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_OPHAT_OSC1_AMP_DECAY", index, 0.0f, 1.0f, 0.3278f);
 				break;
-				
 			case stegosaurus_OPHAT_OSC1_AMP_SUSTAIN:
-				parameter.name = "stegosaurus_OPHAT_OSC1_AMP_SUSTAIN";
-				parameter.symbol = "stegosaurus_OPHAT_OSC1_AMP_SUSTAIN";
-				parameter.ranges.def = 0.76f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 1.0f;
-				fParameters[stegosaurus_OPHAT_OSC1_AMP_SUSTAIN] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_OPHAT_OSC1_AMP_SUSTAIN", index, 0.0f, 1.0f, 0.76f);
 				break;
-				
 			case stegosaurus_OPHAT_OSC1_AMP_RELEASE:
-				parameter.name = "stegosaurus_OPHAT_OSC1_AMP_RELEASE";
-				parameter.symbol = "stegosaurus_OPHAT_OSC1_AMP_RELEASE";
-				parameter.ranges.def = 0.3496f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 1.0f;
-				fParameters[stegosaurus_OPHAT_OSC1_AMP_RELEASE] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_OPHAT_OSC1_AMP_RELEASE", index, 0.0f, 1.0f, 0.3496f);
 				break;
-				
 			case stegosaurus_OPHAT_OSC1_PITCH_ATTACK:
-				parameter.name = "stegosaurus_OPHAT_OSC1_PITCH_ATTACK";
-				parameter.symbol = "stegosaurus_OPHAT_OSC1_PITCH_ATTACK";
-				parameter.ranges.def = 1.0f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 1.0f;
-				fParameters[stegosaurus_OPHAT_OSC1_PITCH_ATTACK] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_OPHAT_OSC1_PITCH_ATTACK", index, 0.0f, 1.0f, 0.0f);
 				break;
-				
 			case stegosaurus_OPHAT_OSC1_PITCH_DECAY:
-				parameter.name = "stegosaurus_OPHAT_OSC1_PITCH_DECAY";
-				parameter.symbol = "stegosaurus_OPHAT_OSC1_PITCH_DECAY";
-				parameter.ranges.def = 0.0f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 1.0f;
-				fParameters[stegosaurus_OPHAT_OSC1_PITCH_DECAY] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_OPHAT_OSC1_PITCH_DECAY", index, 0.0f, 1.0f, 0.0f);
 				break;
-				
 			case stegosaurus_OPHAT_OSC1_PITCH_SUSTAIN:
-				parameter.name = "stegosaurus_OPHAT_OSC1_PITCH_SUSTAIN";
-				parameter.symbol = "stegosaurus_OPHAT_OSC1_PITCH_SUSTAIN";
-				parameter.ranges.def = 0.0f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 1.0f;
-				fParameters[stegosaurus_OPHAT_OSC1_PITCH_SUSTAIN] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_OPHAT_OSC1_PITCH_SUSTAIN", index, 0.0f, 1.0f, 0.0f);
 				break;
-				
 			case stegosaurus_OPHAT_OSC1_PITCH_RELEASE:
-				parameter.name = "stegosaurus_OPHAT_OSC1_PITCH_RELEASE";
-				parameter.symbol = "stegosaurus_OPHAT_OSC1_PITCH_RELEASE";
-				parameter.ranges.def = 0.1522f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 1.0f;
-				fParameters[stegosaurus_OPHAT_OSC1_PITCH_RELEASE] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_OPHAT_OSC1_PITCH_RELEASE", index, 0.0f, 1.0f, 0.1522f);
 				break;
-				
 			case stegosaurus_OPHAT_OSC1_PITCH_ADSR2:
-				parameter.name = "stegosaurus_OPHAT_OSC1_PITCH_ADSR2";
-				parameter.symbol = "stegosaurus_OPHAT_OSC1_PITCH_ADSR2";
-				parameter.ranges.def = 1.6407f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 2.0f;
-				fParameters[stegosaurus_OPHAT_OSC1_PITCH_ADSR2] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_OPHAT_OSC1_PITCH_ADSR2", index, 0.0f, 2.0f, 1.6407f);
 				break;
-				
 			case stegosaurus_OPHAT_OSC1_VOLUME:
-				parameter.name = "stegosaurus_OPHAT_OSC1_VOLUME";
-				parameter.symbol = "stegosaurus_OPHAT_OSC1_VOLUME";
-				parameter.ranges.def = 0.1737f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 1.0f;
-				fParameters[stegosaurus_OPHAT_OSC1_VOLUME] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_OPHAT_OSC1_VOLUME", index, 0.0f, 1.0f, 0.1737f);
 				break;
 				
 			// OSCILLATOR TWO
 				
 			case stegosaurus_OPHAT_OSC2_ACTIVE:
-				parameter.name = "stegosaurus_OPHAT_OSC2_ACTIVE";
-				parameter.symbol = "stegosaurus_OPHAT_OSC2_ACTIVE";
-				parameter.ranges.def = 1.0f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 1.0f;
-				fParameters[stegosaurus_OPHAT_OSC2_ACTIVE] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_OPHAT_OSC2_ACTIVE", index, 0.0f, 1.0f, 1.0f);
 				break;
-				
 			case stegosaurus_OPHAT_OSC2_NOISE:
-				parameter.name = "stegosaurus_OPHAT_OSC2_NOISE";
-				parameter.symbol = "stegosaurus_OPHAT_OSC2_NOISE";
-				parameter.ranges.def = 0.2824f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 1.0f;
-				fParameters[stegosaurus_OPHAT_OSC2_NOISE] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_OPHAT_OSC2_NOISE", index, 0.0f, 1.0f, 0.24f);
 				break;
-				
 			case stegosaurus_OPHAT_OSC2_PITCH:
-				parameter.name = "stegosaurus_OPHAT_OSC2_PITCH";
-				parameter.symbol = "stegosaurus_OPHAT_OSC2_PITCH";
-				parameter.ranges.def = 2.0f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 2.0f;
-				fParameters[stegosaurus_OPHAT_OSC2_PITCH] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_OPHAT_OSC2_PITCH", index, 0.0f, 2.0f, 2.0f);
 				break;
-				
 			case stegosaurus_OPHAT_OSC2_AMP_ATTACK:
-				parameter.name = "stegosaurus_OPHAT_OSC2_AMP_ATTACK";
-				parameter.symbol = "stegosaurus_OPHAT_OSC2_AMP_ATTACK";
-				parameter.ranges.def = 1.0f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 1.0f;
-				fParameters[stegosaurus_OPHAT_OSC2_AMP_ATTACK] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_OPHAT_OSC2_AMP_ATTACK", index, 0.0f, 1.0f, 1.0f);
 				break;
-				
 			case stegosaurus_OPHAT_OSC2_AMP_DECAY:
-				parameter.name = "stegosaurus_OPHAT_OSC2_AMP_DECAY";
-				parameter.symbol = "stegosaurus_OPHAT_OSC2_AMP_DECAY";
-				parameter.ranges.def = 0.4487f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 1.0f;
-				fParameters[stegosaurus_OPHAT_OSC2_AMP_DECAY] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_OPHAT_OSC2_AMP_DECAY", index, 0.0f, 1.0f, 0.4487f);
 				break;
-				
 			case stegosaurus_OPHAT_OSC2_AMP_SUSTAIN:
-				parameter.name = "stegosaurus_OPHAT_OSC2_AMP_SUSTAIN";
-				parameter.symbol = "stegosaurus_OPHAT_OSC2_AMP_SUSTAIN";
-				parameter.ranges.def = 1.0f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 1.0f;
-				fParameters[stegosaurus_OPHAT_OSC2_AMP_SUSTAIN] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_OPHAT_OSC2_AMP_SUSTAIN", index, 0.0f, 1.0f, 1.0f);
 				break;
-				
 			case stegosaurus_OPHAT_OSC2_AMP_RELEASE:
-				parameter.name = "stegosaurus_OPHAT_OSC2_AMP_RELEASE";
-				parameter.symbol = "stegosaurus_OPHAT_OSC2_AMP_RELEASE";
-				parameter.ranges.def = 1.0f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 1.0f;
-				fParameters[stegosaurus_OPHAT_OSC2_AMP_RELEASE] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_OPHAT_OSC2_AMP_RELEASE", index, 0.0f, 1.0f, 1.0f);
 				break;
-				
 			case stegosaurus_OPHAT_OSC2_PITCH_ATTACK:
-				parameter.name = "stegosaurus_OPHAT_OSC2_PITCH_ATTACK";
-				parameter.symbol = "stegosaurus_OPHAT_OSC2_PITCH_ATTACK";
-				parameter.ranges.def = 1.0f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 1.0f;
-				fParameters[stegosaurus_OPHAT_OSC2_PITCH_ATTACK] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_OPHAT_OSC2_PITCH_ATTACK", index, 0.0f, 1.0f, 1.0f);
 				break;
-				
 			case stegosaurus_OPHAT_OSC2_PITCH_DECAY:
-				parameter.name = "stegosaurus_OPHAT_OSC2_PITCH_DECAY";
-				parameter.symbol = "stegosaurus_OPHAT_OSC2_PITCH_DECAY";
-				parameter.ranges.def = 0.0f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 1.0f;
-				fParameters[stegosaurus_OPHAT_OSC2_PITCH_DECAY] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_OPHAT_OSC2_PITCH_DECAY", index, 0.0f, 1.0f, 0.0f);
 				break;
-				
 			case stegosaurus_OPHAT_OSC2_PITCH_SUSTAIN:
-				parameter.name = "stegosaurus_OPHAT_OSC2_PITCH_SUSTAIN";
-				parameter.symbol = "stegosaurus_OPHAT_OSC2_PITCH_SUSTAIN";
-				parameter.ranges.def = 0.0f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 1.0f;
-				fParameters[stegosaurus_OPHAT_OSC2_PITCH_SUSTAIN] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_OPHAT_OSC2_PITCH_SUSTAIN", index, 0.0f, 1.0f, 0.0f);
 				break;
-				
 			case stegosaurus_OPHAT_OSC2_PITCH_RELEASE:
-				parameter.name = "stegosaurus_OPHAT_OSC2_PITCH_RELEASE";
-				parameter.symbol = "stegosaurus_OPHAT_OSC2_PITCH_RELEASE";
-				parameter.ranges.def = 1.0f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 1.0f;
-				fParameters[stegosaurus_OPHAT_OSC2_PITCH_RELEASE] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_OPHAT_OSC2_PITCH_SUSTAIN", index, 0.0f, 1.0f, 1.0f);
 				break;
-				
 			case stegosaurus_OPHAT_OSC2_PITCH_ADSR2:
-				parameter.name = "stegosaurus_OPHAT_OSC2_PITCH_ADSR2";
-				parameter.symbol = "stegosaurus_OPHAT_OSC2_PITCH_ADSR2";
-				parameter.ranges.def = 2.0f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 2.0f;
-				fParameters[stegosaurus_OPHAT_OSC2_PITCH_ADSR2] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_OPHAT_OSC2_PITCH_ADSR2", index, 0.0f, 2.0f, 2.0f);
+				break;
+			case stegosaurus_OPHAT_OSC2_VOLUME:
+				set_param (parameter, "stegosaurus_OPHAT_OSC2_VOLUME", index, 0.0f, 1.0f, 0.21277821);
 				break;
 				
-			case stegosaurus_OPHAT_OSC2_VOLUME:
-				parameter.name = "stegosaurus_OPHAT_OSC2_VOLUME";
-				parameter.symbol = "stegosaurus_OPHAT_OSC2_VOLUME";
-				parameter.ranges.def = 0.0f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 1.0f;
-				fParameters[stegosaurus_OPHAT_OSC2_VOLUME] = parameter.ranges.def;
+			case stegosaurus_OPHAT_OSC3_PITCH:
+				set_param (parameter, "stegosaurus_OPHAT_OSC3_PITCH", index, 0.0f, 1.0f, 0.0f);
+				break;
+			case stegosaurus_OPHAT_OSC3_VOLUME:
+				set_param (parameter, "stegosaurus_OPHAT_OSC3_VOLUME", index, 0.0f, 1.0f, 0.0f);
 				break;
 				
 				
@@ -1007,239 +495,92 @@ class stegosaurus : public Plugin
 			// OSCILLATOR ONE
 				
 			case stegosaurus_CLAP_OSC1_ACTIVE:
-				parameter.name = "stegosaurus_CLAP_OSC1_ACTIVE";
-				parameter.symbol = "stegosaurus_CLAP_OSC1_ACTIVE";
-				parameter.ranges.def = 1.0f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 1.0f;
-				fParameters[stegosaurus_CLAP_OSC1_ACTIVE] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_CLAP_OSC1_ACTIVE", index, 0.0f, 1.0f, 1.0f);
 				break;
-				
 			case stegosaurus_CLAP_OSC1_NOISE:
-				parameter.name = "stegosaurus_CLAP_OSC1_NOISE";
-				parameter.symbol = "stegosaurus_CLAP_OSC1_NOISE";
-				parameter.ranges.def = 0.1f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 1.0f;
-				fParameters[stegosaurus_CLAP_OSC1_NOISE] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_CLAP_OSC1_NOISE", index, 0.0f, 1.0f, 0.1f);
 				break;
-				
 			case stegosaurus_CLAP_OSC1_PITCH:
-				parameter.name = "stegosaurus_CLAP_OSC1_PITCH";
-				parameter.symbol = "stegosaurus_CLAP_OSC1_PITCH";
-				parameter.ranges.def = 0.0f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 2.0f;
-				fParameters[stegosaurus_CLAP_OSC1_PITCH] = parameter.ranges.def;
-				break;
-				
+				set_param (parameter, "stegosaurus_CLAP_OSC1_PITCH", index, 0.0f, 2.0f, 0.0f);
+				break;		
 			case stegosaurus_CLAP_OSC1_AMP_ATTACK:
-				parameter.name = "stegosaurus_CLAP_OSC1_AMP_ATTACK";
-				parameter.symbol = "stegosaurus_CLAP_OSC1_AMP_ATTACK";
-				parameter.ranges.def = 0.8126f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 1.0f;
-				fParameters[stegosaurus_CLAP_OSC1_AMP_ATTACK] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_CLAP_OSC1_AMP_ATTACK", index, 0.0f, 1.0f, 0.8126f);
 				break;
-				
 			case stegosaurus_CLAP_OSC1_AMP_DECAY:
-				parameter.name = "stegosaurus_CLAP_OSC1_AMP_DECAY";
-				parameter.symbol = "stegosaurus_CLAP_OSC1_AMP_DECAY";
-				parameter.ranges.def = 0.35779998f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 1.0f;
-				fParameters[stegosaurus_CLAP_OSC1_AMP_DECAY] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_CLAP_OSC1_AMP_DECAY", index, 0.0f, 1.0f, 0.35779998f);
 				break;
-				
 			case stegosaurus_CLAP_OSC1_AMP_SUSTAIN:
-				parameter.name = "stegosaurus_CLAP_OSC1_AMP_SUSTAIN";
-				parameter.symbol = "stegosaurus_CLAP_OSC1_AMP_SUSTAIN";
-				parameter.ranges.def = 1.0f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 1.0f;
-				fParameters[stegosaurus_CLAP_OSC1_AMP_SUSTAIN] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_CLAP_OSC1_AMP_SUSTAIN", index, 0.0f, 1.0f, 1.0f);
 				break;
-				
 			case stegosaurus_CLAP_OSC1_AMP_RELEASE:
-				parameter.name = "stegosaurus_CLAP_OSC1_AMP_RELEASE";
-				parameter.symbol = "stegosaurus_CLAP_OSC1_AMP_RELEASE";
-				parameter.ranges.def = 0.35959998f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 1.0f;
-				fParameters[stegosaurus_CLAP_OSC1_AMP_RELEASE] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_CLAP_OSC1_AMP_RELEASE", index, 0.0f, 1.0f, 0.35959998f);
 				break;
-				
 			case stegosaurus_CLAP_OSC1_PITCH_ATTACK:
-				parameter.name = "stegosaurus_CLAP_OSC1_PITCH_ATTACK";
-				parameter.symbol = "stegosaurus_CLAP_OSC1_PITCH_ATTACK";
-				parameter.ranges.def = 1.0f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 1.0f;
-				fParameters[stegosaurus_CLAP_OSC1_PITCH_ATTACK] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_CLAP_OSC1_PITCH_ATTACK", index, 0.0f, 1.0f, 1.0f);
 				break;
-				
 			case stegosaurus_CLAP_OSC1_PITCH_DECAY:
-				parameter.name = "stegosaurus_CLAP_OSC1_PITCH_DECAY";
-				parameter.symbol = "stegosaurus_CLAP_OSC1_PITCH_DECAY";
-				parameter.ranges.def = 0.0f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 1.0f;
-				fParameters[stegosaurus_CLAP_OSC1_PITCH_DECAY] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_CLAP_OSC1_PITCH_DECAY", index, 0.0f, 1.0f, 0.0f);
 				break;
-				
 			case stegosaurus_CLAP_OSC1_PITCH_SUSTAIN:
-				parameter.name = "stegosaurus_CLAP_OSC1_PITCH_SUSTAIN";
-				parameter.symbol = "stegosaurus_CLAP_OSC1_PITCH_SUSTAIN";
-				parameter.ranges.def = 0.0f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 1.0f;
-				fParameters[stegosaurus_CLAP_OSC1_PITCH_SUSTAIN] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_CLAP_OSC1_PITCH_SUSTAIN", index, 0.0f, 1.0f, 0.0f);
 				break;
-				
 			case stegosaurus_CLAP_OSC1_PITCH_RELEASE:
-				parameter.name = "stegosaurus_CLAP_OSC1_PITCH_RELEASE";
-				parameter.symbol = "stegosaurus_CLAP_OSC1_PITCH_RELEASE";
-				parameter.ranges.def = 0.18220001f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 1.0f;
-				fParameters[stegosaurus_CLAP_OSC1_PITCH_RELEASE] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_CLAP_OSC1_PITCH_RELEASE", index, 0.0f, 1.0f, 0.18220001f);
 				break;
-				
 			case stegosaurus_CLAP_OSC1_PITCH_ADSR2:
-				parameter.name = "stegosaurus_CLAP_OSC1_PITCH_ADSR2";
-				parameter.symbol = "stegosaurus_CLAP_OSC1_PITCH_ADSR2";
-				parameter.ranges.def = 0.0f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 2.0f;
-				fParameters[stegosaurus_CLAP_OSC1_PITCH_ADSR2] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_CLAP_OSC1_PITCH_ADSR2", index, 0.0f, 2.0f, 0.0f);
 				break;
-				
 			case stegosaurus_CLAP_OSC1_VOLUME:
-				parameter.name = "stegosaurus_CLAP_OSC1_VOLUME";
-				parameter.symbol = "stegosaurus_CLAP_OSC1_VOLUME";
-				parameter.ranges.def = 0.28481483f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 1.0f;
-				fParameters[stegosaurus_CLAP_OSC1_VOLUME] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_CLAP_OSC1_VOLUME", index, 0.0f, 2.0f, 0.28481483f);
 				break;
 				
 			// OSCILLATOR TWO
 				
 			case stegosaurus_CLAP_OSC2_ACTIVE:
-				parameter.name = "stegosaurus_CLAP_OSC2_ACTIVE";
-				parameter.symbol = "stegosaurus_CLAP_OSC2_ACTIVE";
-				parameter.ranges.def = 1.0f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 1.0f;
-				fParameters[stegosaurus_CLAP_OSC2_ACTIVE] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_CLAP_OSC2_ACTIVE", index, 0.0f, 1.0f, 1.0f);
 				break;
-				
 			case stegosaurus_CLAP_OSC2_NOISE:
-				parameter.name = "stegosaurus_CLAP_OSC2_NOISE";
-				parameter.symbol = "stegosaurus_CLAP_OSC2_NOISE";
-				parameter.ranges.def = 0.12037039f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 1.0f;
-				fParameters[stegosaurus_CLAP_OSC2_NOISE] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_CLAP_OSC2_NOISE", index, 0.0f, 1.0f, 0.12037039f);
 				break;
-				
 			case stegosaurus_CLAP_OSC2_PITCH:
-				parameter.name = "stegosaurus_CLAP_OSC2_PITCH";
-				parameter.symbol = "stegosaurus_CLAP_OSC2_PITCH";
-				parameter.ranges.def = 1.13888884f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 2.0f;
-				fParameters[stegosaurus_CLAP_OSC2_PITCH] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_CLAP_OSC2_PITCH", index, 0.0f, 2.0f, 1.13888884f);
 				break;
-				
 			case stegosaurus_CLAP_OSC2_AMP_ATTACK:
-				parameter.name = "stegosaurus_CLAP_OSC2_AMP_ATTACK";
-				parameter.symbol = "stegosaurus_CLAP_OSC2_AMP_ATTACK";
-				parameter.ranges.def = 1.0f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 1.0f;
-				fParameters[stegosaurus_CLAP_OSC2_AMP_ATTACK] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_CLAP_OSC2_AMP_ATTACK", index, 0.0f, 1.0f, 1.0f);
 				break;
-				
 			case stegosaurus_CLAP_OSC2_AMP_DECAY:
-				parameter.name = "stegosaurus_CLAP_OSC2_AMP_DECAY";
-				parameter.symbol = "stegosaurus_CLAP_OSC2_AMP_DECAY";
-				parameter.ranges.def = 0.59869987f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 1.0f;
-				fParameters[stegosaurus_CLAP_OSC2_AMP_DECAY] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_CLAP_OSC2_AMP_DECAY", index, 0.0f, 1.0f, 0.59869987f);
 				break;
-				
 			case stegosaurus_CLAP_OSC2_AMP_SUSTAIN:
-				parameter.name = "stegosaurus_CLAP_OSC2_AMP_SUSTAIN";
-				parameter.symbol = "stegosaurus_CLAP_OSC2_AMP_SUSTAIN";
-				parameter.ranges.def = 1.0f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 1.0f;
-				fParameters[stegosaurus_CLAP_OSC2_AMP_SUSTAIN] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_CLAP_OSC2_AMP_SUSTAIN", index, 0.0f, 1.0f, 1.0f);
 				break;
-				
 			case stegosaurus_CLAP_OSC2_AMP_RELEASE:
-				parameter.name = "stegosaurus_CLAP_OSC2_AMP_RELEASE";
-				parameter.symbol = "stegosaurus_CLAP_OSC2_AMP_RELEASE";
-				parameter.ranges.def = 0.36652166f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 1.0f;
-				fParameters[stegosaurus_CLAP_OSC2_AMP_RELEASE] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_CLAP_OSC2_AMP_RELEASE", index, 0.0f, 1.0f, 0.36652166f);
 				break;
-				
 			case stegosaurus_CLAP_OSC2_PITCH_ATTACK:
-				parameter.name = "stegosaurus_CLAP_OSC2_PITCH_ATTACK";
-				parameter.symbol = "stegosaurus_CLAP_OSC2_PITCH_ATTACK";
-				parameter.ranges.def = 0.96000004f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 1.0f;
-				fParameters[stegosaurus_CLAP_OSC2_PITCH_ATTACK] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_CLAP_OSC2_PITCH_ATTACK", index, 0.0f, 1.0f, 0.96000004f);
 				break;
-				
 			case stegosaurus_CLAP_OSC2_PITCH_DECAY:
-				parameter.name = "stegosaurus_CLAP_OSC2_PITCH_DECAY";
-				parameter.symbol = "stegosaurus_CLAP_OSC2_PITCH_DECAY";
-				parameter.ranges.def = 0.52956504f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 1.0f;
-				fParameters[stegosaurus_CLAP_OSC2_PITCH_DECAY] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_CLAP_OSC2_PITCH_DECAY", index, 0.0f, 1.0f, 0.52956504f);
 				break;
-				
 			case stegosaurus_CLAP_OSC2_PITCH_SUSTAIN:
-				parameter.name = "stegosaurus_CLAP_OSC2_PITCH_SUSTAIN";
-				parameter.symbol = "stegosaurus_CLAP_OSC2_PITCH_SUSTAIN";
-				parameter.ranges.def = 1.0f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 1.0f;
-				fParameters[stegosaurus_CLAP_OSC2_PITCH_SUSTAIN] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_CLAP_OSC2_PITCH_SUSTAIN", index, 0.0f, 1.0f, 1.0f);
 				break;
-				
 			case stegosaurus_CLAP_OSC2_PITCH_RELEASE:
-				parameter.name = "stegosaurus_CLAP_OSC2_PITCH_RELEASE";
-				parameter.symbol = "stegosaurus_CLAP_OSC2_PITCH_RELEASE";
-				parameter.ranges.def = 0.16304348f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 1.0f;
-				fParameters[stegosaurus_CLAP_OSC2_PITCH_RELEASE] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_CLAP_OSC2_PITCH_RELEASE", index, 0.0f, 1.0f, 0.16304348f);
 				break;
-				
 			case stegosaurus_CLAP_OSC2_PITCH_ADSR2:
-				parameter.name = "stegosaurus_CLAP_OSC2_PITCH_ADSR2";
-				parameter.symbol = "stegosaurus_CLAP_OSC2_PITCH_ADSR2";
-				parameter.ranges.def = 1.13888884f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 2.0f;
-				fParameters[stegosaurus_CLAP_OSC2_PITCH_ADSR2] = parameter.ranges.def;
+				set_param (parameter, "stegosaurus_CLAP_OSC2_PITCH_ADSR2", index, 0.0f, 2.0f, 1.13888884f);
+				break;
+			case stegosaurus_CLAP_OSC2_VOLUME:
+				set_param (parameter, "stegosaurus_CLAP_OSC2_VOLUME", index, 0.0f, 1.0f, 0.4675926f);
 				break;
 				
-			case stegosaurus_CLAP_OSC2_VOLUME:
-				parameter.name = "stegosaurus_CLAP_OSC2_VOLUME";
-				parameter.symbol = "stegosaurus_CLAP_OSC2_VOLUME";
-				parameter.ranges.def = 0.4675926f;
-				parameter.ranges.min = 0.0f;
-				parameter.ranges.max = 1.0f;
-				fParameters[stegosaurus_CLAP_OSC2_VOLUME] = parameter.ranges.def;
+			case stegosaurus_CLAP_OSC3_PITCH:
+				set_param (parameter, "stegosaurus_CLAP_OSC3_PITCH", index, 0.0f, 1.0f, 0.0f);
+				break;
+			case stegosaurus_CLAP_OSC3_VOLUME:
+				set_param (parameter, "stegosaurus_CLAP_OSC3_VOLUME", index, 0.0f, 1.0f, 0.0f);
 				break;
 		}
 	}
@@ -1470,6 +811,9 @@ class stegosaurus : public Plugin
 		float osc2_pitch[5];
 		float osc2_pitch_adsr2[5];
 		float osc2_noise[5];
+		
+		float osc3_pitch[5];
+		float osc3_volume[5];
 
 
 
@@ -1483,6 +827,10 @@ class stegosaurus : public Plugin
 		osc2_pitch_adsr2[0] = fParameters[stegosaurus_KICK_OSC2_PITCH_ADSR2];
 		osc2_volume[0] = fParameters[stegosaurus_KICK_OSC2_VOLUME];
 		
+		osc3_pitch[0] = fParameters[stegosaurus_KICK_OSC3_PITCH];
+		osc3_volume[0] = fParameters[stegosaurus_KICK_OSC3_VOLUME];
+		
+		
 		osc1_noise[1] = fParameters[stegosaurus_SNARE_OSC1_NOISE];
 		osc1_pitch[1] = fParameters[stegosaurus_SNARE_OSC1_PITCH];
 		osc1_pitch_adsr2[1] = fParameters[stegosaurus_SNARE_OSC1_PITCH_ADSR2];
@@ -1492,6 +840,9 @@ class stegosaurus : public Plugin
 		osc2_pitch[1] = fParameters[stegosaurus_SNARE_OSC2_PITCH];
 		osc2_pitch_adsr2[1] = fParameters[stegosaurus_SNARE_OSC2_PITCH_ADSR2];
 		osc2_volume[1] = fParameters[stegosaurus_SNARE_OSC2_VOLUME];
+		
+		osc3_pitch[1] = fParameters[stegosaurus_SNARE_OSC3_PITCH];
+		osc3_volume[1] = fParameters[stegosaurus_SNARE_OSC3_VOLUME];
 		
 		osc1_noise[2] = fParameters[stegosaurus_CLHAT_OSC1_NOISE];
 		osc1_pitch[2] = fParameters[stegosaurus_CLHAT_OSC1_PITCH];
@@ -1503,6 +854,10 @@ class stegosaurus : public Plugin
 		osc2_pitch_adsr2[2] = fParameters[stegosaurus_CLHAT_OSC2_PITCH_ADSR2];
 		osc2_volume[2] = fParameters[stegosaurus_CLHAT_OSC2_VOLUME];
 		
+		osc3_pitch[2] = fParameters[stegosaurus_CLHAT_OSC3_PITCH];
+		osc3_volume[2] = fParameters[stegosaurus_CLHAT_OSC3_VOLUME];
+		
+		
 		osc1_noise[3] = fParameters[stegosaurus_OPHAT_OSC1_NOISE];
 		osc1_pitch[3] = fParameters[stegosaurus_OPHAT_OSC1_PITCH];
 		osc1_pitch_adsr2[3] = fParameters[stegosaurus_OPHAT_OSC1_PITCH_ADSR2];
@@ -1513,6 +868,10 @@ class stegosaurus : public Plugin
 		osc2_pitch_adsr2[3] = fParameters[stegosaurus_OPHAT_OSC2_PITCH_ADSR2];
 		osc2_volume[3] = fParameters[stegosaurus_OPHAT_OSC2_VOLUME];
 		
+		osc3_pitch[3] = fParameters[stegosaurus_OPHAT_OSC3_PITCH];
+		osc3_volume[3] = fParameters[stegosaurus_OPHAT_OSC3_VOLUME];
+		
+		
 		osc1_noise[4] = fParameters[stegosaurus_CLAP_OSC1_NOISE];
 		osc1_pitch[4] = fParameters[stegosaurus_CLAP_OSC1_PITCH];
 		osc1_pitch_adsr2[4] = fParameters[stegosaurus_CLAP_OSC1_PITCH_ADSR2];
@@ -1522,6 +881,9 @@ class stegosaurus : public Plugin
 		osc2_pitch[4] = fParameters[stegosaurus_CLAP_OSC2_PITCH];
 		osc2_pitch_adsr2[4] = fParameters[stegosaurus_CLAP_OSC2_PITCH_ADSR2];
 		osc2_volume[4] = fParameters[stegosaurus_CLAP_OSC2_VOLUME];
+		
+		osc3_pitch[4] = fParameters[stegosaurus_CLAP_OSC3_PITCH];
+		osc3_volume[4] = fParameters[stegosaurus_CLAP_OSC3_VOLUME];
 		
 		// OSCILATOR ONES PARAMS
 		
@@ -1784,11 +1146,14 @@ class stegosaurus : public Plugin
 						
 						float adsr_osc1_pitch_level_db = voices[v].adsr_osc1_pitch.level * osc1_pitch_adsr2[v]; 
 						
+						voices[v].osc[2].frequency = 256 * osc3_pitch[v];
+						
 						voices[v].osc[0].wave_mix = 0;	
 						float new_pitch = adsr_osc1_pitch_level_db;
 						float pitch_mod = (8 * noise1.tick() ) *  osc1_noise[v];
 						new_pitch += pitch_mod;
 						new_pitch += osc1_pitch[v];
+						new_pitch += voices[v].osc[2].tick() * osc3_volume[v];
 						new_pitch *= 1024;	
 						if (new_pitch < 0) new_pitch = 0;
 						voices[v].osc[0].frequency = new_pitch;
@@ -1974,141 +1339,6 @@ Plugin *createPlugin()
 
 	stegosaurus* new_stegosaurus = new stegosaurus();
 
-	// LOAD WAVETABLES;
-
-	string user_path = getenv("USER");
-	stringstream wave_path;
-	stringstream wave_file;
-	struct dirent *d;
-	long length = 0;
-
-	DIR *dr;
-	wave_path.str("");
-	wave_path << "/home/" << user_path << "/.lv2/stegosaurus.lv2/waves";
-	
-	dr = opendir(wave_path.str().c_str());
-		 
-	if (dr != NULL)
-	{
-		for( d=readdir(dr); d!=NULL; d=readdir(dr)) // List all files here
-		{
-			wave_file.str("");
-			wave_file << wave_path.str() << "/" << d->d_name;
-
-			FILE* fp = fopen (wave_file.str().c_str(),"r");
-			fseek(fp, 0, SEEK_END); // We can use rewind(fp); also
-
-			
-			if (ftell(fp) == 17720 )
-			{					
-				length = (ftell(fp) - 80 )/ 4;
-				
-				wavetable new_waveform;
-					
-				float* source_waveform_buffer = (float *)malloc(length*sizeof(float)) ;
-				new_waveform.buffer = (float *)malloc((12*length)*sizeof(float)) ;
-							
-				// LOAD RAW WAVEFORM
-							
-				fseek(fp, 80, SEEK_SET);
-				int rd = fread(source_waveform_buffer ,1, length*sizeof(float), fp);
-				(void) rd;
-				fclose(fp);	
-								
-				//------ FILTER 8 DIFFERENT VERSINS OF WAVEFORM TO REDUCE ALIASING
-
-				// Moog 24 dB/oct resonant lowpass VCF
-				// References: CSound source code, Stilson/Smith CCRMA paper.
-				// Modified by paul.kellett@maxim.abel.co.uk July 2000
-
-				// Set coefficients given frequency & resonance [0.0...1.0]
-				
-				float frequency = 0.8;
-				float resonance = 0;	
-				float in;
-
-				for (int wave=1; wave<12; wave++)
-				{
-				
-					float minpeak = 0;
-					float maxpeak = 0;
-					float maxvol = 0;
-					
-					in = 0;
-					
-					for (int x=0; x<length; x++)
-					{
-						in = source_waveform_buffer[x];
-
-						q = 1.0f - frequency;
-						pc = frequency + 0.8f * frequency * q;
-						f = pc + pc - 1.0f;
-						q = resonance * (1.0f + 0.5f * q * (1.0f - q + 5.6f * q * q));
-				
-						// Filter (in [-1.0...+1.0])
-
-						in -= q * bf4;                          //feedback
-						t1 = bf1;  bf1 = (in + bf0) * pc - bf1 * f;
-						t2 = bf2;  bf2 = (bf1 + t1) * pc - bf2 * f;
-						t1 = bf3;  bf3 = (bf2 + t2) * pc - bf3 * f;
-						bf4 = (bf3 + t1) * pc - bf4 * f;
-						bf4 = bf4 - bf4 * bf4 * bf4 * 0.166667f;    //clipping
-						bf0 = in;
-
-						new_waveform.buffer[x + (wave*length)] = bf4;
-							
-						if (bf4 < 0 && bf4 < minpeak) minpeak = bf4;
-						if (bf4 > 0 && bf4 > maxpeak) maxpeak = bf4;
-					
-					}
-
-					if (-minpeak > maxpeak) maxvol = -minpeak;
-						else maxvol = maxpeak;
-
-					if (-minpeak == maxpeak) maxvol = maxpeak;
-
-					float amp = 0.8 / maxvol;
-
-					for (int y=0; y<length; y++)	// Normalise
-					{
-						new_waveform.buffer[y+(wave*length)] = new_waveform.buffer[y+(wave*length)]*amp;
-					}
-
-					frequency /= 2.4;	
-			}
-				
-			for (int x=0; x<length; x++)
-			{
-				new_waveform.buffer[x] = source_waveform_buffer[x] * 0.8;
-			}		
-			
-			new_waveform.length = length;
-			new_waveform.name = d->d_name;
-			new_stegosaurus->wavetables.push_back(new_waveform);
-			free(source_waveform_buffer);
-			
-			}
-		}	
-	}	
-	
-	for (int o=0; o<number_of_oscillators; o++)
-	{
-		for (int v=0; v<number_of_voices; v++)
-		{
-			if (new_stegosaurus->wavetables.size() > 0)
-			{
-				new_stegosaurus->voices[v].osc[o].wave_a = new_stegosaurus->wavetables[0].buffer;
-				new_stegosaurus->voices[v].osc[o].wave_b = new_stegosaurus->wavetables[0].buffer;
-				new_stegosaurus->voices[v].osc[o].length = length;
-			}
-			else
-			{
-				new_stegosaurus->voices[v].osc[o].wave_a = NULL;
-				new_stegosaurus->voices[v].osc[o].wave_b = NULL;
-				new_stegosaurus->voices[v].osc[o].length = 0;
-			}
-		}
-	}
 
 	return new_stegosaurus;
 }

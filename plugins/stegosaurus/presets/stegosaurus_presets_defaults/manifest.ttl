@@ -5,22 +5,16 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix state: <http://lv2plug.in/ns/ext/state#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix doap: <http://usefulinc.com/ns/doap#> .
-@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+
+#----------------------------------------------------------------------------------------------
+# DEFAULTS
 
 <default.ttl>
+	lv2:appliesTo <http://thunderox.com/stegosaurus> ;
 	a pset:Preset ;
-	rdfs:seeAlso <default.ttl> ;
-	lv2:appliesTo <http://thunderox.com/stegosaurus> .
+	rdfs:seeAlso <default.ttl> .
 
-<electro.ttl>
+<boom.ttl>
+	lv2:appliesTo <http://thunderox.com/stegosaurus> ;
 	a pset:Preset ;
-	rdfs:seeAlso <electro.ttl> ;
-	lv2:appliesTo <http://thunderox.com/stegosaurus> .
-		
-<nu_electro.ttl>
-	a pset:Preset ;
-	rdfs:seeAlso <nu_electro.ttl> ;
-	lv2:appliesTo <http://thunderox.com/stegosaurus> .
-	
-	
+	rdfs:seeAlso <boom.ttl> .

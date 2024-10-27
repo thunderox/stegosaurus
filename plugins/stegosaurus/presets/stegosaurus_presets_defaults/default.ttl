@@ -9,21 +9,85 @@
 <>
 	a pset:Preset ;
 	lv2:appliesTo <http://thunderox.com/stegosaurus> ;
+	pset:bank <defaults> ;
 	rdfs:label "default" ;
 	lv2:port [
-		lv2:symbol "lv2_port_130" ;
+		lv2:symbol "lv2_port_120" ;
 		pset:value 0.0
 	] , [
-		lv2:symbol "lv2_port_131" ;
+		lv2:symbol "lv2_port_121" ;
 		pset:value 0.0
 	] , [
-		lv2:symbol "lv2_port_132" ;
+		lv2:symbol "lv2_port_148" ;
 		pset:value 0.0
 	] , [
-		lv2:symbol "lv2_port_133" ;
+		lv2:symbol "lv2_port_149" ;
 		pset:value 0.0
 	] , [
-		lv2:symbol "lv2_port_134" ;
+		lv2:symbol "lv2_port_150" ;
+		pset:value 0.0
+	] , [
+		lv2:symbol "lv2_port_151" ;
+		pset:value 0.0
+	] , [
+		lv2:symbol "lv2_port_152" ;
+		pset:value 0.0
+	] , [
+		lv2:symbol "lv2_port_153" ;
+		pset:value 0.0
+	] , [
+		lv2:symbol "lv2_port_154" ;
+		pset:value 0.0
+	] , [
+		lv2:symbol "lv2_port_155" ;
+		pset:value 0.0
+	] , [
+		lv2:symbol "lv2_port_156" ;
+		pset:value 0.0
+	] , [
+		lv2:symbol "lv2_port_157" ;
+		pset:value 0.0
+	] , [
+		lv2:symbol "lv2_port_158" ;
+		pset:value 0.0
+	] , [
+		lv2:symbol "lv2_port_159" ;
+		pset:value 0.0
+	] , [
+		lv2:symbol "lv2_port_160" ;
+		pset:value 0.0
+	] , [
+		lv2:symbol "lv2_port_161" ;
+		pset:value 0.0
+	] , [
+		lv2:symbol "lv2_port_162" ;
+		pset:value 0.0
+	] , [
+		lv2:symbol "lv2_port_163" ;
+		pset:value 0.0
+	] , [
+		lv2:symbol "lv2_port_164" ;
+		pset:value 0.0
+	] , [
+		lv2:symbol "lv2_port_165" ;
+		pset:value 0.0
+	] , [
+		lv2:symbol "lv2_port_166" ;
+		pset:value 0.0
+	] , [
+		lv2:symbol "lv2_port_167" ;
+		pset:value 0.0
+	] , [
+		lv2:symbol "lv2_port_168" ;
+		pset:value 0.0
+	] , [
+		lv2:symbol "lv2_port_169" ;
+		pset:value 0.0
+	] , [
+		lv2:symbol "lv2_port_36" ;
+		pset:value 0.0
+	] , [
+		lv2:symbol "lv2_port_37" ;
 		pset:value 0.0
 	] , [
 		lv2:symbol "lv2_port_4" ;
@@ -35,17 +99,29 @@
 		lv2:symbol "lv2_port_6" ;
 		pset:value 0.0
 	] , [
+		lv2:symbol "lv2_port_64" ;
+		pset:value 0.0
+	] , [
+		lv2:symbol "lv2_port_65" ;
+		pset:value 0.0
+	] , [
 		lv2:symbol "lv2_port_7" ;
 		pset:value 0.0
 	] , [
 		lv2:symbol "lv2_port_8" ;
 		pset:value 0.0
 	] , [
+		lv2:symbol "lv2_port_92" ;
+		pset:value 0.0
+	] , [
+		lv2:symbol "lv2_port_93" ;
+		pset:value 0.0
+	] , [
 		lv2:symbol "stegosaurus_CLAP_OSC1_ACTIVE" ;
 		pset:value 1.0
 	] , [
 		lv2:symbol "stegosaurus_CLAP_OSC1_AMP_ATTACK" ;
-		pset:value 1.0
+		pset:value 0.81260002
 	] , [
 		lv2:symbol "stegosaurus_CLAP_OSC1_AMP_DECAY" ;
 		pset:value 0.35779998
@@ -60,6 +136,9 @@
 		pset:value 0.1
 	] , [
 		lv2:symbol "stegosaurus_CLAP_OSC1_PITCH" ;
+		pset:value 0.0
+	] , [
+		lv2:symbol "stegosaurus_CLAP_OSC1_PITCH_ADSR2" ;
 		pset:value 0.0
 	] , [
 		lv2:symbol "stegosaurus_CLAP_OSC1_PITCH_ATTACK" ;
@@ -98,6 +177,9 @@
 		lv2:symbol "stegosaurus_CLAP_OSC2_PITCH" ;
 		pset:value 1.13888884
 	] , [
+		lv2:symbol "stegosaurus_CLAP_OSC2_PITCH_ADSR2" ;
+		pset:value 1.13888884
+	] , [
 		lv2:symbol "stegosaurus_CLAP_OSC2_PITCH_ATTACK" ;
 		pset:value 0.96000004
 	] , [
@@ -119,8 +201,8 @@
 		lv2:symbol "stegosaurus_CLHAT_OSC1_AMP_ATTACK" ;
 		pset:value 1.0
 	] , [
-		lv2:symbol "stegosaurus_CLHAT_OSC1_AMP_DECAY" ;
-		pset:value 0.49649996
+		lv2:symbol "stegosaurus_CLHAT_OSC1_AMP_ATTACK" ;
+		pset:value 1.0
 	] , [
 		lv2:symbol "stegosaurus_CLHAT_OSC1_AMP_RELEASE" ;
 		pset:value 0.98000002
@@ -129,34 +211,37 @@
 		pset:value 1.0
 	] , [
 		lv2:symbol "stegosaurus_CLHAT_OSC1_NOISE" ;
-		pset:value 0.05999994
+		pset:value 0.05203772
 	] , [
 		lv2:symbol "stegosaurus_CLHAT_OSC1_PITCH" ;
-		pset:value 1.55555558
+		pset:value 1.42592597
+	] , [
+		lv2:symbol "stegosaurus_CLHAT_OSC1_PITCH_ADSR2" ;
+		pset:value 0.0
 	] , [
 		lv2:symbol "stegosaurus_CLHAT_OSC1_PITCH_ATTACK" ;
 		pset:value 1.0
 	] , [
 		lv2:symbol "stegosaurus_CLHAT_OSC1_PITCH_DECAY" ;
-		pset:value 0.0
+		pset:value 0.60869563
 	] , [
 		lv2:symbol "stegosaurus_CLHAT_OSC1_PITCH_RELEASE" ;
 		pset:value 1.0
 	] , [
 		lv2:symbol "stegosaurus_CLHAT_OSC1_PITCH_SUSTAIN" ;
-		pset:value 0.0
+		pset:value 1.0
 	] , [
 		lv2:symbol "stegosaurus_CLHAT_OSC1_VOLUME" ;
-		pset:value 0.5685187
+		pset:value 0.58740002
 	] , [
 		lv2:symbol "stegosaurus_CLHAT_OSC2_ACTIVE" ;
-		pset:value 1.0
+		pset:value 0.0
 	] , [
 		lv2:symbol "stegosaurus_CLHAT_OSC2_AMP_ATTACK" ;
 		pset:value 1.0
 	] , [
 		lv2:symbol "stegosaurus_CLHAT_OSC2_AMP_DECAY" ;
-		pset:value 0.6652171
+		pset:value 0.71739131
 	] , [
 		lv2:symbol "stegosaurus_CLHAT_OSC2_AMP_RELEASE" ;
 		pset:value 1.0
@@ -165,10 +250,13 @@
 		pset:value 1.0
 	] , [
 		lv2:symbol "stegosaurus_CLHAT_OSC2_NOISE" ;
-		pset:value 0.24537039
+		pset:value 1.22222221
 	] , [
 		lv2:symbol "stegosaurus_CLHAT_OSC2_PITCH" ;
-		pset:value 1.63888884
+		pset:value 0.96296299
+	] , [
+		lv2:symbol "stegosaurus_CLHAT_OSC2_PITCH_ADSR2" ;
+		pset:value 0.0
 	] , [
 		lv2:symbol "stegosaurus_CLHAT_OSC2_PITCH_ATTACK" ;
 		pset:value 1.0
@@ -183,7 +271,7 @@
 		pset:value 1.0
 	] , [
 		lv2:symbol "stegosaurus_CLHAT_OSC2_VOLUME" ;
-		pset:value 0.15277779
+		pset:value 0.4074074
 	] , [
 		lv2:symbol "stegosaurus_KICK_OSC1_ACTIVE" ;
 		pset:value 1.0
@@ -192,7 +280,7 @@
 		pset:value 1.0
 	] , [
 		lv2:symbol "stegosaurus_KICK_OSC1_AMP_DECAY" ;
-		pset:value 0.13649997
+		pset:value 0.3565
 	] , [
 		lv2:symbol "stegosaurus_KICK_OSC1_AMP_RELEASE" ;
 		pset:value 0.39300001
@@ -204,7 +292,10 @@
 		pset:value 0.0
 	] , [
 		lv2:symbol "stegosaurus_KICK_OSC1_PITCH" ;
-		pset:value 0.02
+		pset:value 0.00699949
+	] , [
+		lv2:symbol "stegosaurus_KICK_OSC1_PITCH_ADSR2" ;
+		pset:value 0.00799954
 	] , [
 		lv2:symbol "stegosaurus_KICK_OSC1_PITCH_ATTACK" ;
 		pset:value 1.0
@@ -225,21 +316,24 @@
 		pset:value 1.0
 	] , [
 		lv2:symbol "stegosaurus_KICK_OSC2_AMP_ATTACK" ;
-		pset:value 1.0
+		pset:value 0.99900001
 	] , [
 		lv2:symbol "stegosaurus_KICK_OSC2_AMP_DECAY" ;
-		pset:value 0.43090001
+		pset:value 0.57447785
 	] , [
 		lv2:symbol "stegosaurus_KICK_OSC2_AMP_RELEASE" ;
-		pset:value 0.33700001
+		pset:value 0.76086956
 	] , [
 		lv2:symbol "stegosaurus_KICK_OSC2_AMP_SUSTAIN" ;
 		pset:value 1.0
 	] , [
 		lv2:symbol "stegosaurus_KICK_OSC2_NOISE" ;
-		pset:value 0.0
+		pset:value 0.2372582
 	] , [
 		lv2:symbol "stegosaurus_KICK_OSC2_PITCH" ;
+		pset:value 1.62039995
+	] , [
+		lv2:symbol "stegosaurus_KICK_OSC2_PITCH_ADSR2" ;
 		pset:value 1.62039995
 	] , [
 		lv2:symbol "stegosaurus_KICK_OSC2_PITCH_ATTACK" ;
@@ -261,22 +355,25 @@
 		pset:value 1.0
 	] , [
 		lv2:symbol "stegosaurus_OPHAT_OSC1_AMP_ATTACK" ;
-		pset:value 0.7230432
+		pset:value 1.0
 	] , [
-		lv2:symbol "stegosaurus_OPHAT_OSC1_AMP_DECAY" ;
-		pset:value 0.34779999
+		lv2:symbol "stegosaurus_OPHAT_OSC1_AMP_ATTACK" ;
+		pset:value 1.0
 	] , [
 		lv2:symbol "stegosaurus_OPHAT_OSC1_AMP_RELEASE" ;
-		pset:value 0.35959998
+		pset:value 0.34959999
 	] , [
 		lv2:symbol "stegosaurus_OPHAT_OSC1_AMP_SUSTAIN" ;
-		pset:value 0.95000005
+		pset:value 0.75999999
 	] , [
 		lv2:symbol "stegosaurus_OPHAT_OSC1_NOISE" ;
-		pset:value 0.06037045
+		pset:value 0.14814818
 	] , [
 		lv2:symbol "stegosaurus_OPHAT_OSC1_PITCH" ;
-		pset:value 1.55037022
+		pset:value 1.70370364
+	] , [
+		lv2:symbol "stegosaurus_OPHAT_OSC1_PITCH_ADSR2" ;
+		pset:value 0.03703701
 	] , [
 		lv2:symbol "stegosaurus_OPHAT_OSC1_PITCH_ATTACK" ;
 		pset:value 1.0
@@ -285,13 +382,13 @@
 		pset:value 0.0
 	] , [
 		lv2:symbol "stegosaurus_OPHAT_OSC1_PITCH_RELEASE" ;
-		pset:value 0.0
+		pset:value 0.1522
 	] , [
 		lv2:symbol "stegosaurus_OPHAT_OSC1_PITCH_SUSTAIN" ;
-		pset:value 0.0
+		pset:value 1.0
 	] , [
 		lv2:symbol "stegosaurus_OPHAT_OSC1_VOLUME" ;
-		pset:value 0.31703722
+		pset:value 0.1574074
 	] , [
 		lv2:symbol "stegosaurus_OPHAT_OSC2_ACTIVE" ;
 		pset:value 1.0
@@ -300,34 +397,37 @@
 		pset:value 1.0
 	] , [
 		lv2:symbol "stegosaurus_OPHAT_OSC2_AMP_DECAY" ;
-		pset:value 0.47000027
+		pset:value 0.47826087
 	] , [
 		lv2:symbol "stegosaurus_OPHAT_OSC2_AMP_RELEASE" ;
-		pset:value 1.0
+		pset:value 0.39130434
 	] , [
 		lv2:symbol "stegosaurus_OPHAT_OSC2_AMP_SUSTAIN" ;
 		pset:value 1.0
 	] , [
 		lv2:symbol "stegosaurus_OPHAT_OSC2_NOISE" ;
-		pset:value 0.14629662
+		pset:value 0.81481481
 	] , [
 		lv2:symbol "stegosaurus_OPHAT_OSC2_PITCH" ;
-		pset:value 1.32074046
+		pset:value 1.16666675
+	] , [
+		lv2:symbol "stegosaurus_OPHAT_OSC2_PITCH_ADSR2" ;
+		pset:value 0.48148143
 	] , [
 		lv2:symbol "stegosaurus_OPHAT_OSC2_PITCH_ATTACK" ;
 		pset:value 1.0
 	] , [
 		lv2:symbol "stegosaurus_OPHAT_OSC2_PITCH_DECAY" ;
-		pset:value 0.48739129
+		pset:value 0.32608697
 	] , [
-		lv2:symbol "stegosaurus_OPHAT_OSC2_PITCH_RELEASE" ;
+		lv2:symbol "stegosaurus_OPHAT_OSC2_PITCH_SUSTAIN" ;
 		pset:value 1.0
 	] , [
 		lv2:symbol "stegosaurus_OPHAT_OSC2_PITCH_SUSTAIN" ;
-		pset:value 0.94565219
+		pset:value 1.0
 	] , [
 		lv2:symbol "stegosaurus_OPHAT_OSC2_VOLUME" ;
-		pset:value 0.42388898
+		pset:value 0.2962963
 	] , [
 		lv2:symbol "stegosaurus_SNARE_OSC1_ACTIVE" ;
 		pset:value 1.0
@@ -336,34 +436,37 @@
 		pset:value 1.0
 	] , [
 		lv2:symbol "stegosaurus_SNARE_OSC1_AMP_DECAY" ;
-		pset:value 0.38780001
+		pset:value 0.3793045
 	] , [
 		lv2:symbol "stegosaurus_SNARE_OSC1_AMP_RELEASE" ;
-		pset:value 0.38479999
+		pset:value 0.37080017
 	] , [
 		lv2:symbol "stegosaurus_SNARE_OSC1_AMP_SUSTAIN" ;
-		pset:value 1.0
+		pset:value 0.99500006
 	] , [
 		lv2:symbol "stegosaurus_SNARE_OSC1_NOISE" ;
-		pset:value 0.37040001
+		pset:value 0.29629624
 	] , [
 		lv2:symbol "stegosaurus_SNARE_OSC1_PITCH" ;
 		pset:value 1.90740001
+	] , [
+		lv2:symbol "stegosaurus_SNARE_OSC1_PITCH_ADSR2" ;
+		pset:value 0.48148143
+	] , [
+		lv2:symbol "stegosaurus_SNARE_OSC1_PITCH_ADSR2" ;
+		pset:value 0.48148143
 	] , [
 		lv2:symbol "stegosaurus_SNARE_OSC1_PITCH_ATTACK" ;
 		pset:value 1.0
 	] , [
 		lv2:symbol "stegosaurus_SNARE_OSC1_PITCH_DECAY" ;
-		pset:value 0.0
+		pset:value 0.30434781
 	] , [
 		lv2:symbol "stegosaurus_SNARE_OSC1_PITCH_RELEASE" ;
 		pset:value 0.1087
 	] , [
 		lv2:symbol "stegosaurus_SNARE_OSC1_PITCH_SUSTAIN" ;
-		pset:value 0.0
-	] , [
-		lv2:symbol "stegosaurus_SNARE_OSC1_VOLUME" ;
-		pset:value 0.25189999
+		pset:value 1.0
 	] , [
 		lv2:symbol "stegosaurus_SNARE_OSC2_ACTIVE" ;
 		pset:value 1.0
@@ -372,25 +475,28 @@
 		pset:value 1.0
 	] , [
 		lv2:symbol "stegosaurus_SNARE_OSC2_AMP_DECAY" ;
-		pset:value 0.40000001
+		pset:value 0.36582586
 	] , [
 		lv2:symbol "stegosaurus_SNARE_OSC2_AMP_RELEASE" ;
 		pset:value 0.38870001
 	] , [
 		lv2:symbol "stegosaurus_SNARE_OSC2_AMP_SUSTAIN" ;
-		pset:value 0.46000001
-	] , [
-		lv2:symbol "stegosaurus_SNARE_OSC2_NOISE" ;
-		pset:value 0.0
-	] , [
-		lv2:symbol "stegosaurus_SNARE_OSC2_PITCH" ;
-		pset:value 0.0348
-	] , [
-		lv2:symbol "stegosaurus_SNARE_OSC2_PITCH_ATTACK" ;
 		pset:value 1.0
 	] , [
+		lv2:symbol "stegosaurus_SNARE_OSC2_NOISE" ;
+		pset:value 0.00400019
+	] , [
+		lv2:symbol "stegosaurus_SNARE_OSC2_PITCH" ;
+		pset:value 0.00500023
+	] , [
+		lv2:symbol "stegosaurus_SNARE_OSC2_PITCH_ADSR2" ;
+		pset:value 0.02700126
+	] , [
+		lv2:symbol "stegosaurus_SNARE_OSC2_PITCH_ATTACK" ;
+		pset:value 0.99600005
+	] , [
 		lv2:symbol "stegosaurus_SNARE_OSC2_PITCH_DECAY" ;
-		pset:value 0.40000001
+		pset:value 0.42078277
 	] , [
 		lv2:symbol "stegosaurus_SNARE_OSC2_PITCH_RELEASE" ;
 		pset:value 0.39021999
@@ -399,9 +505,9 @@
 		pset:value 1.0
 	] , [
 		lv2:symbol "stegosaurus_SNARE_OSC2_VOLUME" ;
-		pset:value 0.63870001
+		pset:value 0.6388889
 	] , [
 		lv2:symbol "stegosaurus_VOLUME" ;
-		pset:value 1.152174
+		pset:value 1.79999995
 	] .
 

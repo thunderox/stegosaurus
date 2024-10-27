@@ -49,7 +49,7 @@ clean:
 install:
 	cp $(CURDIR)/bin/stegosaurus.lv2 /usr/lib/lv2 -r
 	cp $(CURDIR)/bin/stegosaurus-vst.so /usr/lib/vst
-	cp $(CURDIR)/plugins/stegosaurus/presets/stegosaurus_presets_electro.lv2 /usr/lib/lv2 -r
+	cp $(CURDIR)/plugins/stegosaurus/presets/stegosaurus_presets_defaults /usr/lib/lv2 -r
 	mkdir /home/$(SUDO_USER)/.lv2/stegosaurus.lv2 -p
 	chmod 777 /home/$(SUDO_USER)/.lv2/stegosaurus.lv2 -R
 	cp $(CURDIR)/plugins/stegosaurus/waves /home/$(SUDO_USER)/.lv2/stegosaurus.lv2/waves -rf
@@ -59,7 +59,7 @@ install:
 # --------------------------------------------------------------
 uninstall:
 	rm /usr/lib/lv2/stegosaurus.lv2  -rf
-	rm /usr/lib/lv2/stegosaurus_presets_electro -rf
+	rm /usr/lib/lv2/stegosaurus_presets_defaults -r -rf
 	rm /usr/lib/vst/stegosaurus-vst.so -f
 	rm /home/$(SUDO_USER)/.lv2/stegosaurus.lv2 -rf
 	rm /usr/lib/dssi/stegosaurus.dssi -rf

@@ -99,9 +99,7 @@ class stegosaurus_ui : public UI
 				int ypos = panelY;
 
 				for (int o=0; o<2; o++)
-				{
-					cout << port << endl;
-					
+				{	
 					int gui_ACTIVE = Delirium_UI_Create_Widget(GUI, deliriumUI_Switch, 0,
 						panelX + 0.25, ypos + 1.5, 1, 1.5, "OSC-"+std::to_string(o+1), port);
 					Delirium_UI_Widget_Set_Group_And_Member(GUI, gui_ACTIVE, group, name[name_index]);
@@ -111,7 +109,7 @@ class stegosaurus_ui : public UI
 					
 					int gui_NOISE = Delirium_UI_Create_Widget(GUI, deliriumUI_Fader, 0,
 						panelX + 1.5, ypos + 1, 0.5, 3, "NOISE", port);
-					Delirium_UI_Widget_Set_Min_Max(GUI, gui_NOISE, 2,0);
+					Delirium_UI_Widget_Set_Min_Max(GUI, gui_NOISE, 1.0,0);
 					Delirium_UI_Widget_Set_Group_And_Member(GUI, gui_NOISE, group, name[name_index]);
 					fParameters_widget_number[port] = gui_NOISE;
 					port++;
@@ -124,7 +122,7 @@ class stegosaurus_ui : public UI
 					port++;
 					
 					int gui_AMP_ATTACK = Delirium_UI_Create_Widget(GUI, deliriumUI_ADSR, 0,
-						panelX + 3.5, ypos + 1.5, 3, 2,"AMP",port); 
+						panelX + 3.5, ypos + 1.5, 2.5, 2,"AMP",port); 
 					fParameters_widget_number[port] = gui_AMP_ATTACK; 
 					fParameters_widget_number[port+1] = gui_AMP_ATTACK; 
 					fParameters_widget_number[port+2] = gui_AMP_ATTACK; 
@@ -133,7 +131,7 @@ class stegosaurus_ui : public UI
 					port += 4;
 					
 					int gui_PITCH_ATTACK = Delirium_UI_Create_Widget(GUI, deliriumUI_ADSR, 0,
-						panelX + 7, ypos + 1.5, 3, 2,"PITCH",port); 
+						panelX + 6.5, ypos + 1.5, 2.5, 2,"PITCH",port); 
 					fParameters_widget_number[port] = gui_PITCH_ATTACK; 
 					fParameters_widget_number[port+1] = gui_PITCH_ATTACK; 
 					fParameters_widget_number[port+2] = gui_PITCH_ATTACK; 
@@ -142,14 +140,14 @@ class stegosaurus_ui : public UI
 					port += 4;
 					
 					int gui_PITCH_ADSR2 = Delirium_UI_Create_Widget(GUI, deliriumUI_Fader, 0,
-						panelX + 10.5, ypos + 1, 0.5, 3, "ADSR2", port);
+						panelX + 9.5, ypos + 1, 0.5, 3, "ADSR2", port);
 					Delirium_UI_Widget_Set_Min_Max(GUI, gui_PITCH_ADSR2, 2,0);
 					Delirium_UI_Widget_Set_Group_And_Member(GUI, gui_PITCH_ADSR2, group, name[name_index]);
 					fParameters_widget_number[port] = gui_PITCH_ADSR2;
 					port++;
 					
 					int gui_VOLUME = Delirium_UI_Create_Widget(GUI, deliriumUI_Fader, 0,
-						panelX + 11.5, ypos + 1, 0.5, 3, "VOL", port);
+						panelX + 10.5, ypos + 1, 0.5, 3, "VOL", port);
 					Delirium_UI_Widget_Set_Min_Max(GUI, gui_VOLUME, 1,0);
 					Delirium_UI_Widget_Set_Group_And_Member(GUI, gui_VOLUME, group, name[name_index]);
 					fParameters_widget_number[port] = gui_VOLUME;
@@ -157,8 +155,23 @@ class stegosaurus_ui : public UI
 					
 					ypos += 3.75;
 				}
+				
+				int gui_OSC3_PITCH = Delirium_UI_Create_Widget(GUI, deliriumUI_Fader, 0,
+					panelX + 11.5, panelY + 1, 0.5, 3, "O3-P", port);
+				Delirium_UI_Widget_Set_Min_Max(GUI, gui_OSC3_PITCH, 2,0);
+				Delirium_UI_Widget_Set_Group_And_Member(GUI, gui_OSC3_PITCH, group, name[name_index]);
+				fParameters_widget_number[port] = gui_OSC3_PITCH;
+				port++;
+				
+				int gui_OSC3_VOLUME = Delirium_UI_Create_Widget(GUI, deliriumUI_Fader, 0,
+					panelX + 12.5, panelY + 1, 0.5, 3, "O3-V", port);
+				Delirium_UI_Widget_Set_Min_Max(GUI, gui_OSC3_VOLUME, 2,0);
+				Delirium_UI_Widget_Set_Group_And_Member(GUI, gui_OSC3_VOLUME, group, name[name_index]);
+				fParameters_widget_number[port] = gui_OSC3_VOLUME;
+				port++;
+				
 				name_index++;
-				port += 2;
+			
 			}
 			
 
@@ -515,17 +528,9 @@ class stegosaurus_ui : public UI
 
 			// get widget number connected to this parameter
 			int widget_number = fParameters_widget_number[index];
-			
-			if (index == stegosaurus_SNARE_OSC2_PITCH_DECAY)
-			{
-				cout << index << " - " << value << " - " << widget_number <<  " - " << GUI->Widgets.size() << endl;
-
-			}
 						
 			if (widget_number < 0 || widget_number > (int)GUI->Widgets.size() ) return;
 			
-
-
 			Delirium_UI_Widget_Base* wdg = (Delirium_UI_Widget_Base*)GUI->Widgets[widget_number];
 			
 
@@ -535,7 +540,6 @@ class stegosaurus_ui : public UI
 			if (index > (uint32_t)wdg->parameter_number && wdg->type == deliriumUI_ADSR)
 			{
 				wdg->current_value = ( index - wdg->parameter_number);
-				if (index == stegosaurus_SNARE_OSC2_PITCH_DECAY) cout << "grrrrrrrr - " << index << " - " << wdg->parameter_number << endl;
 			}
 			
 			if ((int)index > wdg->parameter_number && wdg->type == deliriumUI_Fader_Route)

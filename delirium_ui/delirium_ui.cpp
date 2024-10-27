@@ -159,7 +159,7 @@ int  Delirium_UI_Create_Widget(Delirium_UI_Surface* GUI, int type, int group, fl
 		new_widget->max = 1;
 		new_widget->default_values[0] = 0;
 		new_widget->current_value = 0;
-		new_widget->increment = 0.01;
+		new_widget->increment = 0.005;
 		new_widget->integer = (type == deliriumUI_Selector);
 		new_widget->hover = false;
 		new_widget->route_number = 0;

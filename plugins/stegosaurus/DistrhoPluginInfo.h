@@ -23,6 +23,7 @@ enum Parameters {
 	stegosaurus_OUT_TWO,
 	stegosaurus_OUT_THREE,
 	stegosaurus_OUT_FOUR,
+	
 	stegosaurus_VOLUME,
 
 	stegosaurus_KICK_OSC1_ACTIVE,

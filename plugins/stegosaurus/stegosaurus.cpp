@@ -126,7 +126,7 @@ class stegosaurus : public Plugin
 				set_param (parameter, "stegosaurus_KICK_OSC1_NOISE", index, 0.0f, 1.0f, 0.0f);
 				break;
 			case stegosaurus_KICK_OSC1_PITCH:
-				set_param (parameter, "stegosaurus_KICK_OSC1_PITCH", index, 0.0f, 0.25f, 0.02f);
+				set_param (parameter, "stegosaurus_KICK_OSC1_PITCH", index, 0.0f, 0.25f, 0.005f);
 				break;
 			case stegosaurus_KICK_OSC1_AMP_ATTACK:
 				set_param (parameter, "stegosaurus_KICK_OSC1_AMP_ATTACK", index, 0.0f, 1.0f, 1.0f);
@@ -144,19 +144,19 @@ class stegosaurus : public Plugin
 				set_param (parameter, "stegosaurus_KICK_OSC1_PITCH_ATTACK", index, 0.0f, 1.0f, 1.0f);
 				break;
 			case stegosaurus_KICK_OSC1_PITCH_DECAY:
-				set_param (parameter, "stegosaurus_KICK_OSC1_PITCH_DECAY", index, 0.0f, 1.0f, 0.423f);
+				set_param (parameter, "stegosaurus_KICK_OSC1_PITCH_DECAY", index, 0.0f, 1.0f, 0.40300003f);
 				break;
 			case stegosaurus_KICK_OSC1_PITCH_SUSTAIN:
 				set_param (parameter, "stegosaurus_KICK_OSC1_PITCH_SUSTAIN", index, 0.0f, 1.0f, 1.0f);
 				break;
 			case stegosaurus_KICK_OSC1_PITCH_RELEASE:
-				set_param (parameter, "stegosaurus_KICK_OSC1_PITCH_RELEASE", index, 0.0f, 1.0f, 0.3913f);
+				set_param (parameter, "stegosaurus_KICK_OSC1_PITCH_RELEASE", index, 0.0f, 1.0f, 0.39129999f);
 				break;
 			case stegosaurus_KICK_OSC1_PITCH_ADSR2:
-				set_param (parameter, "stegosaurus_KICK_OSC1_PITCH_ADSR2", index, 0.0f, 0.25f, 0.02f);
+				set_param (parameter, "stegosaurus_KICK_OSC1_PITCH_ADSR2", index, 0.0f, 0.25f, 0.00799954f);
 				break;
 			case stegosaurus_KICK_OSC1_VOLUME:
-				set_param (parameter, "stegosaurus_KICK_OSC1_VOLUME", index, 0.0f, 1.0f, 0.9537f);
+				set_param (parameter, "stegosaurus_KICK_OSC1_VOLUME", index, 0.0f, 1.0f, 0.95370001f);
 				break;
 				
 			// OSCILLATOR TWO
@@ -165,40 +165,40 @@ class stegosaurus : public Plugin
 				set_param (parameter, "stegosaurus_KICK_OSC2_ACTIVE", index, 0.0f, 1.0f, 1.0f);
 				break;
 			case stegosaurus_KICK_OSC2_NOISE:
-				set_param (parameter, "stegosaurus_KICK_OSC2_NOISE", index, 0.0f, 1.0f, 0.0f);
+				set_param (parameter, "stegosaurus_KICK_OSC2_NOISE", index, 0.0f, 1.0f, 0.47222221f);
 				break;
 			case stegosaurus_KICK_OSC2_PITCH:
-				set_param (parameter, "stegosaurus_KICK_OSC2_PITCH", index, 0.0f, 2.0f, 1.6204f);
+				set_param (parameter, "stegosaurus_KICK_OSC2_PITCH", index, 0.0f, 2.0f, 0.0f);
 				break;
 			case stegosaurus_KICK_OSC2_AMP_ATTACK:
-				set_param (parameter, "stegosaurus_KICK_OSC2_AMP_ATTACK", index, 0.0f, 2.0f, 1.0f);
+				set_param (parameter, "stegosaurus_KICK_OSC2_AMP_ATTACK", index, 0.0f, 1.0f, 1.0f);
 				break;
 			case stegosaurus_KICK_OSC2_AMP_DECAY:
-				set_param (parameter, "stegosaurus_KICK_OSC2_AMP_DECAY", index, 0.0f, 1.0f, 0.4309f);
+				set_param (parameter, "stegosaurus_KICK_OSC2_AMP_DECAY", index, 0.0f, 1.0f, 0.5911f);
 				break;
 			case stegosaurus_KICK_OSC2_AMP_SUSTAIN:
 				set_param (parameter, "stegosaurus_KICK_OSC2_AMP_SUSTAIN", index, 0.0f, 1.0f, 1.0f);
 				break;
 			case stegosaurus_KICK_OSC2_AMP_RELEASE:
-				set_param (parameter, "stegosaurus_KICK_OSC2_AMP_RELEASE", index, 0.0f, 1.0f, 0.3370f);
+				set_param (parameter, "stegosaurus_KICK_OSC2_AMP_RELEASE", index, 0.0f, 1.0f, 0.33700001f);
 				break;
 			case stegosaurus_KICK_OSC2_PITCH_ATTACK:
 				set_param (parameter, "stegosaurus_KICK_OSC2_PITCH_ATTACK", index, 0.0f, 1.0f, 1.0f);
 				break;
 			case stegosaurus_KICK_OSC2_PITCH_DECAY:
-				set_param (parameter, "stegosaurus_KICK_OSC2_PITCH_DECAY", index, 0.0f, 1.0f, 0.7004f);
+				set_param (parameter, "stegosaurus_KICK_OSC2_PITCH_DECAY", index, 0.0f, 1.0f, 0.56547797f);
 				break;
 			case stegosaurus_KICK_OSC2_PITCH_SUSTAIN:
 				set_param (parameter, "stegosaurus_KICK_OSC2_PITCH_SUSTAIN", index, 0.0f, 1.0f, 1.0f);
 				break;
 			case stegosaurus_KICK_OSC2_PITCH_RELEASE:
-				set_param (parameter, "stegosaurus_KICK_OSC2_PITCH_RELEASE", index, 0.0f, 1.0f, 0.2717f);
+				set_param (parameter, "stegosaurus_KICK_OSC2_PITCH_RELEASE", index, 0.0f, 1.0f, 0.27169999f);
 				break;
 			case stegosaurus_KICK_OSC2_PITCH_ADSR2:
-				set_param (parameter, "stegosaurus_KICK_OSC2_PITCH_ADSR2", index, 0.0f, 2.0f, 1.6204f);
+				set_param (parameter, "stegosaurus_KICK_OSC2_PITCH_ADSR2", index, 0.0f, 2.0f, 0.1913327f);
 				break;
 			case stegosaurus_KICK_OSC2_VOLUME:
-				set_param (parameter, "stegosaurus_KICK_OSC2_VOLUME", index, 0.0f, 1.0f, 0.4120f);
+				set_param (parameter, "stegosaurus_KICK_OSC2_VOLUME", index, 0.0f, 1.0f, 0.412f);
 				break;
 				
 			case stegosaurus_KICK_OSC3_PITCH:
@@ -216,22 +216,22 @@ class stegosaurus : public Plugin
 				set_param (parameter, "stegosaurus_SNARE_OSC1_ACTIVE", index, 0.0f, 1.0f, 1.0f);
 				break;
 			case stegosaurus_SNARE_OSC1_NOISE:
-				set_param (parameter, "stegosaurus_SNARE_OSC1_NOISE", index, 0.0f, 1.0f, 0.24f);
+				set_param (parameter, "stegosaurus_SNARE_OSC1_NOISE", index, 0.0f, 1.0f, 0.16666663f);
 				break;			
 			case stegosaurus_SNARE_OSC1_PITCH:
 				set_param (parameter, "stegosaurus_SNARE_OSC1_PITCH", index, 0.0f, 2.0f, 1.9074f);
 				break;	
 			case stegosaurus_SNARE_OSC1_AMP_ATTACK:
-				set_param (parameter, "stegosaurus_SNARE_OSC1_AMP_ATTACK", index, 0.0f, 2.0f, 1.0f);
+				set_param (parameter, "stegosaurus_SNARE_OSC1_AMP_ATTACK", index, 0.0f, 1.0f, 1.0f);
 				break;
 			case stegosaurus_SNARE_OSC1_AMP_DECAY:
-				set_param (parameter, "stegosaurus_SNARE_OSC1_AMP_DECAY", index, 0.0f, 1.0f, 0.3878f);
+				set_param (parameter, "stegosaurus_SNARE_OSC1_AMP_DECAY", index, 0.0f, 1.0f, 0.43779996f);
 				break;	
 			case stegosaurus_SNARE_OSC1_AMP_SUSTAIN:
 				set_param (parameter, "stegosaurus_SNARE_OSC1_AMP_SUSTAIN", index, 0.0f, 1.0f, 1.0f);
 				break;
 			case stegosaurus_SNARE_OSC1_AMP_RELEASE:
-				set_param (parameter, "stegosaurus_SNARE_OSC1_AMP_RELEASE", index, 0.0f, 1.0f, 0.3848f);
+				set_param (parameter, "stegosaurus_SNARE_OSC1_AMP_RELEASE", index, 0.0f, 1.0f, 0.38479999);
 				break;
 			case stegosaurus_SNARE_OSC1_PITCH_ATTACK:
 				set_param (parameter, "stegosaurus_SNARE_OSC1_PITCH_ATTACK", index, 0.0f, 1.0f, 1.0f);
@@ -246,10 +246,10 @@ class stegosaurus : public Plugin
 				set_param (parameter, "stegosaurus_SNARE_OSC1_PITCH_RELEASE", index, 0.0f, 2.0f, 0.1087f);
 				break;
 			case stegosaurus_SNARE_OSC1_PITCH_ADSR2:
-				set_param (parameter, "stegosaurus_SNARE_OSC1_PITCH_ADSR2", index, 0.0f, 2.0f, 1.9074f);
+				set_param (parameter, "stegosaurus_SNARE_OSC1_PITCH_ADSR2", index, 0.0f, 2.0f, 0.25189999f);
 				break;
 			case stegosaurus_SNARE_OSC1_VOLUME:
-				set_param (parameter, "stegosaurus_SNARE_OSC1_PITCH_ADSR2", index, 0.0f, 1.0f, 0.2519f);
+				set_param (parameter, "stegosaurus_SNARE_OSC1_VOLUME", index, 0.0f, 1.0f, 0.2519f);
 				break;
 				
 			// OSCILLATOR TWO
@@ -261,37 +261,37 @@ class stegosaurus : public Plugin
 				set_param (parameter, "stegosaurus_SNARE_OSC2_NOISE", index, 0.0f, 1.0f, 0.0f);
 				break;
 			case stegosaurus_SNARE_OSC2_PITCH:
-				set_param (parameter, "stegosaurus_SNARE_OSC2_PITCH", index, 0.0f, 2.0f, 0.0348f);
+				set_param (parameter, "stegosaurus_SNARE_OSC2_PITCH", index, 0.0f, 2.0f, 0.00879884f);
 				break;
 			case stegosaurus_SNARE_OSC2_AMP_ATTACK:
 				set_param (parameter, "stegosaurus_SNARE_OSC2_AMP_ATTACK", index, 0.0f, 1.0f, 1.0f);
 				break;
 			case stegosaurus_SNARE_OSC2_AMP_DECAY:
-				set_param (parameter, "stegosaurus_SNARE_OSC2_AMP_DECAY", index, 0.0f, 1.0f, 0.4f);
+				set_param (parameter, "stegosaurus_SNARE_OSC2_AMP_DECAY", index, 0.0f, 1.0f, 0.39400008f);
 				break;
 			case stegosaurus_SNARE_OSC2_AMP_SUSTAIN:
-				set_param (parameter, "stegosaurus_SNARE_OSC2_AMP_SUSTAIN", index, 0.0f, 1.0f, 0.64f);
+				set_param (parameter, "stegosaurus_SNARE_OSC2_AMP_SUSTAIN", index, 0.0f, 1.0f, 1.0f);
 				break;
 			case stegosaurus_SNARE_OSC2_AMP_RELEASE:
-				set_param (parameter, "stegosaurus_SNARE_OSC2_AMP_RELEASE", index, 0.0f, 1.0f, 0.3887f);
+				set_param (parameter, "stegosaurus_SNARE_OSC2_AMP_RELEASE", index, 0.0f, 1.0f, 0.38870001);
 				break;
 			case stegosaurus_SNARE_OSC2_PITCH_ATTACK:
 				set_param (parameter, "stegosaurus_SNARE_OSC2_PITCH_ATTACK", index, 0.0f, 1.0f, 1.0f);
 				break;
 			case stegosaurus_SNARE_OSC2_PITCH_DECAY:
-				set_param (parameter, "stegosaurus_SNARE_OSC2_PITCH_DECAY", index, 0.0f, 1.0f, 0.4f);
+				set_param (parameter, "stegosaurus_SNARE_OSC2_PITCH_DECAY", index, 0.0f, 1.0f, 0.40699992f);
 				break;
 			case stegosaurus_SNARE_OSC2_PITCH_SUSTAIN:
 				set_param (parameter, "stegosaurus_SNARE_OSC2_PITCH_SUSTAIN", index, 0.0f, 1.0f, 1.0f);
 				break;
 			case stegosaurus_SNARE_OSC2_PITCH_RELEASE:
-				set_param (parameter, "stegosaurus_SNARE_OSC2_PITCH_RELEASE", index, 0.0f, 1.0f, 0.39022f);
+				set_param (parameter, "stegosaurus_SNARE_OSC2_PITCH_RELEASE", index, 0.0f, 1.0f, 0.39021999f);
 				break;
 			case stegosaurus_SNARE_OSC2_PITCH_ADSR2:
-				set_param (parameter, "stegosaurus_SNARE_OSC2_PITCH_ADSR2", index, 0.0f, 2.0f, 0.0348f);
+				set_param (parameter, "stegosaurus_SNARE_OSC2_PITCH_ADSR2", index, 0.0f, 2.0f, 0.02700126);
 				break;
 			case stegosaurus_SNARE_OSC2_VOLUME:
-				set_param (parameter, "stegosaurus_SNARE_OSC2_VOLUME", index, 0.0f, 1.0f, 0.6387f);
+				set_param (parameter, "stegosaurus_SNARE_OSC2_VOLUME", index, 0.0f, 1.0f, 0.63870001f);
 				break;
 				
 			case stegosaurus_SNARE_OSC3_PITCH:
@@ -312,10 +312,10 @@ class stegosaurus : public Plugin
 				set_param (parameter, "stegosaurus_CLHAT_OSC1_NOISE", index, 0.0f, 1.0f, 0.0f);
 				break;
 			case stegosaurus_CLHAT_OSC1_PITCH:
-				set_param (parameter, "stegosaurus_CLHAT_OSC1_PITCH", index, 0.0f, 2.0f, 1.6111f);
+				set_param (parameter, "stegosaurus_CLHAT_OSC1_PITCH", index, 0.0f, 2.0f, 1.5370f);
 				break;
 			case stegosaurus_CLHAT_OSC1_AMP_ATTACK:
-				set_param (parameter, "stegosaurus_CLHAT_OSC1_AMP_ATTACK", index, 0.0f, 2.0f, 1.0f);
+				set_param (parameter, "stegosaurus_CLHAT_OSC1_AMP_ATTACK", index, 0.0f, 1.0f, 1.0f);
 				break;
 			case stegosaurus_CLHAT_OSC1_AMP_DECAY:
 				set_param (parameter, "stegosaurus_CLHAT_OSC1_AMP_DECAY", index, 0.0f, 1.0f, 0.4465f);
@@ -339,10 +339,10 @@ class stegosaurus : public Plugin
 				set_param (parameter, "stegosaurus_CLHAT_OSC1_PITCH_RELEASE", index, 0.0f, 1.0f, 1.0f);
 				break;
 			case stegosaurus_CLHAT_OSC1_PITCH_ADSR2:
-				set_param (parameter, "stegosaurus_CLHAT_OSC1_PITCH_ADSR2", index, 0.0f, 2.0f, 1.6111f);
+				set_param (parameter, "stegosaurus_CLHAT_OSC1_PITCH_ADSR2", index, 0.0f, 2.0f, 0.0f);
 				break;
 			case stegosaurus_CLHAT_OSC1_VOLUME:
-				set_param (parameter, "stegosaurus_CLHAT_OSC1_VOLUME", index, 0.0f, 1.0f, 0.5874f);
+				set_param (parameter, "stegosaurus_CLHAT_OSC1_VOLUME", index, 0.0f, 1.0f, 0.3f);
 				break;
 
 			// OSCILLATOR TWO
@@ -388,10 +388,10 @@ class stegosaurus : public Plugin
 				break;
 				
 			case stegosaurus_CLHAT_OSC3_PITCH:
-				set_param (parameter, "stegosaurus_CLHAT_OSC3_PITCH", index, 0.0f, 1.0f, 0.0f);
+				set_param (parameter, "stegosaurus_CLHAT_OSC3_PITCH", index, 0.0f, 1.0f, 0.1185f);
 				break;
 			case stegosaurus_CLHAT_OSC3_VOLUME:
-				set_param (parameter, "stegosaurus_CLHAT_OSC3_VOLUME", index, 0.0f, 1.0f, 0.0f);
+				set_param (parameter, "stegosaurus_CLHAT_OSC3_VOLUME", index, 0.0f, 1.0f, 0.9259f);
 				break;
 
 
@@ -403,25 +403,25 @@ class stegosaurus : public Plugin
 				set_param (parameter, "stegosaurus_OPHAT_OSC1_ACTIVE", index, 0.0f, 1.0f, 1.0f);
 				break;
 			case stegosaurus_OPHAT_OSC1_NOISE:
-				set_param (parameter, "stegosaurus_OPHAT_OSC1_NOISE", index, 0.0f, 1.0f, 0.1f);
+				set_param (parameter, "stegosaurus_OPHAT_OSC1_NOISE", index, 0.0f, 1.0f, 0.03481483f);
 				break;
 			case stegosaurus_OPHAT_OSC1_PITCH:
-				set_param (parameter, "stegosaurus_OPHAT_OSC1_PITCH", index, 0.0f, 2.0f, 1.6407f);
+				set_param (parameter, "stegosaurus_OPHAT_OSC1_PITCH", index, 0.0f, 2.0f, 1.5925926f);
 				break;
 			case stegosaurus_OPHAT_OSC1_AMP_ATTACK:
-				set_param (parameter, "stegosaurus_OPHAT_OSC1_AMP_ATTACK", index, 0.0f, 1.0f, 0.8126f);
+				set_param (parameter, "stegosaurus_OPHAT_OSC1_AMP_ATTACK", index, 0.0f, 1.0f, 1.0f);
 				break;
 			case stegosaurus_OPHAT_OSC1_AMP_DECAY:
-				set_param (parameter, "stegosaurus_OPHAT_OSC1_AMP_DECAY", index, 0.0f, 1.0f, 0.3278f);
+				set_param (parameter, "stegosaurus_OPHAT_OSC1_AMP_DECAY", index, 0.0f, 1.0f, 0.35999981f);
 				break;
 			case stegosaurus_OPHAT_OSC1_AMP_SUSTAIN:
-				set_param (parameter, "stegosaurus_OPHAT_OSC1_AMP_SUSTAIN", index, 0.0f, 1.0f, 0.76f);
+				set_param (parameter, "stegosaurus_OPHAT_OSC1_AMP_SUSTAIN", index, 0.0f, 1.0f, 1.0f);
 				break;
 			case stegosaurus_OPHAT_OSC1_AMP_RELEASE:
-				set_param (parameter, "stegosaurus_OPHAT_OSC1_AMP_RELEASE", index, 0.0f, 1.0f, 0.3496f);
+				set_param (parameter, "stegosaurus_OPHAT_OSC1_AMP_RELEASE", index, 0.0f, 1.0f, 0.36500013f);
 				break;
 			case stegosaurus_OPHAT_OSC1_PITCH_ATTACK:
-				set_param (parameter, "stegosaurus_OPHAT_OSC1_PITCH_ATTACK", index, 0.0f, 1.0f, 0.0f);
+				set_param (parameter, "stegosaurus_OPHAT_OSC1_PITCH_ATTACK", index, 0.0f, 1.0f, 1.0f);
 				break;
 			case stegosaurus_OPHAT_OSC1_PITCH_DECAY:
 				set_param (parameter, "stegosaurus_OPHAT_OSC1_PITCH_DECAY", index, 0.0f, 1.0f, 0.0f);
@@ -433,10 +433,10 @@ class stegosaurus : public Plugin
 				set_param (parameter, "stegosaurus_OPHAT_OSC1_PITCH_RELEASE", index, 0.0f, 1.0f, 0.1522f);
 				break;
 			case stegosaurus_OPHAT_OSC1_PITCH_ADSR2:
-				set_param (parameter, "stegosaurus_OPHAT_OSC1_PITCH_ADSR2", index, 0.0f, 2.0f, 1.6407f);
+				set_param (parameter, "stegosaurus_OPHAT_OSC1_PITCH_ADSR2", index, 0.0f, 2.0f, 0.03703701f);
 				break;
 			case stegosaurus_OPHAT_OSC1_VOLUME:
-				set_param (parameter, "stegosaurus_OPHAT_OSC1_VOLUME", index, 0.0f, 1.0f, 0.1737f);
+				set_param (parameter, "stegosaurus_OPHAT_OSC1_VOLUME", index, 0.0f, 1.0f, 0.16370004f);
 				break;
 				
 			// OSCILLATOR TWO
@@ -445,16 +445,16 @@ class stegosaurus : public Plugin
 				set_param (parameter, "stegosaurus_OPHAT_OSC2_ACTIVE", index, 0.0f, 1.0f, 1.0f);
 				break;
 			case stegosaurus_OPHAT_OSC2_NOISE:
-				set_param (parameter, "stegosaurus_OPHAT_OSC2_NOISE", index, 0.0f, 1.0f, 0.24f);
+				set_param (parameter, "stegosaurus_OPHAT_OSC2_NOISE", index, 0.0f, 1.0f, 0.14814812f);
 				break;
 			case stegosaurus_OPHAT_OSC2_PITCH:
-				set_param (parameter, "stegosaurus_OPHAT_OSC2_PITCH", index, 0.0f, 2.0f, 2.0f);
+				set_param (parameter, "stegosaurus_OPHAT_OSC2_PITCH", index, 0.0f, 2.0f, 1.4074074f);
 				break;
 			case stegosaurus_OPHAT_OSC2_AMP_ATTACK:
 				set_param (parameter, "stegosaurus_OPHAT_OSC2_AMP_ATTACK", index, 0.0f, 1.0f, 1.0f);
 				break;
 			case stegosaurus_OPHAT_OSC2_AMP_DECAY:
-				set_param (parameter, "stegosaurus_OPHAT_OSC2_AMP_DECAY", index, 0.0f, 1.0f, 0.4487f);
+				set_param (parameter, "stegosaurus_OPHAT_OSC2_AMP_DECAY", index, 0.0f, 1.0f, 0.5086999f);
 				break;
 			case stegosaurus_OPHAT_OSC2_AMP_SUSTAIN:
 				set_param (parameter, "stegosaurus_OPHAT_OSC2_AMP_SUSTAIN", index, 0.0f, 1.0f, 1.0f);
@@ -472,20 +472,20 @@ class stegosaurus : public Plugin
 				set_param (parameter, "stegosaurus_OPHAT_OSC2_PITCH_SUSTAIN", index, 0.0f, 1.0f, 0.0f);
 				break;
 			case stegosaurus_OPHAT_OSC2_PITCH_RELEASE:
-				set_param (parameter, "stegosaurus_OPHAT_OSC2_PITCH_SUSTAIN", index, 0.0f, 1.0f, 1.0f);
+				set_param (parameter, "stegosaurus_OPHAT_OSC2_PITCH_RELEASE", index, 0.0f, 1.0f, 1.0f);
 				break;
 			case stegosaurus_OPHAT_OSC2_PITCH_ADSR2:
-				set_param (parameter, "stegosaurus_OPHAT_OSC2_PITCH_ADSR2", index, 0.0f, 2.0f, 2.0f);
+				set_param (parameter, "stegosaurus_OPHAT_OSC2_PITCH_ADSR2", index, 0.0f, 2.0f, 0.48148143f);
 				break;
 			case stegosaurus_OPHAT_OSC2_VOLUME:
-				set_param (parameter, "stegosaurus_OPHAT_OSC2_VOLUME", index, 0.0f, 1.0f, 0.21277821);
+				set_param (parameter, "stegosaurus_OPHAT_OSC2_VOLUME", index, 0.0f, 1.0f, 1.0f);
 				break;
 				
 			case stegosaurus_OPHAT_OSC3_PITCH:
-				set_param (parameter, "stegosaurus_OPHAT_OSC3_PITCH", index, 0.0f, 1.0f, 0.0f);
+				set_param (parameter, "stegosaurus_OPHAT_OSC3_PITCH", index, 0.0f, 1.0f, 0.33333337f);
 				break;
 			case stegosaurus_OPHAT_OSC3_VOLUME:
-				set_param (parameter, "stegosaurus_OPHAT_OSC3_VOLUME", index, 0.0f, 1.0f, 0.0f);
+				set_param (parameter, "stegosaurus_OPHAT_OSC3_VOLUME", index, 0.0f, 1.0f, 0.87037039f);
 				break;
 				
 				

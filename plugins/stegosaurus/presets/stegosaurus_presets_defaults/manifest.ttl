@@ -18,3 +18,8 @@
 	lv2:appliesTo <http://thunderox.com/stegosaurus> ;
 	a pset:Preset ;
 	rdfs:seeAlso <boom.ttl> .
+	
+<overdrive_1.ttl>
+	lv2:appliesTo <http://thunderox.com/stegosaurus> ;
+	a pset:Preset ;
+	rdfs:seeAlso <overdrive_1.ttl> .

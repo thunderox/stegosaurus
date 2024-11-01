@@ -56,6 +56,7 @@ enum Parameters {
 
 	stegosaurus_KICK_OSC3_PITCH,
 	stegosaurus_KICK_OSC3_VOLUME,
+	stegosaurus_KICK_OVERDRIVE,
 
 	stegosaurus_SNARE_OSC1_ACTIVE,
 	stegosaurus_SNARE_OSC1_NOISE,
@@ -87,6 +88,7 @@ enum Parameters {
 	
 	stegosaurus_SNARE_OSC3_PITCH,
 	stegosaurus_SNARE_OSC3_VOLUME,
+	stegosaurus_SNARE_OVERDRIVE,
 
 	stegosaurus_CLHAT_OSC1_ACTIVE,
 	stegosaurus_CLHAT_OSC1_NOISE,
@@ -118,6 +120,7 @@ enum Parameters {
 
 	stegosaurus_CLHAT_OSC3_PITCH,
 	stegosaurus_CLHAT_OSC3_VOLUME,
+	stegosaurus_CLHAT_OVERDRIVE,
 
 	stegosaurus_OPHAT_OSC1_ACTIVE,
 	stegosaurus_OPHAT_OSC1_NOISE,
@@ -149,6 +152,7 @@ enum Parameters {
 	
 	stegosaurus_OPHAT_OSC3_PITCH,
 	stegosaurus_OPHAT_OSC3_VOLUME,
+	stegosaurus_OPHAT_OVERDRIVE,
 	
 	stegosaurus_CLAP_OSC1_ACTIVE,
 	stegosaurus_CLAP_OSC1_NOISE,
@@ -180,6 +184,7 @@ enum Parameters {
 	
 	stegosaurus_CLAP_OSC3_PITCH,
 	stegosaurus_CLAP_OSC3_VOLUME,
+	stegosaurus_CLAP_OVERDRIVE,
 	
 	stegosaurus_COWBELL_OSC1_ACTIVE,
 	stegosaurus_COWBELL_OSC1_NOISE,
@@ -211,6 +216,7 @@ enum Parameters {
 	
 	stegosaurus_COWBELL_OSC3_PITCH,
 	stegosaurus_COWBELL_OSC3_VOLUME,
+	stegosaurus_COWBELL_OVERDRIVE,
 	
 	stegosaurus_OUT_SELECTOR_1,
 	stegosaurus_OUT_SELECTOR_2,

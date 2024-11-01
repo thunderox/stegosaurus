@@ -157,17 +157,24 @@ class stegosaurus_ui : public UI
 				}
 				
 				int gui_OSC3_PITCH = Delirium_UI_Create_Widget(GUI, deliriumUI_Fader, 0,
-					panelX + 11.5, panelY + 1, 0.5, 3, "O3-P", port);
+					panelX + 11.5, panelY + 1, 0.5, 3, "FM-FRQ", port);
 				Delirium_UI_Widget_Set_Min_Max(GUI, gui_OSC3_PITCH, 2,0);
 				Delirium_UI_Widget_Set_Group_And_Member(GUI, gui_OSC3_PITCH, group, name[name_index]);
 				fParameters_widget_number[port] = gui_OSC3_PITCH;
 				port++;
 				
 				int gui_OSC3_VOLUME = Delirium_UI_Create_Widget(GUI, deliriumUI_Fader, 0,
-					panelX + 12.5, panelY + 1, 0.5, 3, "O3-V", port);
+					panelX + 12.5, panelY + 1, 0.5, 3, "FM-VOL", port);
 				Delirium_UI_Widget_Set_Min_Max(GUI, gui_OSC3_VOLUME, 2,0);
 				Delirium_UI_Widget_Set_Group_And_Member(GUI, gui_OSC3_VOLUME, group, name[name_index]);
 				fParameters_widget_number[port] = gui_OSC3_VOLUME;
+				port++;
+				
+				int gui_OVERTDRIVE = Delirium_UI_Create_Widget(GUI, deliriumUI_Fader, 0,
+					panelX + 13.5, panelY + 1, 0.5, 3, "OVERDRIVE", port);
+				Delirium_UI_Widget_Set_Min_Max(GUI, gui_OVERTDRIVE, 4,0);
+				Delirium_UI_Widget_Set_Group_And_Member(GUI, gui_OVERTDRIVE, group, name[name_index]);
+				fParameters_widget_number[port] = gui_OVERTDRIVE;
 				port++;
 				
 				name_index++;

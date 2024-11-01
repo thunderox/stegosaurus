@@ -833,7 +833,7 @@ class stegosaurus : public Plugin
 					voices[4].adsr_osc2_pitch.level = 0;
 					voices[4].frequency = midi_note;
 					voices[4].volume = (float)midi_volume/128 ;
-					keys[midi_note] = 0;
+					keys[midi_note] = 4;
 				}
 				
 				if (midi_note == 69 || midi_note == 56) // A3 - COWBELL
@@ -852,7 +852,7 @@ class stegosaurus : public Plugin
 					voices[5].adsr_osc2_pitch.level = 0;
 					voices[5].frequency = midi_note;
 					voices[5].volume = (float)midi_volume/128 ;
-					keys[midi_note] = 0;
+					keys[midi_note] = 5;
 				}
 			}
 			

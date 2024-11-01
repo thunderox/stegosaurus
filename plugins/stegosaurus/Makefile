@@ -41,6 +41,8 @@ FILES_UI = \
 # Do some magic
 
 UI_TYPE = cairo
+#USE_CLAP_BUNDLE = true
+USE_VST2_BUNDLE = true
 include ../../dpf/Makefile.plugins.mk
 
 # --------------------------------------------------------------
@@ -58,6 +60,8 @@ endif # MACOS_OR_WINDOWS
 
 TARGETS += lv2_sep
 TARGETS += vst
+#TARGETS += vst3
+#TARGETS += clap
 
 endif # HAVE_CAIRO
 

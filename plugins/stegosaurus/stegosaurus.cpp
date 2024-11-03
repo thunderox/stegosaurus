@@ -99,6 +99,7 @@ class stegosaurus : public Plugin
 		param.ranges.min = min;
 		param.ranges.max = max;
 		param.ranges.def = def;
+		param.hints = kParameterIsAutomatable;
 		fParameters[index] = def; 
 		
 	}	

@@ -23,3 +23,13 @@
 	lv2:appliesTo <http://thunderox.com/stegosaurus> ;
 	a pset:Preset ;
 	rdfs:seeAlso <overdrive_1.ttl> .
+	
+<electro_1.ttl>
+	lv2:appliesTo <http://thunderox.com/stegosaurus> ;
+	a pset:Preset ;
+	rdfs:seeAlso <electro_1.ttl> .
+	
+<industrial.ttl>
+	lv2:appliesTo <http://thunderox.com/stegosaurus> ;
+	a pset:Preset ;
+	rdfs:seeAlso <electro_1.ttl> .

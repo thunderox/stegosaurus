@@ -9,7 +9,7 @@
 <>
 	a pset:Preset ;
 	lv2:appliesTo <http://thunderox.com/stegosaurus> ;
-	pset:bank <defaults> ;
+	pset:bank <standard> ;
 	rdfs:label "default" ;
 	lv2:port [
 		lv2:symbol "lv2_port_178" ;
